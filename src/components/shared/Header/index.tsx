@@ -1,3 +1,3 @@
 export const Header = () => {
-  return <p>[id.tsx]</p>
+  return <p>ヘッダー</p>
 }
