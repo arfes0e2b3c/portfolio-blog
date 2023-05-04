@@ -8,6 +8,7 @@ import {
   articleTitle,
   articleTitleContainer
 } from './styles/articleCard.css'
+import Image from 'next/image'
 
 type ArticleCardProps = {
   article: Article
@@ -19,7 +20,13 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
   return (
     <div className={articleCard}>
       <div className={articleImageContainer}>
-        <img className={articleImage} src={article.eyecatch?.url} alt='' />
+        <Image
+          className={articleImage}
+          src={article.eyecatch?.url ?? ''}
+          alt=''
+          width={1200}
+          height={630}
+        />
         <p className={articleCreatedAt}>{article.createdAt}</p>
       </div>
       <div className={articleTitleContainer}>
