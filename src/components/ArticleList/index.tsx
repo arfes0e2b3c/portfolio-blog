@@ -3,7 +3,7 @@ import { useFetchArticleList } from '@/components/ArticleList/hooks/articleListH
 import { useQuery } from 'react-query'
 import { ArticleCard } from './elements/ArticleCard'
 import { FC } from 'react'
-import { articleContainer } from './styles/articleList.css'
+import { articleListContainer, articleListInner, articleListTitle } from './styles/articleList.css'
 
 export const fetchArticleList = async (): Promise<ArticleResponse> => {
   const articleList = await useFetchArticleList()
@@ -29,10 +29,13 @@ export const ArticleList: FC = () => {
   }
 
   return (
-    <div className={articleContainer}>
-      {articleList?.map((article: Article) => (
-        <ArticleCard key={article.id} article={article} />
-      ))}
+    <div className={articleListInner}>
+      <h2 className={articleListTitle}>ARTICLE</h2>
+      <div className={articleListContainer}>
+        {articleList?.map((article: Article) => (
+          <ArticleCard key={article.id} article={article} />
+        ))}
+      </div>
     </div>
   )
 }
