@@ -1,14 +1,14 @@
-import { Blog, BlogResponse } from '@/types'
-import { useFetchArticleList } from '@/components/BlogList/hooks/articleListHooks'
+import { Article, ArticleResponse } from '@/types'
+import { useFetchArticleList } from '@/components/ArticleList/hooks/articleListHooks'
 import { useQuery } from 'react-query'
 
-export const fetchArticleList = async (): Promise<BlogResponse> => {
+export const fetchArticleList = async (): Promise<ArticleResponse> => {
   const articleList = await useFetchArticleList()
 
   return articleList
 }
 
-export const BlogList = () => {
+export const ArticleList = () => {
   const {
     data: result,
     isLoading,
@@ -27,7 +27,7 @@ export const BlogList = () => {
 
   return (
     <div>
-      {articleList?.map((article: Blog) => (
+      {articleList?.map((article: Article) => (
         <p key={article.id}>{article.title}</p>
       ))}
     </div>

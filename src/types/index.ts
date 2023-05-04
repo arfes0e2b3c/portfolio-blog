@@ -1,4 +1,4 @@
-export type Blog = {
+export type Article = {
   id: string
   createdAt: string
   updatedAt: string
@@ -21,8 +21,8 @@ export type Blog = {
   }
 }
 
-export type BlogResponse = {
-  contents?: Blog[]
+export type ArticleResponse = {
+  contents?: Article[]
   totalCount?: number
   offset?: number
   limit?: number

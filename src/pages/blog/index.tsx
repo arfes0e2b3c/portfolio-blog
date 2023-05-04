@@ -1,5 +1,5 @@
 import { GetStaticPropsResult, NextPage } from 'next'
-import { BlogList } from '@/components/BlogList'
+import { ArticleList } from '@/components/ArticleList'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
@@ -7,7 +7,7 @@ const queryClient = new QueryClient()
 const Page: NextPage = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <BlogList />
+      <ArticleList />
     </QueryClientProvider>
   )
 }
