@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
           html {
             font-family: ${inter.style.fontFamily};
             font-weight: ${400};
+            color: #333;
           }
         `}
       </style>
