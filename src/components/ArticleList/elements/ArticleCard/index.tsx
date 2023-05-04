@@ -6,6 +6,8 @@ type ArticleCardProps = {
 }
 
 export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
+  article.createdAt = formatCreatedAt(article.createdAt)
+
   return (
     <div>
       <div>
