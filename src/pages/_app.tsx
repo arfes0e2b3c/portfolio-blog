@@ -1,4 +1,3 @@
-import '@/styles/globals.css'
 import { Header } from '@/components/shared/Header'
 import type { AppProps } from 'next/app'
 import 'sanitize.css'
