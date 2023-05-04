@@ -1,6 +1,8 @@
 import { Article, ArticleResponse } from '@/types'
 import { useFetchArticleList } from '@/components/ArticleList/hooks/articleListHooks'
 import { useQuery } from 'react-query'
+import { ArticleCard } from './elements/ArticleCard'
+import { FC } from 'react'
 
 export const fetchArticleList = async (): Promise<ArticleResponse> => {
   const articleList = await useFetchArticleList()
@@ -8,7 +10,7 @@ export const fetchArticleList = async (): Promise<ArticleResponse> => {
   return articleList
 }
 
-export const ArticleList = () => {
+export const ArticleList: FC = () => {
   const {
     data: result,
     isLoading,
@@ -28,7 +30,7 @@ export const ArticleList = () => {
   return (
     <div>
       {articleList?.map((article: Article) => (
-        <p key={article.id}>{article.title}</p>
+        <ArticleCard key={article.id} article={article} />
       ))}
     </div>
   )
