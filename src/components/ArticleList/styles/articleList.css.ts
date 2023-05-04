@@ -4,5 +4,5 @@ export const articleContainer = style({
   margin: '100px',
   display: 'flex',
   justifyContent: 'center',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
 })

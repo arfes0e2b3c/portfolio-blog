@@ -6,7 +6,7 @@ import {
   articleImage,
   articleImageContainer,
   articleTitle,
-  articleTitleContainer
+  articleTitleContainer,
 } from './styles/articleCard.css'
 import Image from 'next/image'
 

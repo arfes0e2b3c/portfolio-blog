@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({
   weight: '100',
-  subsets: ['cyrillic']
+  subsets: ['cyrillic'],
 })
 
 export default function App({ Component, pageProps }: AppProps) {

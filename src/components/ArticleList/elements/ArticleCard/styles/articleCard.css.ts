@@ -11,18 +11,18 @@ export const articleCard = style({
   transition: '.2s',
   cursor: 'pointer',
   ':hover': {
-    boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.1)'
-  }
+    boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.1)',
+  },
 })
 
 export const articleImageContainer = style({
   position: 'relative',
-  width: '100%'
+  width: '100%',
 })
 
 export const articleImage = style({
   width: '100%',
-  height: 'calc(367.5% / ' + cardHeight + ')'
+  height: 'calc(367.5% / ' + cardHeight + ')',
 })
 
 export const articleCreatedAt = style({
@@ -33,19 +33,19 @@ export const articleCreatedAt = style({
   margin: '0',
   backgroundColor: '#333',
   color: 'white',
-  borderRadius: '30px'
+  borderRadius: '30px',
 })
 
 export const articleTitleContainer = style({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
-  height: 'calc((1 - 367.5 / ' + cardHeight + ') * ' + cardHeight + 'px)'
+  height: 'calc((1 - 367.5 / ' + cardHeight + ') * ' + cardHeight + 'px)',
 })
 
 export const articleTitle = style({
   width: '100%',
   margin: '0',
   marginLeft: '10px',
-  fontWeight: 'lighter'
+  fontWeight: 'lighter',
 })

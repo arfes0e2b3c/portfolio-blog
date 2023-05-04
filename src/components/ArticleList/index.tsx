@@ -15,9 +15,9 @@ export const ArticleList: FC = () => {
   const {
     data: result,
     isLoading,
-    isError
+    isError,
   } = useQuery('articles', fetchArticleList, {
-    refetchOnWindowFocus: false
+    refetchOnWindowFocus: false,
   })
   const articleList = result && result.contents
   if (isLoading) {
