@@ -13,6 +13,7 @@ export const header = style({
   paddingLeft: '20px',
   backdropFilter: 'blur(10px)',
   zIndex: '1000',
+  boxShadow: '0px 0px 2px 2px rgba(0, 0, 0, 0.1)',
 })
 
 export const leftHeader = style({
