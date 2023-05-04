@@ -1,12 +1,15 @@
-import { NextPage } from 'next'
-import { BlogList } from '../../components/BlogList'
+import { GetStaticPropsResult, NextPage } from 'next'
+import { BlogList } from '@/components/BlogList'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-// export default function Blog() {
-//   return <p>index.tsx</p>
-// }
+const queryClient = new QueryClient()
 
 const Page: NextPage = () => {
-  return <BlogList />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <BlogList />
+    </QueryClientProvider>
+  )
 }
 
 export default Page
