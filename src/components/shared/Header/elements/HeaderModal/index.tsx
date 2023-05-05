@@ -6,7 +6,6 @@ import {
   menuLink,
   menuList,
 } from './styles/headerModal.css'
-import Image from 'next/image'
 
 const menus = [
   {

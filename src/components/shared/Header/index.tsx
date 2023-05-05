@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import { HeaderModal } from './elements/HeaderModal'
 import {
   blogTitle,
   blogTitleWrapper,
@@ -7,9 +10,6 @@ import {
   menuIcon,
   rightHeader,
 } from './styles/header.css'
-import { HeaderModal } from './elements/HeaderModal'
-import { useState } from 'react'
-import Link from 'next/link'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)

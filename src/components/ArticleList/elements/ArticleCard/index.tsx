@@ -1,4 +1,4 @@
-import { Article } from '@/types'
+import Image from 'next/image'
 import { FC } from 'react'
 import {
   articleCard,
@@ -8,7 +8,7 @@ import {
   articleTitle,
   articleTitleContainer,
 } from './styles/articleCard.css'
-import Image from 'next/image'
+import { Article } from '@/types'
 
 type ArticleCardProps = {
   article: Article

@@ -1,6 +1,6 @@
 import { GetStaticPropsResult, NextPage } from 'next'
-import { ArticleList } from '@/components/ArticleList'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ArticleList } from '@/components/ArticleList'
 
 const queryClient = new QueryClient()
 

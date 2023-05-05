@@ -1,12 +1,12 @@
-import { Article, ArticleResponse } from '@/types'
-import { useFetchArticleList } from '@/components/ArticleList/hooks/articleListHooks'
+import { FC } from 'react'
 import { useQuery } from 'react-query'
 import { ArticleCard } from './elements/ArticleCard'
-import { FC } from 'react'
 import { articleListContainer, articleListInner, articleListTitle } from './styles/articleList.css'
+import { UseFetchArticleList } from '@/components/ArticleList/hooks/articleListHooks'
+import { Article, ArticleResponse } from '@/types'
 
 export const fetchArticleList = async (): Promise<ArticleResponse> => {
-  const articleList = await useFetchArticleList()
+  const articleList = await UseFetchArticleList()
 
   return articleList
 }

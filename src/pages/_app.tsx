@@ -2,6 +2,7 @@ import { Header } from '@/components/shared/Header'
 import type { AppProps } from 'next/app'
 import 'sanitize.css'
 import { useEffect } from 'react'
+import { Header } from '@/components/shared/Header'
 import { ShadowHeader } from '@/components/shared/ShadowHeader'
 
 const inter = Inter({
