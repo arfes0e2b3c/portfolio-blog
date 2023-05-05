@@ -1,4 +1,5 @@
-import { Article } from '@/types'
+import Image from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 import {
   articleCard,
@@ -8,17 +9,18 @@ import {
   articleTitle,
   articleTitleContainer,
 } from './styles/articleCard.css'
-import Image from 'next/image'
+import { Article } from '@/types'
+import { formatTime2Ymd } from '@/utils/function'
 
 type ArticleCardProps = {
   article: Article
 }
 
 export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
-  article.createdAt = formatCreatedAt(article.createdAt)
+  article.createdAt = formatTime2Ymd(article.createdAt)
 
   return (
-    <div className={articleCard}>
+    <Link href={`article/${article.id}`} className={articleCard}>
       <div className={articleImageContainer}>
         <Image
           className={articleImage}
@@ -32,10 +34,6 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
       <div className={articleTitleContainer}>
         <h4 className={articleTitle}>{article.title}</h4>
       </div>
-    </div>
+    </Link>
   )
-}
-
-function formatCreatedAt(createdAt: string): string {
-  return createdAt.slice(0, 4) + '/' + createdAt.slice(5, 7) + '/' + createdAt.slice(8, 10)
 }

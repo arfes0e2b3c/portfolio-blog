@@ -11,6 +11,8 @@ export const articleCard = style({
   boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.05)',
   transition: '.2s',
   cursor: 'pointer',
+  textDecoration: 'none',
+  color: '#333',
   ':hover': {
     boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.1)',
   },
