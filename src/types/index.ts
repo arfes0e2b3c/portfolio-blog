@@ -3,7 +3,7 @@ export type Article = {
   createdAt: string
   updatedAt: string
   publishedAt: string
-  revisedat: string
+  revisedAt: string
   title: string
   content: string
   eyecatch?: {
@@ -16,7 +16,7 @@ export type Article = {
     createdAt: string
     updatedAt: string
     publishedAt: string
-    revisedat: string
+    revisedAt: string
     name: string
   }
 }
