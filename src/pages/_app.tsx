@@ -1,7 +1,7 @@
 import { Header } from '@/components/shared/Header'
 import type { AppProps } from 'next/app'
 import 'sanitize.css'
-import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
 import { ShadowHeader } from '@/components/shared/ShadowHeader'
 
 const inter = Inter({
@@ -10,6 +10,9 @@ const inter = Inter({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    import('zenn-embed-elements')
+  }, [])
   return (
     <>
       <style jsx global>
