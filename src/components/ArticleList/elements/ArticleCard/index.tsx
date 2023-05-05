@@ -9,13 +9,14 @@ import {
   articleTitleContainer,
 } from './styles/articleCard.css'
 import { Article } from '@/types'
+import { formatTime2Ymd } from '@/utils/function'
 
 type ArticleCardProps = {
   article: Article
 }
 
 export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
-  article.createdAt = formatCreatedAt(article.createdAt)
+  article.createdAt = formatTime2Ymd(article.createdAt)
 
   return (
     <div className={articleCard}>
