@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { Header } from '@/components/shared/Header'
 import { ShadowHeader } from '@/components/shared/ShadowHeader'
 import 'zenn-content-css'
+import Script from 'next/script'
 
 const inter = Inter({
   weight: '100',
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
+      <Script src='https://embed.zenn.studio/js/listen-embed-event.js'></Script>
       <Header />
       <ShadowHeader />
       <Component {...pageProps} />
