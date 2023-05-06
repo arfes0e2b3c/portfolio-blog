@@ -9,17 +9,17 @@ import {
 
 const menus = [
   {
-    key: 1,
+    id: 1,
     title: 'TOP',
     path: '/',
   },
   {
-    key: 2,
+    id: 2,
     title: 'ARTICLE',
     path: '/article',
   },
   {
-    key: 3,
+    id: 3,
     title: 'CONTACT',
     path: '/contact',
   },
@@ -32,7 +32,7 @@ export const HeaderModal = () => {
       <ul className={menuContainer}>
         {menus.map((menu) => {
           return (
-            <li className={menuList} key={menu.key}>
+            <li className={menuList} key={menu.id}>
               <Link className={menuLink} href={menu.path}>
                 {menu.title}
               </Link>

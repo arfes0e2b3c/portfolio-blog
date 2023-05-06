@@ -57,7 +57,7 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-      const limitY = 425
+      const limitY = 395
 
       setIsFixed(scrollY > limitY)
     }

@@ -11,6 +11,7 @@ import {
   articleDetailContent,
   articleDetailSidebar,
   articleDetailTitle,
+  articleDetailTitleContainer,
 } from './styles/articleDetail.css'
 import { Article } from '@/types'
 
@@ -54,9 +55,11 @@ export const ArticleDetail = () => {
     <section className={articleDetailContainer}>
       <div className={articleDetailContainerInner}>
         <article className={[articleDetailBody, notoSansJpThin.className].join(' ')}>
-          <h2 className={[notoSansJpBold.className, articleDetailTitle].join(' ')}>
-            {articleDetail.title}
-          </h2>
+          <div className={articleDetailTitleContainer}>
+            <h2 className={[notoSansJpBold.className, articleDetailTitle].join(' ')}>
+              {articleDetail.title}
+            </h2>
+          </div>
           <div
             className={['znc', articleDetailContent].join(' ')}
             dangerouslySetInnerHTML={{

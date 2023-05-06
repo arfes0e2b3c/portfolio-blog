@@ -17,7 +17,7 @@ type ArticleCardProps = {
 }
 
 export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
-  article.createdAt = formatTime2Ymd(article.createdAt)
+  article.publishedAt = formatTime2Ymd(article.publishedAt)
 
   return (
     <Link href={`article/${article.id}`} className={articleCard}>
@@ -29,7 +29,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
           width={1200}
           height={630}
         />
-        <p className={articleCreatedAt}>{article.createdAt}</p>
+        <p className={articleCreatedAt}>{article.publishedAt}</p>
       </div>
       <div className={articleTitleContainer}>
         <h4 className={articleTitle}>{article.title}</h4>
