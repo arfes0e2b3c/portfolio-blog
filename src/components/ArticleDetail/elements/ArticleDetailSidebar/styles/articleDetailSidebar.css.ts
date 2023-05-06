@@ -2,7 +2,6 @@ import { globalStyle, style } from '@vanilla-extract/css'
 
 export const articleDetailSidebar = style({
   position: 'relative',
-  marginLeft: '20px',
   width: '100%',
 })
 

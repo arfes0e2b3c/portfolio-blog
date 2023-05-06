@@ -55,5 +55,6 @@ export const articleDetailSidebar = style({
   position: 'relative',
   top: titleHeight,
   left: `calc(${contentWidthRatio} * 100%)`,
-  width: `calc(${containerWidth} * ${sidebarWidthRatio})`,
+  width: `calc(${containerWidth} * ${sidebarWidthRatio} - 20px)`,
+  marginLeft: '20px',
 })
