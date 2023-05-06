@@ -3,6 +3,7 @@ import 'sanitize.css'
 import { Inter, Noto_Sans_JP } from 'next/font/google'
 import Script from 'next/script'
 import { useEffect } from 'react'
+import { Footer } from '@/components/shared/Footer'
 import { Header } from '@/components/shared/Header'
 import { ShadowHeader } from '@/components/shared/ShadowHeader'
 import 'zenn-content-css'
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Header />
       <ShadowHeader />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }
