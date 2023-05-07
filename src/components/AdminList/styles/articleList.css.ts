@@ -8,7 +8,7 @@ export const adminList = style({
 export const adminListHeader = style({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'end',
+  alignItems: 'flex-end',
 })
 
 export const adminListTitle = style({
