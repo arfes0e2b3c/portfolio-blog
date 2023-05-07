@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useQuery } from 'react-query'
 import { ArticleCard } from './elements/ArticleCard'
 import { articleListContainer, articleListInner, articleListTitle } from './styles/articleList.css'
-import { UseFetchArticleList } from '@/components/ArticleList/hooks/articleListHooks'
+import { UseFetchArticleList } from '@/hooks/articleListHooks'
 import { Article, ArticleResponse } from '@/types'
 
 export const fetchArticleList = async (): Promise<ArticleResponse> => {
