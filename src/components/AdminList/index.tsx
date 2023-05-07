@@ -30,6 +30,7 @@ export const AdminList: FC = () => {
     data: result,
     isLoading,
     isError,
+    refetch,
   } = useQuery('articles', fetchArticleList, {
     refetchOnWindowFocus: false,
   })
@@ -63,7 +64,9 @@ export const AdminList: FC = () => {
         <ul className={articleListTableBody}>
           {articleList &&
             articleList.map((article, index) => {
-              return <ArticleCard article={article} index={index} key={article.id} />
+              return (
+                <ArticleCard article={article} index={index} key={article.id} refetch={refetch} />
+              )
             })}
         </ul>
       </div>

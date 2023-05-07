@@ -14,11 +14,13 @@ import {
 import { Article } from '@/types'
 import { formatTime2Ymd } from '@/utils/function'
 
-const deleteArticle = async (id: string): Promise<void> => {
-  const res = await UseDeleteArticle(id)
-}
-
-export const ArticleCard = (props: { article: Article; index: number }) => {
+export const ArticleCard = (props: { article: Article; index: number; refetch: () => void }) => {
+  const deleteArticle = async (id: string): Promise<void> => {
+    const res = await UseDeleteArticle(id)
+    if (res === '202') {
+      props.refetch()
+    }
+  }
   const article = props.article
   article.publishedAt = formatTime2Ymd(article.publishedAt)
   article.updatedAt = formatTime2Ymd(article.updatedAt)
