@@ -3,6 +3,7 @@ import 'sanitize.css'
 import { Inter, Noto_Sans_JP } from 'next/font/google'
 import Script from 'next/script'
 import { useEffect } from 'react'
+import { component } from './styles/component.css'
 import { Footer } from '@/components/shared/Footer'
 import { Header } from '@/components/shared/Header'
 import { ShadowHeader } from '@/components/shared/ShadowHeader'
@@ -35,7 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Script src='https://embed.zenn.studio/js/listen-embed-event.js'></Script>
       <Header />
       <ShadowHeader />
-      <Component {...pageProps} />
+      <div className={component}>
+        <Component {...pageProps} />
+      </div>
       <Footer />
     </>
   )
