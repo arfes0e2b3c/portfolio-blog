@@ -1,5 +1,5 @@
 import { initMicroCms } from '@/api/axios'
-import { Article, ArticleResponse } from '@/types'
+import { ArticleResponse } from '@/types'
 
 export const UseFetchArticleList = async (): Promise<ArticleResponse> => {
   const articleList = await initMicroCms()
