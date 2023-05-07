@@ -4,7 +4,7 @@ import { ArticleDetail } from '@/components/ArticleDetail'
 
 const queryClient = new QueryClient()
 
-const DetailPage: NextPage = () => {
+const ArticleDetailPage: NextPage = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ArticleDetail />
@@ -12,4 +12,4 @@ const DetailPage: NextPage = () => {
   )
 }
 
-export default DetailPage
+export default ArticleDetailPage
