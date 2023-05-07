@@ -35,7 +35,7 @@ export const Header = () => {
           height={100}
         />
       </div>
-      {isOpen && <HeaderModal />}
+      {<HeaderModal toggleModal={toggleModal} isOpen={isOpen} />}
     </header>
   )
 }
