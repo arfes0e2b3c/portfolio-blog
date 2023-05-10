@@ -7,7 +7,6 @@ import {
   adminCreateInner,
   adminCreateTitle,
 } from './styles/adminCreate.css'
-import 'react-split-mde/css/index.css'
 
 export const AdminCreate = () => {
   return (
