@@ -10,6 +10,7 @@ import {
   articlePublishedAt,
   articleTitle,
   articleUpdatedAt,
+  isDraft,
 } from './styles/articleCard.css'
 import { Article } from '@/types'
 import { formatTime2Ymd } from '@/utils/function'
@@ -26,7 +27,7 @@ export const ArticleCard = (props: { article: Article; index: number; refetch: (
   article.updatedAt = formatTime2Ymd(article.updatedAt)
   const index = props.index + 1
   return (
-    <li className={articleCard}>
+    <li className={[articleCard, article.isPublished ? '' : isDraft].join(' ')}>
       <div className={articleCardInner}>
         <p className={articleId}>{index}</p>
         <p className={articleTitle}>{article.title}</p>

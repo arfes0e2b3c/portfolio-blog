@@ -7,6 +7,11 @@ export const articleCard = style({
   boxShadow: '0 0 2px 2px rgba(0,0,0,0.1)',
   borderRadius: '5px',
 })
+
+export const isDraft = style({
+  backgroundColor: '#eee',
+})
+
 export const articleCardInner = style({
   display: 'flex',
   justifyContent: 'space-around',
