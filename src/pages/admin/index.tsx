@@ -4,7 +4,7 @@ import { AdminList } from '@/components/AdminList'
 
 const queryClient = new QueryClient()
 
-const Admin: NextPage = () => {
+const AdminIndexPage: NextPage = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AdminList />
@@ -12,4 +12,4 @@ const Admin: NextPage = () => {
   )
 }
 
-export default Admin
+export default AdminIndexPage

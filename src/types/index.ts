@@ -6,6 +6,7 @@ export type Article = {
   revisedAt: string
   title: string
   content: string
+  draftContent: string
   eyecatch?: {
     url: string
     height: number
@@ -19,6 +20,7 @@ export type Article = {
     revisedAt: string
     name: string
   }
+  isPublished: boolean
 }
 
 export type ArticleResponse = {

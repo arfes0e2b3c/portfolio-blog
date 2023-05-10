@@ -4,7 +4,7 @@ import { ArticleList } from '@/components/ArticleList'
 
 const queryClient = new QueryClient()
 
-const Page: NextPage = () => {
+const ArticleListPage: NextPage = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ArticleList />
@@ -12,4 +12,4 @@ const Page: NextPage = () => {
   )
 }
 
-export default Page
+export default ArticleListPage

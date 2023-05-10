@@ -47,7 +47,7 @@ export const AdminList: FC = () => {
     <section className={adminList}>
       <div className={adminListHeader}>
         <h2 className={adminListTitle}>記事一覧</h2>
-        <Link className={createArticleButton} href={'/create'}>
+        <Link className={createArticleButton} href={'/admin/create'}>
           新規作成
         </Link>
       </div>
