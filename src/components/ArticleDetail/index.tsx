@@ -2,8 +2,8 @@ import { Noto_Sans_JP } from 'next/font/google'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import markdownToHtml from 'zenn-markdown-html'
+import { usefetchArticleDetail } from '../../hooks/ArticleDetailHooks'
 import { ArticleDetailSidebar } from './elements/ArticleDetailSidebar'
-import { usefetchArticleDetail } from './hooks/ArticleDetailHooks'
 import {
   articleDetailBody,
   articleDetailContainer,
