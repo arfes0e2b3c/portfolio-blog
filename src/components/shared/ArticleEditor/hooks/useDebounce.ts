@@ -10,7 +10,6 @@ export const useDebounce = (value: string, delay: number) => {
       clearTimeout(timer)
     }
   }, [value, delay])
-  console.log('changed1')
 
   return debounceValue
 }

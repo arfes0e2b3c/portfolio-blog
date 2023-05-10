@@ -4,27 +4,31 @@ export const adminCreate = style({
   width: '100%',
 })
 
-export const createBody = style({
+export const adminCreateInner = style({
   width: '1280px',
-  display: 'flex',
-  margin: '0 auto',
+  margin: '50px auto 0',
 })
 
-export const createResult = style({
-  width: '50%',
-  height: '70vh',
-  overflow: 'scroll',
-  padding: '30px',
-  boxShadow: '0 0 5px 5px rgba(0,0,0,0.1)',
-  border: 'none',
-  borderRadius: '10px',
+export const adminCreateHeader = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
 })
-export const createTextarea = style({
-  width: '50%',
-  height: '70vh',
-  padding: '30px',
+
+export const adminCreateTitle = style({
+  position: 'relative',
+  display: 'inline',
   marginLeft: '20px',
-  boxShadow: '0 0 5px 5px rgba(0,0,0,0.1)',
-  border: 'none',
-  borderRadius: '10px',
+  paddingBottom: '5px',
+  fontSize: '36px',
+  fontWeight: 'lighter',
+  ':after': {
+    content: '',
+    position: 'absolute',
+    bottom: '0',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '150px',
+    borderBottom: '2px solid #777',
+  },
 })

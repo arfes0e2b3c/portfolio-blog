@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import markdownToHtml from 'zenn-markdown-html'
-import { Markdown } from './elements/Markdown'
-import { useDebounce } from './hooks/useDebounce'
-import { createBody, createResult, createTextarea } from './styles/adminCreate.css'
+import { ArticleEditor } from '../shared/ArticleEditor'
+import { usePostArticle } from './hooks/usePostArticleHooks'
+import { usePostDraft } from './hooks/usePostDraftHooks'
+import {
+  adminCreate,
+  adminCreateHeader,
+  adminCreateInner,
+  adminCreateTitle,
+} from './styles/adminCreate.css'
 import 'react-split-mde/css/index.css'
-export const AdminCreate = () => {
-  const [content, setContent] = useState('')
-  const debouncedContent = useDebounce(content, 500)
-  const changeTextarea = (text: string) => {
-    setContent(text)
-  }
 
+export const AdminCreate = () => {
   return (
-    <section>
-      <div>
-        <h2>新規記事作成</h2>
-      </div>
-      <div>
-        <input type='text' />
-      </div>
-      <div className={createBody}>
-        {/* <Editor parser={parser} value={content} onChange={handleValueChange} /> */}
-        <Markdown display={debouncedContent} />
-        <textarea
-          className={createTextarea}
-          name=''
-          id=''
-          cols={30}
-          rows={30}
-          onChange={(e) => changeTextarea(e.target.value)}
-        ></textarea>
+    <section className={adminCreate}>
+      <div className={adminCreateInner}>
+        <div className={adminCreateHeader}>
+          <h2 className={adminCreateTitle}>新規記事作成</h2>
+        </div>
+        <ArticleEditor postDraft={usePostDraft} postArticle={usePostArticle} />
       </div>
     </section>
   )
