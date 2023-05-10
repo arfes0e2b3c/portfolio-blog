@@ -11,6 +11,7 @@ export const usefetchArticleDetail = async (id: string): Promise<Article> => {
       revisedAt: '',
       title: '',
       content: '',
+      draftContent: '',
       eyecatch: {
         url: '',
         height: 0,
@@ -24,6 +25,7 @@ export const usefetchArticleDetail = async (id: string): Promise<Article> => {
         revisedAt: '',
         name: '',
       },
+      isPublished: false,
     }
   }
   const articleDetail = await initMicroCms()
