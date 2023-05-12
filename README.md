@@ -1,38 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 使用技術
 
-## Getting Started
+### Next.js
+実際にインターンで使用するのがNext.jsだということに加え、今まで自分が触れてこなかったので挑戦という意味も込めて選択しました。ReactではなくNextを選択した理由としては短い期間で本質的な開発に注力するためにはNextを選択するべきだと考えたからです。
 
-First, run the development server:
+### TypeScript
+型安全に開発することができるので選択しました。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### vanilla-extract
+css-in-jsについてはいくつか候補(styled-components, tailwind)はありましたが、HTML部分の可読性や型安全性や定義参照などのDXの点で優れていると感じたため選択しました。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Jest/React-Testing-Library
+特に他に候補がない様に思われたので特に選択理由はありません。
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Vercel
+Nextとの親和性や自動デプロイが魅力的だと感じたので選択しました
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### github
+選択理由は特にありません。機能ごとにブランチを切ってmainブランチにマージするという流れで開発を行いました。
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### react-query
+データフェッチやグローバルな状態管理で利用しています。キャッシュで動作を高速化できたりswrと違いisLoadingで読み込みを管理できる点が魅力的だと思っています。
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## デザインパターン
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### TreeDesign
+最初はatomic designが候補にありましたが、①今回の規模の開発でmoleclesやorganismを分けられる自信がなく、また分ける必要性を感じなかったこと ②DOMに即したディレクトリ構成にすることでより直感と合った開発をすることができる、という２点からTreeDesignを採用しています。
