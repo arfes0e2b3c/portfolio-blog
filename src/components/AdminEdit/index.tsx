@@ -5,21 +5,14 @@ import { ArticleEditor } from '../shared/ArticleEditor'
 import { useEditArticle } from './hooks/useEditArticleHooks'
 import { useEditDraft } from './hooks/useEditDraftHooks'
 import { adminEdit, adminEditHeader, adminEditInner, adminEditTitle } from './styles/adminEdit.css'
-import { usefetchArticleDetail } from '@/hooks/ArticleDetailHooks'
+import { fetchArticleDetail } from '@/hooks/articleDetail'
+import { Article } from '@/types'
 
-const fetchArticleDetail = async (id: string) => {
-  const articleDetail = await usefetchArticleDetail(id)
-  return articleDetail
-}
-export const AdminEdit = () => {
+export const AdminEdit = (props: { article: Article }) => {
   const router = useRouter()
-  // const id = useMemo(() => {
-  //   console.log(router.query.id)
-
-  //   return Array.isArray(router.query.id) ? router.query.id[0] : router.query.id ?? ''
-  // }, [router])
-  // console.log(id)
-  const id = window.location.href.split('edit/')[0]
+  const id = useMemo(() => {
+    return Array.isArray(router.query.id) ? router.query.id[0] : router.query.id ?? ''
+  }, [router])
 
   const {
     data: result,
@@ -27,12 +20,12 @@ export const AdminEdit = () => {
     isError,
   } = useQuery(
     'edit',
-    () => {
-      // console.log(router)
-      fetchArticleDetail(id)
+    async () => {
+      return await fetchArticleDetail(id)
     },
     {
       refetchOnWindowFocus: false,
+      initialData: props.article,
     }
   )
   if (isLoading) {
@@ -42,8 +35,6 @@ export const AdminEdit = () => {
   if (isError || !result) {
     return <span>Error fetching articles</span>
   }
-  console.log(result)
-  const articleDetail = result
 
   return (
     <section className={adminEdit}>
@@ -54,9 +45,9 @@ export const AdminEdit = () => {
         <ArticleEditor
           funcDraft={useEditDraft}
           funcArticle={useEditArticle}
-          id={articleDetail.id}
-          title={articleDetail.title}
-          content={articleDetail.content}
+          id={result?.id}
+          title={result?.title}
+          content={result?.content}
         />
       </div>
     </section>
