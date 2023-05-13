@@ -5,19 +5,14 @@ import { articleListContainer, articleListInner, articleListTitle } from './styl
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
 import { Article, ArticleResponse } from '@/types'
 
-export const fetchArticleList = async (): Promise<ArticleResponse> => {
-  const articleList = await UseFetchArticleList()
-
-  return articleList
-}
-
-export const ArticleList: FC = () => {
+export const ArticleList = (props: { articleList: ArticleResponse }) => {
   const {
     data: result,
     isLoading,
     isError,
-  } = useQuery('articles', fetchArticleList, {
+  } = useQuery('user-articles', UseFetchArticleList, {
     refetchOnWindowFocus: false,
+    initialData: props.articleList,
   })
   const articleList = result && result.contents
   if (isLoading) {
