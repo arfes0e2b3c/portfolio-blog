@@ -25,7 +25,7 @@ export const AdminList = (props: { articleList: ArticleResponse }) => {
     isLoading,
     isError,
     refetch,
-  } = useQuery('articles', UseFetchArticleList, {
+  } = useQuery('admin-articles', UseFetchArticleList, {
     refetchOnWindowFocus: false,
     initialData: props.articleList,
   })
