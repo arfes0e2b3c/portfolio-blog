@@ -1,4 +1,4 @@
-import { initMicroCms } from '@/api/axios'
+import { fetchArticleDetail } from '@/api/articleDetail'
 import { Article } from '@/types'
 
 export const usefetchArticleDetail = async (id: string): Promise<Article> => {
@@ -28,10 +28,6 @@ export const usefetchArticleDetail = async (id: string): Promise<Article> => {
       isPublished: false,
     }
   }
-  const articleDetail = await initMicroCms()
-    .get<Article>(`articles/${id}`)
-    .then((res) => {
-      return res.data
-    })
+  const articleDetail = await fetchArticleDetail(id)
   return articleDetail
 }

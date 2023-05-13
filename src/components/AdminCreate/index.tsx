@@ -15,7 +15,7 @@ export const AdminCreate = () => {
         <div className={adminCreateHeader}>
           <h2 className={adminCreateTitle}>新規記事作成</h2>
         </div>
-        <ArticleEditor postDraft={usePostDraft} postArticle={usePostArticle} />
+        <ArticleEditor funcDraft={usePostDraft} funcArticle={usePostArticle} />
       </div>
     </section>
   )
