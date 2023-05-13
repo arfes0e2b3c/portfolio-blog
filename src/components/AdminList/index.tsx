@@ -19,12 +19,6 @@ import {
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
 import { ArticleResponse } from '@/types'
 
-export const fetchArticleList = async (): Promise<ArticleResponse> => {
-  const articleList = await UseFetchArticleList()
-
-  return articleList
-}
-
 export const AdminList = (props: { articleList: ArticleResponse }) => {
   const {
     data: result,
