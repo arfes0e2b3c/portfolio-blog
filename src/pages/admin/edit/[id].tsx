@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(props: { params: { id: string } }) {
+export const getStaticProps = async (props: { params: { id: string } }) => {
   const article = await fetchArticleDetail(props.params.id)
   return {
     props: {
