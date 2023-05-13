@@ -25,14 +25,15 @@ export const fetchArticleList = async (): Promise<ArticleResponse> => {
   return articleList
 }
 
-export const AdminList: FC = () => {
+export const AdminList = (props: { articleList: ArticleResponse }) => {
   const {
     data: result,
     isLoading,
     isError,
     refetch,
-  } = useQuery('articles', fetchArticleList, {
+  } = useQuery('articles', UseFetchArticleList, {
     refetchOnWindowFocus: false,
+    initialData: props.articleList,
   })
   const articleList = result && result.contents
   if (isLoading) {
