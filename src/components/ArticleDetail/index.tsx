@@ -30,7 +30,7 @@ const notoSansJpBold = Noto_Sans_JP({
   subsets: ['latin'],
 })
 
-export const ArticleDetail = () => {
+export const ArticleDetail = (props: { article: Article }) => {
   const router = useRouter()
 
   const id: string = Array.isArray(router.query.id) ? router.query.id[0] : router.query.id ?? ''
@@ -41,6 +41,7 @@ export const ArticleDetail = () => {
     isError,
   } = useQuery(['detail', id], () => fetchArticleDetail(id), {
     refetchOnWindowFocus: false,
+    initialData: props.article,
   })
   if (isLoading) {
     return <span>Loading...</span>
