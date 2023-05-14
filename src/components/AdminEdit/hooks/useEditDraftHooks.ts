@@ -1,8 +1,8 @@
 import { initMicroCms } from '@/api/axios'
 
-export const useEditDraft = async (title: string, content: string): Promise<void> => {
+export const useEditDraft = async (title: string, content: string, id?: string): Promise<void> => {
   await initMicroCms()
-    .patch('/articles', {
+    .patch(`/articles/${id}`, {
       title: title,
       content: content,
       draftContent: content,
