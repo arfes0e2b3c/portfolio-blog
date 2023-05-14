@@ -19,20 +19,15 @@ import {
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
 import { ArticleResponse } from '@/types'
 
-export const fetchArticleList = async (): Promise<ArticleResponse> => {
-  const articleList = await UseFetchArticleList()
-
-  return articleList
-}
-
-export const AdminList: FC = () => {
+export const AdminList = (props: { articleList: ArticleResponse }) => {
   const {
     data: result,
     isLoading,
     isError,
     refetch,
-  } = useQuery('articles', fetchArticleList, {
+  } = useQuery('admin-articles', UseFetchArticleList, {
     refetchOnWindowFocus: false,
+    initialData: props.articleList,
   })
   const articleList = result && result.contents
   if (isLoading) {

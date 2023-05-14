@@ -1,7 +1,7 @@
 import { fetchArticleDetail } from '@/api/articleDetail'
 import { Article } from '@/types'
 
-export const usefetchArticleDetail = async (id: string): Promise<Article> => {
+export const UseFetchArticleDetail = async (id: string): Promise<Article> => {
   if (!id) {
     return {
       id: '',

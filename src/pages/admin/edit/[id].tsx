@@ -7,7 +7,7 @@ import { Article } from '@/types'
 
 export async function getStaticPaths() {
   const articles = await fetchArticleList()
-  const ids = articles?.contents?.map((article) => {
+  const ids = articles.contents?.map((article) => {
     return {
       params: {
         id: article.id,
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(props: { params: { id: string } }) {
+export const getStaticProps = async (props: { params: { id: string } }) => {
   const article = await fetchArticleDetail(props.params.id)
   return {
     props: {

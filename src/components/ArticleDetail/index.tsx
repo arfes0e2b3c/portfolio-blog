@@ -2,7 +2,7 @@ import { Noto_Sans_JP } from 'next/font/google'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import markdownToHtml from 'zenn-markdown-html'
-import { usefetchArticleDetail } from '../../hooks/ArticleDetailHooks'
+import { UseFetchArticleDetail } from '../../hooks/ArticleDetailHooks'
 import { ArticleDetailSidebar } from './elements/ArticleDetailSidebar'
 import {
   articleDetailBody,
@@ -16,7 +16,7 @@ import {
 import { Article } from '@/types'
 
 export const fetchArticleDetail = async (id: string): Promise<Article> => {
-  const articleDetail = await usefetchArticleDetail(id)
+  const articleDetail = await UseFetchArticleDetail(id)
   return articleDetail
 }
 
@@ -30,7 +30,7 @@ const notoSansJpBold = Noto_Sans_JP({
   subsets: ['latin'],
 })
 
-export const ArticleDetail = () => {
+export const ArticleDetail = (props: { article: Article }) => {
   const router = useRouter()
 
   const id: string = Array.isArray(router.query.id) ? router.query.id[0] : router.query.id ?? ''
@@ -41,6 +41,7 @@ export const ArticleDetail = () => {
     isError,
   } = useQuery(['detail', id], () => fetchArticleDetail(id), {
     refetchOnWindowFocus: false,
+    initialData: props.article,
   })
   if (isLoading) {
     return <span>Loading...</span>
