@@ -18,16 +18,10 @@ export const AdminEdit = (props: { article: Article }) => {
     data: result,
     isLoading,
     isError,
-  } = useQuery(
-    'edit',
-    async () => {
-      return await fetchArticleDetail(id)
-    },
-    {
-      refetchOnWindowFocus: false,
-      initialData: props.article,
-    }
-  )
+  } = useQuery('edit', async () => await fetchArticleDetail(id), {
+    refetchOnWindowFocus: false,
+    initialData: props.article,
+  })
   if (isLoading) {
     return <span>Loading...</span>
   }
