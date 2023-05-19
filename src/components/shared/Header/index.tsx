@@ -29,7 +29,7 @@ export const Header = () => {
       <div className={rightHeader} onClick={toggleModal}>
         <Image
           className={menuIcon}
-          src={isOpen ? '/close.svg' : '/menu_icon.svg'}
+          src={isOpen ? '/icons_common/close.svg' : '/icons_common//menu_icon.svg'}
           alt='ハンバーガーメニュー'
           width={100}
           height={100}
