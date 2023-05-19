@@ -9,6 +9,7 @@ import {
   period,
   profileBody,
   profileBodyInner,
+  profileBodyWrapper,
 } from './styles/profileBody.css'
 
 const histories = [
@@ -87,31 +88,33 @@ const histories = [
 
 export const ProfileBody = () => {
   return (
-    <section className={profileBody}>
-      <ul className={profileBodyInner}>
-        {histories.map((history, index) => {
-          return (
-            <li className={historyItem} key={index}>
-              <Image
-                className={companyImage}
-                src={history.src}
-                alt={history.company}
-                width={80}
-                height={80}
-              />
-              <div>
-                <p className={companyName}>
-                  <Link className={companyLink} href={history.href}>
-                    {history.company}
-                  </Link>
-                </p>
-                <p className={job}>{history.job}</p>
-                <p className={period}>{history.period}</p>
-              </div>
-            </li>
-          )
-        })}
-      </ul>
+    <section className={profileBodyWrapper}>
+      <div className={profileBody}>
+        <ul className={profileBodyInner}>
+          {histories.map((history, index) => {
+            return (
+              <li className={historyItem} key={index}>
+                <Image
+                  className={companyImage}
+                  src={history.src}
+                  alt={history.company}
+                  width={80}
+                  height={80}
+                />
+                <div>
+                  <p className={companyName}>
+                    <Link className={companyLink} href={history.href}>
+                      {history.company}
+                    </Link>
+                  </p>
+                  <p className={job}>{history.job}</p>
+                  <p className={period}>{history.period}</p>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </section>
   )
 }

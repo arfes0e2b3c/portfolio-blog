@@ -1,18 +1,20 @@
 import { style } from '@vanilla-extract/css'
 
-export const profileBody = style({
+export const profileBodyWrapper = style({
   display: 'flex',
   justifyContent: 'flex-end',
   width: '100%',
 })
 
-export const profileBodyInner = style({
+export const profileBody = style({
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
+  justifyContent: 'center',
   width: '640px',
   padding: '0',
+  marginRight: 'calc(50vw - 640px)',
 })
+
+export const profileBodyInner = style({})
 
 export const historyItem = style({
   position: 'relative',
