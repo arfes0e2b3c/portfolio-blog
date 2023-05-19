@@ -7,6 +7,9 @@ export const profileBody = style({
 })
 
 export const profileBodyInner = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
   width: '640px',
   padding: '0',
 })
