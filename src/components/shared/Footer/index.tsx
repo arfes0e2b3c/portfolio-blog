@@ -37,7 +37,7 @@ export const Footer = () => {
           <Link href='/'>
             <Image
               className={blogIcon}
-              src='/yata_icon.jpg'
+              src='/images/yata_icon.jpg'
               alt='やたのアイコン画像'
               width={80}
               height={80}

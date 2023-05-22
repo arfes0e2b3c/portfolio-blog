@@ -20,7 +20,7 @@ export const Header = () => {
     <header className={header}>
       <div className={leftHeader}>
         <Link href='/'>
-          <Image src='/yata_icon.jpg' alt='アイコン画像' width={80} height={80} />
+          <Image src='/images/yata_icon.jpg' alt='アイコン画像' width={80} height={80} />
         </Link>
         <Link className={blogTitleWrapper} href='/'>
           <h1 className={blogTitle}>ARFES</h1>
@@ -29,7 +29,7 @@ export const Header = () => {
       <div className={rightHeader} onClick={toggleModal}>
         <Image
           className={menuIcon}
-          src={isOpen ? '/close.svg' : '/menu_icon.svg'}
+          src={isOpen ? '/icons_common/close.svg' : '/icons_common//menu_icon.svg'}
           alt='ハンバーガーメニュー'
           width={100}
           height={100}

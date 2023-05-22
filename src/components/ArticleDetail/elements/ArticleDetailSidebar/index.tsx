@@ -74,7 +74,7 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
         <div className={upperContainer}>
           <Image
             className={authorIcon}
-            src='/yata_icon.jpg'
+            src='/images/yata_icon.jpg'
             alt='やたのアイコン画像'
             width={80}
             height={80}
@@ -83,13 +83,23 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
             <h3 className={fullName}>YUKI YATA</h3>
             <div className={iconContainer}>
               <Link href='https://github.com/arfes0e2b3c'>
-                <Image src='/github.svg' alt='githubのアイコン画像' width={25} height={25} />
+                <Image
+                  src='/icons_sns/github.svg'
+                  alt='githubのアイコン画像'
+                  width={25}
+                  height={25}
+                />
               </Link>
               <Link href='https://twitter.com/0e2b3c'>
-                <Image src='/twitter.svg' alt='twitterのアイコン画像' width={25} height={25} />
+                <Image
+                  src='/icons_sns/twitter.svg'
+                  alt='twitterのアイコン画像'
+                  width={25}
+                  height={25}
+                />
               </Link>
               <Link href='https://zenn.dev/arfes'>
-                <Image src='/zenn.svg' alt='zennのアイコン画像' width={25} height={25} />
+                <Image src='/icons_sns/zenn.svg' alt='zennのアイコン画像' width={25} height={25} />
               </Link>
             </div>
           </div>
@@ -111,7 +121,7 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
               <li className={articleInfoItem} key={item.key}>
                 <div className={labelContainer}>
                   <Image
-                    src={`/${item.img_path}`}
+                    src={`/icons_common/${item.img_path}`}
                     alt={`${item.label}の画像`}
                     width={30}
                     height={30}
