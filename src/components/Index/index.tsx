@@ -6,13 +6,14 @@ import { SkillBody } from './elements/SkillBody'
 import { SkillHead } from './elements/SkillHead'
 import { ProductBody } from './elements/productBody'
 export const Index = () => {
+  const minusZIndex = { zIndex: '-1' }
   return (
     <>
-      <Parallax pages={2}>
-        <ParallaxLayer sticky={{ start: 0, end: 0.5 }}>
+      <Parallax pages={5.5}>
+        <ParallaxLayer sticky={{ start: 0, end: 0.75 }} style={minusZIndex}>
           <ProfileHead />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.5}>
+        <ParallaxLayer offset={0}>
           <ProfileBody />
         </ParallaxLayer>
         <ParallaxLayer sticky={{ start: 1.2, end: 2.3 }} style={minusZIndex}>
