@@ -2,9 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   companyImage,
+  companyImageContainer,
   companyLink,
   companyName,
   historyItem,
+  historyItemInner,
   job,
   period,
   profileBody,
@@ -66,22 +68,22 @@ export const ProfileBody = () => {
           {histories.map((history, index) => {
             return (
               <li className={historyItem} key={index}>
-                <Image
-                  className={companyImage}
-                  src={history.src}
-                  alt={history.company}
-                  width={80}
-                  height={80}
-                />
-                <div>
-                  <p className={companyName}>
-                    <Link className={companyLink} href={history.href}>
-                      {history.company}
-                    </Link>
-                  </p>
-                  <p className={job}>{history.job}</p>
-                  <p className={period}>{history.period}</p>
-                </div>
+                <Link className={[companyLink, historyItemInner].join(' ')} href={history.href}>
+                  <div className={companyImageContainer}>
+                    <Image
+                      className={companyImage}
+                      src={history.src}
+                      alt={history.company}
+                      width={80}
+                      height={80}
+                    />
+                  </div>
+                  <div>
+                    <p className={companyName}>{history.company}</p>
+                    <p className={job}>{history.job}</p>
+                    <p className={period}>{history.period}</p>
+                  </div>
+                </Link>
               </li>
             )
           })}

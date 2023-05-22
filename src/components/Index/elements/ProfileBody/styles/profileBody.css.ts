@@ -18,7 +18,6 @@ export const profileBodyInner = style({})
 
 export const historyItem = style({
   position: 'relative',
-  display: 'flex',
   marginTop: '40px',
   listStyle: 'none',
   selectors: {
@@ -34,6 +33,9 @@ export const historyItem = style({
       zIndex: '-1',
     },
   },
+})
+export const historyItemInner = style({
+  display: 'flex',
 })
 
 export const companyImageContainer = style({
