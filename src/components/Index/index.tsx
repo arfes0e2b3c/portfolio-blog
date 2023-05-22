@@ -28,8 +28,6 @@ export const Index = () => {
           <ProductBody />
         </ParallaxLayer>
       </Parallax>
-      {/* <SkillTable />
-      <ProductTable /> */}
     </>
   )
 }
