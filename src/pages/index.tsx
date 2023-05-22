@@ -15,6 +15,9 @@ export default function Home() {
           html {
             overflow: hidden;
           }
+          footer {
+            display: none;
+          }
         `}
       </style>
       <main>
