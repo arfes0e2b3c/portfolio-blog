@@ -74,7 +74,7 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
         <div className={upperContainer}>
           <Image
             className={authorIcon}
-            src='/yata_icon.jpg'
+            src='/images/yata_icon.jpg'
             alt='やたのアイコン画像'
             width={80}
             height={80}

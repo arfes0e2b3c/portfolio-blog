@@ -40,7 +40,7 @@ export const ProfileHead = () => {
       <div className={profileHeadInner}>
         <h2 className={profileHeadTitle}>PROFILE</h2>
         <div className={profileHeadBody}>
-          <Image src='/yata_icon.jpg' alt='やたのアイコン画像' width={200} height={200} />
+          <Image src='/images/yata_icon.jpg' alt='やたのアイコン画像' width={200} height={200} />
           <div>
             <h3 className={fullname}>Yuki Yata</h3>
             <p className={currentJob}>Student/Software Engineer</p>
