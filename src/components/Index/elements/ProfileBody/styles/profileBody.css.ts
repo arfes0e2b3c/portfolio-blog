@@ -36,10 +36,21 @@ export const historyItem = style({
   },
 })
 
-export const companyImage = style({
+export const companyImageContainer = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '80px',
   borderRadius: '50%',
   boxShadow: '0 0 5px 2px rgba(0,0,0,0.1)',
   marginRight: '20px',
+  overflow: 'hidden',
+  backgroundColor: '#333',
+})
+
+export const companyImage = style({
+  width: '40px',
+  height: '40px',
 })
 
 export const companyName = style({
