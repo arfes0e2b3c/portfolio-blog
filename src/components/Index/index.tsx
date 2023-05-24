@@ -9,20 +9,20 @@ export const Index = () => {
   const minusZIndex = { zIndex: '-1' }
   return (
     <>
-      <Parallax pages={5.5}>
-        <ParallaxLayer sticky={{ start: 0, end: 0.75 }} style={minusZIndex}>
+      <Parallax pages={6}>
+        <ParallaxLayer sticky={{ start: 0, end: 0.5 }}>
           <ProfileHead />
         </ParallaxLayer>
         <ParallaxLayer offset={0}>
           <ProfileBody />
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 1.2, end: 2.3 }} style={minusZIndex}>
+        <ParallaxLayer sticky={{ start: 1.0, end: 2.3 }} style={minusZIndex}>
           <SkillHead />
         </ParallaxLayer>
-        <ParallaxLayer offset={1.7}>
+        <ParallaxLayer offset={1.4}>
           <SkillBody />
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 2.7, end: 4.1 }} style={minusZIndex}>
+        <ParallaxLayer sticky={{ start: 2.7, end: 5.0 }} style={minusZIndex}>
           <ProductHead />
         </ParallaxLayer>
         <ParallaxLayer offset={3.1}>
