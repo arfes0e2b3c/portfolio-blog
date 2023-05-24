@@ -47,9 +47,9 @@ export const ProfileHead = () => {
             <div className={iconContainer}>
               {icons.map((icon, index) => {
                 return (
-                  <Link className={snsIcon} href={icon.href} key={index}>
+                  <a target='_blank' className={snsIcon} href={icon.href} key={index}>
                     <Image src={icon.src} alt={icon.alt} width={25} height={25} />
-                  </Link>
+                  </a>
                 )
               })}
             </div>
