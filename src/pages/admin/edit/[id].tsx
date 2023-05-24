@@ -1,12 +1,12 @@
 import { NextPage } from 'next'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { fetchArticleDetail } from '@/api/articleDetail'
-import { fetchArticleList } from '@/api/articleList'
+import { fetchArticleListAdmin } from '@/api/articleListAdmin'
 import { AdminEdit } from '@/components/AdminEdit'
 import { Article } from '@/types'
 
 export async function getStaticPaths() {
-  const articles = await fetchArticleList()
+  const articles = await fetchArticleListAdmin()
   const ids = articles.contents?.map((article) => {
     return {
       params: {

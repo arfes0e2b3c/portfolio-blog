@@ -1,9 +1,9 @@
 import { initMicroCms } from './axios'
 import { ArticleResponse } from '@/types'
 
-export const fetchArticleList = async () => {
+export const fetchArticleListAdmin = async () => {
   const articleList = await initMicroCms()
-    .get<ArticleResponse>('articles?filters=isPublished[equals]true')
+    .get<ArticleResponse>('articles')
     .then((res) => {
       return res.data
     })

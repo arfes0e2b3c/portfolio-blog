@@ -16,7 +16,7 @@ import {
   articleUpdatedAt,
   createArticleButton,
 } from './styles/articleList.css'
-import { UseFetchArticleList } from '@/hooks/articleListHooks'
+import { UseFetchArticleListAdmin } from '@/hooks/articleListAdminHooks'
 import { ArticleResponse } from '@/types'
 
 export const AdminList = (props: { articleList: ArticleResponse }) => {
@@ -25,7 +25,7 @@ export const AdminList = (props: { articleList: ArticleResponse }) => {
     isLoading,
     isError,
     refetch,
-  } = useQuery('admin-articles', UseFetchArticleList, {
+  } = useQuery('admin-articles', UseFetchArticleListAdmin, {
     refetchOnWindowFocus: false,
     initialData: props.articleList,
   })
