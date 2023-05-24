@@ -4,7 +4,6 @@ export const useEditDraft = async (title: string, content: string, id?: string):
   await initMicroCms()
     .patch(`/articles/${id}`, {
       title: title,
-      content: content,
       draftContent: content,
     })
     .then(() => {
