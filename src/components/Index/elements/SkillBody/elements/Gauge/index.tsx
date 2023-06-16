@@ -27,7 +27,7 @@ export const Gauge = (props: { path: string; level: string; href: string }) => {
         </svg>
         <Image
           className={logoImage}
-          src={`/logos/${props.path}`}
+          src={`/lang_logos/${props.path}`}
           alt='スキルレベルを示す画像です'
           width={55}
           height={55}
