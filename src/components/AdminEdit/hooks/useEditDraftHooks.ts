@@ -1,10 +1,14 @@
 import { initMicroCms } from '@/api/axios'
 
-export const useEditDraft = async (title: string, content: string, id?: string): Promise<void> => {
+export const useEditDraft = async (
+  title: string,
+  draftContent: string,
+  id?: string
+): Promise<void> => {
   await initMicroCms()
     .patch(`/articles/${id}`, {
       title: title,
-      draftContent: content,
+      draftContent: draftContent,
     })
     .then(() => {
       alert('下書き保存しました')

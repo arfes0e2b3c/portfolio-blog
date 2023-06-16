@@ -18,15 +18,15 @@ const notoSansJp = Noto_Sans_JP({
 })
 
 export const ArticleEditor = (props: {
-  funcDraft: (title: string, content: string, id?: string) => Promise<void>
+  funcDraft: (title: string, draftContent: string, id?: string) => Promise<void>
   funcArticle: (title: string, content: string, id?: string) => Promise<void>
   id?: string
   title?: string
-  content?: string
+  draftContent?: string
 }) => {
   const [title, setTitle] = useState(props.title ?? '')
-  const [content, setContent] = useState(props.content ?? '')
-  const debouncedContent = useDebounce(content, 500)
+  const [draftContent, setDraftContent] = useState(props.draftContent ?? '')
+  const debouncedContent = useDebounce(draftContent, 500)
   return (
     <>
       <div className={editorHeader}>
@@ -42,13 +42,13 @@ export const ArticleEditor = (props: {
         <div className={buttonContainer}>
           <button
             className={saveDraftButton}
-            onClick={() => props.funcDraft(title, content, props.id)}
+            onClick={() => props.funcDraft(title, draftContent, props.id)}
           >
             下書き保存
           </button>
           <button
             className={publishButton}
-            onClick={() => props.funcArticle(title, content, props.id)}
+            onClick={() => props.funcArticle(title, draftContent, props.id)}
           >
             公開
           </button>
@@ -61,8 +61,8 @@ export const ArticleEditor = (props: {
           id=''
           cols={30}
           rows={30}
-          defaultValue={props.content}
-          onChange={(e) => setContent(e.target.value)}
+          defaultValue={props.draftContent}
+          onChange={(e) => setDraftContent(e.target.value)}
           placeholder='ここに本文を書いてください'
           spellCheck='false'
         ></textarea>

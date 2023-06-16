@@ -41,7 +41,7 @@ export const AdminEdit = (props: { article: Article }) => {
           funcArticle={useEditArticle}
           id={result?.id}
           title={result?.title}
-          content={result?.content}
+          draftContent={result?.draftContent}
         />
       </div>
     </section>
