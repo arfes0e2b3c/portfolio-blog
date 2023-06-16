@@ -20,28 +20,32 @@ const histories = [
     href: 'https://www.ynu.ac.jp/',
     job: 'Faculty of Business Administration',
     period: '2021/04/01~',
-    src: '/icons_common/university.svg',
   },
   {
     company: 'Lumos Programming Circle',
     href: 'https://twitter.com/lumos_program',
     job: 'Member',
     period: '2021/11/21~',
-    src: '/icons_common/pc.svg',
+    src: '/company_logos/lumos.png',
   },
   {
     company: 'Prince Hotels&Resorts',
     href: 'https://www.princehotels.co.jp/',
     job: 'Waiter',
     period: '2022/02/01~2022/06/30',
-    src: '/icons_common/waiter.svg',
   },
   {
     company: 'aidiot inc.',
     href: 'https://aidiot.jp/',
     job: 'Frontend/Backend Engineer',
     period: '2022/07/01~2023/05/15',
-    src: '/icons_common/pc.svg',
+  },
+  {
+    company: 'YUMEMI Inc.',
+    href: 'https://www.yumemi.co.jp/',
+    job: 'Frontend Engineer',
+    period: '2023/06/12~2023/06/16',
+    src: '/company_logos/yumemi.svg',
   },
   // {
   //   company: 'YUMEMI Inc.',
@@ -72,7 +76,7 @@ export const ProfileBody = () => {
                   <div className={companyImageContainer}>
                     <Image
                       className={companyImage}
-                      src={history.src}
+                      src={history.src || '/images/no_image.png'}
                       alt={history.company}
                       width={80}
                       height={80}
