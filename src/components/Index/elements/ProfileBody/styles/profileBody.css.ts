@@ -47,12 +47,12 @@ export const companyImageContainer = style({
   boxShadow: '0 0 5px 2px rgba(0,0,0,0.1)',
   marginRight: '20px',
   overflow: 'hidden',
-  backgroundColor: '#333',
+  backgroundColor: 'white',
 })
 
 export const companyImage = style({
-  width: '40px',
-  height: '40px',
+  width: '75px',
+  height: '75px',
 })
 
 export const companyName = style({
