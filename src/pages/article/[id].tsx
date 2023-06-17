@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import Head from 'next/head'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { fetchArticleDetail } from '@/api/articleDetail'
 import { fetchArticleList } from '@/api/articleList'
@@ -34,9 +35,23 @@ const queryClient = new QueryClient()
 
 const ArticleDetailPage: NextPage<{ article: Article }> = ({ article }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ArticleDetail article={article} />
-    </QueryClientProvider>
+    <>
+      <Head>
+        <title>{article.title}</title>
+        <meta
+          property='og:image'
+          content={article.eyecatch?.url ?? '/images/eyecatch_no-image.png'}
+        />
+        <meta property='og:title' content={article.title} />
+        <meta property='og:description' content={article.content.slice(0, 60)} />
+        <meta property='og:type' content='article' />
+        <meta property='twitter:title' content={article.title} />
+        <meta property='twitter:card' content='summary_large_image' />
+      </Head>
+      <QueryClientProvider client={queryClient}>
+        <ArticleDetail article={article} />
+      </QueryClientProvider>
+    </>
   )
 }
 
