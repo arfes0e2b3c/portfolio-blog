@@ -1,6 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 
-const headerHeight = '100px'
+const headerHeightLg = '100px'
+const headerHeightSm = '70px'
 
 export const header = style({
   display: 'flex',
@@ -9,11 +10,16 @@ export const header = style({
   top: '0',
   left: '0',
   width: '100%',
-  height: headerHeight,
+  height: headerHeightLg,
   paddingLeft: '20px',
   backdropFilter: 'blur(10px)',
   zIndex: '1000',
   boxShadow: '0px 0px 2px 2px rgba(0, 0, 0, 0.1)',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: headerHeightSm,
+    },
+  },
 })
 
 export const leftHeader = style({
@@ -21,23 +27,39 @@ export const leftHeader = style({
   alignItems: 'center',
 })
 
+export const blogIcon = style({
+  borderRadius: '50%',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: headerHeightSm,
+      height: headerHeightSm,
+    },
+  },
+})
+
 export const blogTitleWrapper = style({
   textDecoration: 'none',
 })
 
 export const blogTitle = style({
+  margin: '0',
   marginLeft: '10px',
   fontSize: '48px',
   fontWeight: 'lighter',
   color: '#555',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      fontSize: '32px',
+    },
+  },
 })
 
 export const rightHeader = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: headerHeight,
-  height: headerHeight,
+  width: headerHeightLg,
+  height: headerHeightLg,
   backgroundColor: '#333',
   cursor: 'pointer',
   transition: '.2s',
@@ -45,13 +67,25 @@ export const rightHeader = style({
   ':hover': {
     backgroundColor: 'white',
   },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: headerHeightSm,
+      height: headerHeightSm,
+    },
+  },
 })
 
 export const menuIcon = style({
-  width: `calc(${headerHeight} * 0.65)`,
-  height: `calc(${headerHeight} * 0.65)`,
+  width: `calc(${headerHeightLg} * 0.65)`,
+  height: `calc(${headerHeightLg} * 0.65)`,
   userSelect: 'none',
   transition: '.2s',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: `calc(${headerHeightSm} * 0.65)`,
+      height: `calc(${headerHeightSm} * 0.65)`,
+    },
+  },
 })
 
 globalStyle(`${rightHeader}:hover > ${menuIcon}`, {

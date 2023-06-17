@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { HeaderModal } from './elements/HeaderModal'
 import {
+  blogIcon,
   blogTitle,
   blogTitleWrapper,
   header,
@@ -20,7 +21,13 @@ export const Header = () => {
     <header className={header}>
       <div className={leftHeader}>
         <Link href='/'>
-          <Image src='/images/yata_icon.jpg' alt='アイコン画像' width={80} height={80} />
+          <Image
+            className={blogIcon}
+            src='/images/yata_icon.jpg'
+            alt='アイコン画像'
+            width={80}
+            height={80}
+          />
         </Link>
         <Link className={blogTitleWrapper} href='/'>
           <h1 className={blogTitle}>ARFES</h1>

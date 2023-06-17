@@ -8,6 +8,8 @@ export const articleCard = style({
   width: cardWidth + 'px',
   height: cardHeight + 'px',
   margin: '20px',
+  borderRadius: '5px',
+  overflow: 'hidden',
   boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.05)',
   transition: '.2s',
   cursor: 'pointer',
@@ -15,6 +17,13 @@ export const articleCard = style({
   color: '#333',
   ':hover': {
     boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.1)',
+  },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      margin: '10px',
+      width: '100%',
+      height: 'auto',
+    },
   },
 })
 
@@ -26,6 +35,11 @@ export const articleImageContainer = style({
 export const articleImage = style({
   width: '100%',
   height: `calc( ${cardWidth} * ${imageRatio}px)`,
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: 'auto',
+    },
+  },
 })
 
 export const articleCreatedAt = style({
@@ -37,6 +51,13 @@ export const articleCreatedAt = style({
   backgroundColor: '#333',
   color: 'white',
   borderRadius: '30px',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      top: '10px',
+      left: '10px',
+      fontSize: '0.8rem',
+    },
+  },
 })
 
 export const articleTitleContainer = style({
@@ -44,6 +65,11 @@ export const articleTitleContainer = style({
   alignItems: 'center',
   width: '100%',
   height: `calc(${cardHeight}px - ${cardWidth} * ${imageRatio}px)`,
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: 'auto',
+    },
+  },
 })
 
 export const articleTitle = style({
@@ -51,4 +77,10 @@ export const articleTitle = style({
   margin: '0',
   marginLeft: '10px',
   fontWeight: 'lighter',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      margin: '0',
+      padding: '10px',
+    },
+  },
 })

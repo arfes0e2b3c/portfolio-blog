@@ -5,6 +5,11 @@ export const articleListInner = style({
   flexDirection: 'column',
   width: '1280px',
   margin: '0 auto',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+    },
+  },
 })
 
 export const articleListContainer = style({
@@ -26,5 +31,11 @@ export const articleListTitle = style({
     transform: 'translateX(-50%)',
     width: '100px',
     borderBottom: '2px solid #333',
+  },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      fontSize: '40px',
+      margin: '20px 0',
+    },
   },
 })
