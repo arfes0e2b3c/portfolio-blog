@@ -30,6 +30,11 @@ export const headerModalTitle = style({
     width: '70%',
     borderBottom: '1px solid #333',
   },
+  '@media': {
+    'screen and (max-width: 400px)': {
+      top: '20%',
+    },
+  },
 })
 
 export const menuContainer = style({
