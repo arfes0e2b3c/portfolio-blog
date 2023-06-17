@@ -69,7 +69,7 @@ export const ArticleDetail = (props: { article: Article }) => {
               }),
             }}
           ></div>
-          <div className={[articleDetailSidebar].join(' ')}>
+          <div className={articleDetailSidebar}>
             <ArticleDetailSidebar article={articleDetail} />
           </div>
         </article>
