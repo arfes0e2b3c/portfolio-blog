@@ -66,6 +66,14 @@ export const fixed = style({
   top: `100px`,
   left: `calc(${containerWidth} * ${contentWidthRatio} + (100% - ${containerWidth}) / 2 + 20px)`,
   width: `calc(${containerWidth} * (1 - ${contentWidthRatio}))`,
+  '@media': {
+    'screen and (max-width: 768px)': {
+      position: 'relative',
+      top: `0`,
+      left: '0',
+      width: '100%',
+    },
+  },
 })
 
 export const articleInfoList = style({
