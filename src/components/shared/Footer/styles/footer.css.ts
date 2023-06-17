@@ -22,6 +22,11 @@ export const upperLeftFooter = style({
   flexDirection: 'column',
   alignItems: 'center',
   width: '150px',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100px',
+    },
+  },
 })
 
 export const blogIcon = style({
@@ -31,6 +36,11 @@ export const blogIcon = style({
 
 export const blogTitle = style({
   margin: '0px 0',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      display: 'none',
+    },
+  },
 })
 
 export const upperRightFooter = style({
@@ -47,4 +57,10 @@ export const menuLink = style({
   fontSize: '32px',
   textDecoration: 'none',
   color: '#333',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      margin: '0 10px',
+      fontSize: '18px',
+    },
+  },
 })
