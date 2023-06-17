@@ -21,6 +21,10 @@ export const leftHeader = style({
   alignItems: 'center',
 })
 
+export const blogIcon = style({
+  borderRadius: '50%',
+})
+
 export const blogTitleWrapper = style({
   textDecoration: 'none',
 })
