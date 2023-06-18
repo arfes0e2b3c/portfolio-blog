@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import 'sanitize.css'
 import { Inter, Noto_Sans_JP } from 'next/font/google'
 import Script from 'next/script'
+import { SessionProvider } from 'next-auth/react'
 import { useEffect } from 'react'
 import { Footer } from '@/components/shared/Footer'
 import { Header } from '@/components/shared/Header'
@@ -19,7 +20,7 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useEffect(() => {
     import('zenn-embed-elements')
   }, [])
@@ -37,7 +38,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Header />
       <ShadowHeader />
       <div className={component}>
-        <Component {...pageProps} />
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
       </div>
       <Footer />
     </>
