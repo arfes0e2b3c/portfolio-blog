@@ -39,6 +39,7 @@ const histories = [
     href: 'https://aidiot.jp/',
     job: 'Frontend/Backend Engineer',
     period: '2022/07/01~2023/05/15',
+    src: '/company_logos/aidiot.png',
   },
   {
     company: 'YUMEMI Inc.',
