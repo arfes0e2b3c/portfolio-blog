@@ -26,7 +26,7 @@ const languages = [
   },
   {
     path: 'typescript.svg',
-    level: '65',
+    level: '70',
     href: 'https://www.typescriptlang.org/',
   },
   {
