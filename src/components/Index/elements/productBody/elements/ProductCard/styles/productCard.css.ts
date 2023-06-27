@@ -4,6 +4,10 @@ const cardWidth = '600'
 const cardHeight = '360'
 const imageRatio = `${630 / 1200}`
 
+export const productCardWrapper = style({
+  textDecoration: 'none',
+})
+
 export const productCard = style({
   width: cardWidth + 'px',
   height: cardHeight + 'px',
@@ -11,7 +15,6 @@ export const productCard = style({
   boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.05)',
   transition: '.2s',
   cursor: 'pointer',
-  textDecoration: 'none',
   color: '#333',
   ':hover': {
     boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.1)',
@@ -21,6 +24,7 @@ export const productCard = style({
 export const productImage = style({
   width: '100%',
   height: `calc( ${cardWidth} * ${imageRatio}px)`,
+  borderBottom: '1px solid rgba(0,0,0,0.03)'
 })
 
 export const productTitleContainer = style({
