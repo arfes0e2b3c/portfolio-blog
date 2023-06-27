@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import {
   productCard,
+  productCardWrapper,
   productImage,
   productTitle,
   productTitleContainer,
@@ -8,7 +9,7 @@ import {
 
 export const ProductCard = (props: { href: string; imageSrc: string; title: string }) => {
   return (
-    <a href={props.href} target='_blank'>
+    <a className={productCardWrapper} href={props.href} target='_blank'>
       <div className={productCard}>
         <Image
           className={productImage}
