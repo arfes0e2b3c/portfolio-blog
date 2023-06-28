@@ -26,7 +26,7 @@ const languages = [
   },
   {
     path: 'typescript.svg',
-    level: '65',
+    level: '70',
     href: 'https://www.typescriptlang.org/',
   },
   {
@@ -38,6 +38,16 @@ const languages = [
     path: 'python.svg',
     level: '50',
     href: 'https://www.python.org/',
+  },
+  {
+    path: 'ruby.svg',
+    level: '20',
+    href: 'https://www.ruby-lang.org/ja/',
+  },
+  {
+    path: 'dart.svg',
+    level: '10',
+    href: 'https://dart.dev/',
   },
 ]
 const libraries = [
@@ -53,18 +63,33 @@ const libraries = [
   },
   {
     path: 'reactjs.svg',
-    level: '70',
+    level: '80',
     href: 'https://ja.legacy.reactjs.org/',
   },
   {
     path: 'nextjs.svg',
-    level: '70',
+    level: '80',
     href: 'https://nextjs.org/',
+  },
+  {
+    path: 'svelte.svg',
+    level: '20',
+    href: 'https://svelte.jp/',
   },
   {
     path: 'laravel.svg',
     level: '85',
     href: 'https://laravel.com/',
+  },
+  {
+    path: 'rubyonrails.svg',
+    level: '15',
+    href: 'https://rubyonrails.org/',
+  },
+  {
+    path: 'flutter.svg',
+    level: '10',
+    href: 'https://flutter.dev/',
   },
 ]
 const tools = [
@@ -87,6 +112,11 @@ const tools = [
     path: 'firebase.svg',
     level: '50',
     href: 'https://firebase.google.com',
+  },
+  {
+    path: 'vercel.svg',
+    level: '40',
+    href: 'https://vercel.com/',
   },
 ]
 
