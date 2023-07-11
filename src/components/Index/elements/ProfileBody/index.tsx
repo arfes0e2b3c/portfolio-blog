@@ -48,6 +48,13 @@ const histories = [
     period: '2023/06/12~2023/06/16',
     src: '/company_logos/yumemi.svg',
   },
+  {
+    company: 'Cookpad Inc.',
+    href: 'https://info.cookpad.com/',
+    job: 'Tech Workshop Course for Engineers',
+    period: '2023/07/01~2023/07/09',
+    src: '/company_logos/cookpad.png',
+  },
   // {
   //   company: 'YUMEMI Inc.',
   //   job: 'engineer',
