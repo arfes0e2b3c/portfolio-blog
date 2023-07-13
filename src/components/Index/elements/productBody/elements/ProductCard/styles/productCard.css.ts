@@ -19,12 +19,23 @@ export const productCard = style({
   ':hover': {
     boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.1)',
   },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: 'calc(100% - 40px)',
+      height: `calc(100% * ${cardHeight} / ${cardWidth})`
+    },
+  },
 })
 
 export const productImage = style({
   width: '100%',
   height: `calc( ${cardWidth} * ${imageRatio}px)`,
-  borderBottom: '1px solid rgba(0,0,0,0.03)'
+  borderBottom: '1px solid rgba(0,0,0,0.03)',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: `calc(100% * ${imageRatio})`,
+    },
+  },
 })
 
 export const productTitleContainer = style({
