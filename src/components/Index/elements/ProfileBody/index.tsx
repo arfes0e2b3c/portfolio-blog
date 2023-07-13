@@ -56,9 +56,9 @@ const histories = [
     src: '/company_logos/cookpad.png',
   },
   // {
-  //   company: 'YUMEMI Inc.',
-  //   job: 'engineer',
-  //   period: '2023/06/12~2023/06/16',
+  //   company: 'Cookpad Inc.',
+  //   job: 'Tech Workshop Course',
+  //   period: '2023/07/01~2023/07/09',
   // },
   // {
   //   company: 'CARTA Holdings',
@@ -69,6 +69,14 @@ const histories = [
   //   company: 'Nikkei inc.',
   //   job: 'engineer',
   //   period: '2023/09/18~2023/09/22',
+  // },
+  //   company: 'Nikkei inc.',
+  //   job: 'engineer',
+  //   period: '2023/09/18~2023/09/22',
+  // },
+  //   company: 'Cookpad Inc.',
+  //   job: 'Tech Workshop Course',
+  //   period: '2023/07/01~2023/07/09',
   // },
 ]
 

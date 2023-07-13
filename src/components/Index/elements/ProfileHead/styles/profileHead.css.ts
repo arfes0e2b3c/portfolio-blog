@@ -4,6 +4,11 @@ export const profileHead = style({
   width: '100%',
   height: '100vh',
   overflow: 'hidden',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: 'auto',
+    },
+  },
 })
 
 export const profileHeadInner = style({
@@ -14,6 +19,13 @@ export const profileHeadInner = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+      marginLeft: '0',
+      height: 'auto',
+    },
+  },
 })
 
 export const profileHeadTitle = style({

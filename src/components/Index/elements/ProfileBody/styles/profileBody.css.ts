@@ -12,6 +12,12 @@ export const profileBody = style({
   width: '640px',
   padding: '0',
   marginRight: 'calc(50vw - 640px)',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+      marginRight: '0',
+    },
+  },
 })
 
 export const profileBodyInner = style({})
@@ -43,6 +49,7 @@ export const companyImageContainer = style({
   justifyContent: 'center',
   alignItems: 'center',
   width: '80px',
+  height: '75px',
   borderRadius: '50%',
   boxShadow: '0 0 5px 2px rgba(0,0,0,0.1)',
   marginRight: '20px',

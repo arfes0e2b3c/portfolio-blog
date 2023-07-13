@@ -33,7 +33,14 @@ export const card = style({
     background: 'white',
     zIndex: '1000',
     animation: `${slideOutBg} .3s ease forwards`,
-  }
+  },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+      height: 'auto',
+      aspectRatio: '1',
+    },
+  },
 })
 
 const slideInBg = keyframes({
@@ -54,6 +61,13 @@ export const svg = style({
   width: '100%',
   height: '100%',
   zIndex: '100',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+      height: 'auto',
+      aspectRatio: '1',
+    },
+  },
 })
 
 globalStyle(`${svg} circle`, {
@@ -71,6 +85,12 @@ globalStyle(`${svg} circle:nth-child(2)`, {
   strokeDashoffset: `calc(377 * (100 - ${strokePercent}) / 100)`,
   stroke: '#333',
   transition: '.3s',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      strokeDasharray: `calc(100% * ${Math.PI})`,
+      strokeDashoffset: `calc(100% * ${Math.PI} * (100 - ${strokePercent}) / 100)`,
+    },
+  },
 })
 
 export const logoImage = style({
@@ -108,4 +128,10 @@ globalStyle(`${card}:hover ${skillLevel}`, {
 globalStyle(`${card}:hover ${svg} circle:nth-child(2)`, {
   strokeDasharray: '377',
   strokeDashoffset: '754',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      strokeDasharray: `calc(100% * ${Math.PI})`,
+      strokeDashoffset: `calc(100% * ${Math.PI} * 2)`,
+    },
+  },
 })

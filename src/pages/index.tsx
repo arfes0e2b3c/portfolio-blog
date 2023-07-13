@@ -35,9 +35,9 @@ const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
       </Head>
       <style jsx global>
         {`
-          html {
-            overflow: hidden;
-          }
+          // html {
+          //   overflow: hidden;
+          // }
           footer {
             display: none;
           }

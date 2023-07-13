@@ -7,6 +7,13 @@ export const productHead = style({
   justifyContent: 'center',
   alignItems: 'center',
   marginLeft: 'calc(50vw - 640px)',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+      height: 'auto',
+      marginLeft: '0',
+    },
+  },
 })
 
 export const productHeadTitle = style({
