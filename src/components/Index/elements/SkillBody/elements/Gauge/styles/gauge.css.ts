@@ -15,8 +15,8 @@ export const card = style({
 
 export const svg = style({
   position: 'relative',
-  width: '124px',
-  height: '124px',
+  width: '100%',
+  height: '100%',
   zIndex: '100',
 })
 
