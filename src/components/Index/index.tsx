@@ -30,26 +30,26 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   const plusZIndex = { zIndex: '1' }
   return (
     <>
-      <Parallax pages={5.4}>
-        <ParallaxLayer sticky={{ start: 0, end: 0.25 }}  factor={2.2}>
+      <Parallax pages={6.5}>
+        <ParallaxLayer sticky={{ start: 0, end: 0.45 }}>
           <ProfileHead/>
         </ParallaxLayer>
         <ParallaxLayer offset={0}>
           <ProfileBody />
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 0.85, end: 0.85 }} offset={1.0} factor={0.5} style={plusZIndex}>
+        <ParallaxLayer sticky={{ start: 1.0, end: 1.0 }} style={plusZIndex}>
           <RecentPost articleList={articleList ?? []}/>
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 1.0, end: 2.25 }} style={minusZIndex}>
+        <ParallaxLayer sticky={{ start: 1.2, end: 2.8 }} style={minusZIndex}>
           <SkillHead />
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 1.4, end: 1.4 }} style={plusZIndex}>
+        <ParallaxLayer sticky={{ start: 1.6, end: 1.6 }} style={plusZIndex}>
           <SkillBody />
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 2.5, end: 4.5 }} style={minusZIndex}>
+        <ParallaxLayer sticky={{ start: 3.1, end: 5.5 }} style={minusZIndex}>
           <ProductHead />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.9}>
+        <ParallaxLayer offset={3.45}>
           <ProductBody />
         </ParallaxLayer>
       </Parallax>
