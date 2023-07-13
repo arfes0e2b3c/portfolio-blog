@@ -1,6 +1,16 @@
-import { createVar, globalStyle, style } from '@vanilla-extract/css'
+import { createVar, globalStyle, keyframes, style } from '@vanilla-extract/css'
 
 export const strokePercent = createVar()
+export const strokePercentWithPx = createVar()
+
+const slideOutBg = keyframes({
+  '0%': {
+    transform: 'translateY(-100%)'
+  },
+  '100%': {
+    transform: 'translateY(0)'
+  }
+})
 
 export const card = style({
   position: 'relative',
@@ -11,6 +21,32 @@ export const card = style({
   color: '#333',
   transition: '.3s',
   overflow: 'hidden',
+  background: 'white',
+  ':before': {
+    content: '',
+    position: 'absolute',
+    left: '0',
+    top: '100%',
+    width: '100%',
+    height: `calc(${strokePercentWithPx} / 100 * 124)`,
+    mixBlendMode: 'difference',
+    background: 'white',
+    zIndex: '1000',
+    animation: `${slideOutBg} .3s ease forwards`,
+  }
+})
+
+const slideInBg = keyframes({
+  '0%': {
+    transform: 'translateY(0)'
+  },
+  '100%': {
+    transform: 'translateY(-100%)'
+  }
+})
+
+globalStyle(`${card}:hover:before`, {
+  animation: `${slideInBg} .3s ease forwards`,
 })
 
 export const svg = style({
@@ -34,7 +70,7 @@ globalStyle(`${svg} circle:nth-child(2)`, {
   strokeDasharray: '377',
   strokeDashoffset: `calc(377 * (100 - ${strokePercent}) / 100)`,
   stroke: '#333',
-  transition: '.5s',
+  transition: '.3s',
 })
 
 export const logoImage = style({
@@ -60,6 +96,7 @@ export const skillLevel = style({
   fontWeight: '700',
   opacity: '0',
   transition: '.3s',
+  color: 'black',
 })
 
 globalStyle(`${card}:hover ${skillLevel}`, {
