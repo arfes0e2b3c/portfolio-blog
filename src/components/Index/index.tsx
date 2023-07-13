@@ -1,4 +1,5 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { Pragati_Narrow } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
 import { ProductHead } from './elements/ProductHead'
@@ -9,11 +10,15 @@ import { SkillBody } from './elements/SkillBody'
 import { SkillHead } from './elements/SkillHead'
 import { ProductBody } from './elements/productBody'
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
-import { ArticleResponse } from '@/types'
+import { ArticleResponse, ParallaxNums } from '@/types'
 export const Index = (props: { articleList: ArticleResponse }) => {
   const [displayWidth, setDisplayWidth] = useState(1920)
   useEffect(() => {
     setDisplayWidth(window.innerWidth)
+  }, [])
+  const [displayHeight, setDisplayHeight] = useState(1920)
+  useEffect(() => {
+    setDisplayHeight(window.innerHeight)
   }, [])
   const {
     data: result,
@@ -33,29 +38,93 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   }
   const minusZIndex = { zIndex: '-1' }
   const plusZIndex = { zIndex: '1' }
+
+  let parallaxNums: ParallaxNums
+  if(displayHeight > 960) {
+    parallaxNums = {
+      pages: 5.5,
+      profileHead: {
+        start: 0,
+        end: 0.25
+      },
+      profileBody: 0,
+      recentPost: 0.85,
+      skillHead: {
+        start: 1.0,
+        end: 2.3
+      },
+      skillBody: 1.4,
+      productHead: {
+        start: 2.6,
+        end: 5.0
+      },
+      productBody: 3.0
+    }
+  }else if(displayHeight > 780) {
+    parallaxNums = {
+      pages: 8.5,
+      profileHead: {
+        start: 0.0,
+        end: 0.4
+      },
+      profileBody: 0,
+      recentPost: 1.0,
+      skillHead: {
+        start: 1.25,
+        end: 2.8
+      },
+      skillBody: 1.6,
+      productHead: {
+        start: 3.2,
+        end: 6.5
+      },
+      productBody: 3.5
+    }
+  }else{
+    parallaxNums = {
+      pages: 8.5,
+      profileHead: {
+        start: 0.0,
+        end: 0.4
+      },
+      profileBody: 0,
+      recentPost: 1.0,
+      skillHead: {
+        start: 1.25,
+        end: 2.8
+      },
+      skillBody: 1.6,
+      productHead: {
+        start: 3.2,
+        end: 6.5
+      },
+      productBody: 3.5
+    }
+  }
+
   if (displayWidth > 768) {
   return (
       <>
-        <Parallax pages={6.5}>
-          <ParallaxLayer sticky={{ start: 0, end: 0.45 }}>
+        <Parallax pages={parallaxNums.pages}>
+          <ParallaxLayer sticky={{ start: parallaxNums.profileHead.start, end: parallaxNums.profileHead.end }}>
             <ProfileHead/>
           </ParallaxLayer>
-          <ParallaxLayer offset={0}>
+          <ParallaxLayer offset={parallaxNums.profileBody}>
             <ProfileBody />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: 1.0, end: 1.0 }} style={plusZIndex}>
-          <RecentPost articleList={articleList ?? []}/>
-        </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 1.2, end: 2.8 }} style={minusZIndex}>
+          <ParallaxLayer sticky={{ start: parallaxNums.recentPost, end: parallaxNums.recentPost }} style={plusZIndex}>
+            <RecentPost articleList={articleList ?? []}/>
+          </ParallaxLayer>
+          <ParallaxLayer sticky={{ start: parallaxNums.skillHead.start, end: parallaxNums.skillHead.end }} style={minusZIndex}>
             <SkillHead />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: 1.6, end: 1.6 }} style={plusZIndex}>
+          <ParallaxLayer sticky={{ start: parallaxNums.skillBody, end: parallaxNums.skillBody }} style={plusZIndex}>
             <SkillBody />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: 3.1, end: 5.5 }} style={minusZIndex}>
+          <ParallaxLayer sticky={{ start: parallaxNums.productHead.start, end: parallaxNums.productHead.end }} style={minusZIndex}>
             <ProductHead />
           </ParallaxLayer>
-          <ParallaxLayer offset={3.45}>
+          <ParallaxLayer offset={parallaxNums.productBody}>
             <ProductBody />
           </ParallaxLayer>
         </Parallax>

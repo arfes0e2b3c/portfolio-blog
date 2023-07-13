@@ -29,3 +29,23 @@ export type ArticleResponse = {
   offset?: number
   limit?: number
 }
+
+export type ParallaxNums = {
+  pages: number
+  profileHead: {
+    start: number
+    end: number
+  }
+  profileBody: number
+  recentPost: number
+  skillHead: {
+    start: number
+    end: number
+  }
+  skillBody: number
+  productHead: {
+    start: number
+    end: number
+  }
+  productBody: number
+}
