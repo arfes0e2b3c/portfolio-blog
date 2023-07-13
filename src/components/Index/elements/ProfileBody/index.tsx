@@ -51,7 +51,7 @@ const histories = [
   {
     company: 'Cookpad Inc.',
     href: 'https://info.cookpad.com/',
-    job: 'Tech Workshop Course for Engineers',
+    job: 'Tech Workshop Course',
     period: '2023/07/01~2023/07/09',
     src: '/company_logos/cookpad.png',
   },

@@ -35,6 +35,7 @@ export const articleImageContainer = style({
 export const articleImage = style({
   width: '100%',
   height: `calc( ${cardWidth} * ${imageRatio}px)`,
+  borderBottom: '1px solid #f5f5f5',
   '@media': {
     'screen and (max-width: 768px)': {
       height: 'auto',
@@ -73,10 +74,13 @@ export const articleTitleContainer = style({
 })
 
 export const articleTitle = style({
-  width: '100%',
+  width: 'calc(100% - 20px)',
   margin: '0',
   marginLeft: '10px',
+  marginRight: '10px',
   fontWeight: 'lighter',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
   '@media': {
     'screen and (max-width: 768px)': {
       margin: '0',

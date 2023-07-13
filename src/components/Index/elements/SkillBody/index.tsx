@@ -49,6 +49,11 @@ const languages = [
     level: '10',
     href: 'https://dart.dev/',
   },
+  {
+    path: 'swift.svg',
+    level: '20',
+    href: 'https://www.apple.com/jp/swift/',
+  },
 ]
 const libraries = [
   {
@@ -117,6 +122,16 @@ const tools = [
     path: 'vercel.svg',
     level: '40',
     href: 'https://vercel.com/',
+  },
+  {
+    path: 'graphql.svg',
+    level: '30',
+    href: 'https://graphql.org/',
+  },
+  {
+    path: 'figma.svg',
+    level: '40',
+    href: 'https://www.figma.com/ja/',
   },
 ]
 
