@@ -28,6 +28,7 @@ export const productItem = style({
   '@media': {
     'screen and (max-width: 768px)': {
       width: '100%',
+      marginTop: '20px',
     },
   },
 })

@@ -29,4 +29,9 @@ export const productHeadTitle = style({
     width: '150px',
     borderBottom: '2px solid #777',
   },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      margin: '40px 0 15px'
+    },
+  },
 })

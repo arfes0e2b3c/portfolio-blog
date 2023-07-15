@@ -15,7 +15,7 @@ export const Gauge = (props: { path: string; level: string; href: string }) => {
   useEffect(() => {
     setDisplayWidth(window.innerWidth)
   }, [])
-  const circleR = displayWidth > 768 ? 60 : (displayWidth - 35) * 0.15
+  const circleR = displayWidth > 0 ? (displayWidth > 768 ? 60 : (displayWidth - 35) * 0.15) : 0
   return (
     <a href={props.href} target='_blank'>
       <div className={card} style={assignInlineVars({

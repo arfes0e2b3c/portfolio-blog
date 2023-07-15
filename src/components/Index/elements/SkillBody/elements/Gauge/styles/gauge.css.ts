@@ -39,6 +39,9 @@ export const card = style({
       width: '100%',
       height: 'auto',
       aspectRatio: '1',
+      ':before': {
+        animation: 'none',
+      },
     },
   },
 })
@@ -54,6 +57,11 @@ const slideInBg = keyframes({
 
 globalStyle(`${card}:hover:before`, {
   animation: `${slideInBg} .3s ease forwards`,
+  '@media': {
+    'screen and (max-width: 768px)': {
+      animation: 'none',
+    },
+  },
 })
 
 export const svg = style({
