@@ -16,7 +16,7 @@ import {
 
 const histories = [
   {
-    company: 'Yokohama National Univercity',
+    company: 'Yokohama National University',
     href: 'https://www.ynu.ac.jp/',
     job: 'Faculty of Business Administration',
     period: '2021/04/01~',

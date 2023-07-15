@@ -32,11 +32,15 @@ export const historyItem = style({
       position: 'absolute',
       top: '50%',
       left: '39px',
-      // transform: 'translateY(-100%)',
       width: '0px',
       height: 'calc(100%)',
       borderLeft: '2px solid #ddd',
       zIndex: '-1',
+    },
+  },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginTop: '20px',
     },
   },
 })
