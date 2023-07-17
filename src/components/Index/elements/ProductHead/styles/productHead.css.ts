@@ -31,7 +31,7 @@ export const productHeadTitle = style({
   },
   '@media': {
     'screen and (max-width: 768px)': {
-      margin: '40px 0 15px'
+      margin: '40px 0 15px',
     },
   },
 })

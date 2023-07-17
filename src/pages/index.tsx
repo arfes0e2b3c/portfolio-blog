@@ -16,7 +16,6 @@ export const getStaticProps = async () => {
 }
 
 const queryClient = new QueryClient()
-    
 
 const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
   return (
@@ -36,7 +35,7 @@ const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
       </style>
       <main>
         <QueryClientProvider client={queryClient}>
-          <Index  articleList={articleList}/>
+          <Index articleList={articleList} />
         </QueryClientProvider>
       </main>
     </>

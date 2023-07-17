@@ -12,7 +12,12 @@ export default function Document() {
         <link rel='mask-icon' href='favicons/safari-pinned-tab.svg' color='#5bbad5' />
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
-        <meta property='og:image' content={'https://images.microcms-assets.io/assets/ff031b7059e24bf49ba18a06ed82cf72/e1d83b7ef93d4ccda91e668aeaa48a42/portfolio-base-thumbnail.png'} />
+        <meta
+          property='og:image'
+          content={
+            'https://images.microcms-assets.io/assets/ff031b7059e24bf49ba18a06ed82cf72/e1d83b7ef93d4ccda91e668aeaa48a42/portfolio-base-thumbnail.png'
+          }
+        />
         <meta property='og:title' content="Arfes's Portfolio & Blog" />
         <meta property='og:description' content="Arfes's Portfolio & Blog" />
         <meta property='og:type' content='article' />

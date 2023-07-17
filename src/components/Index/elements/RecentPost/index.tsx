@@ -1,22 +1,28 @@
-import Link from "next/link"
-import { ArticleCard } from "./elements/articleCard"
-import { articleContainer, articleLink, linkContainer, recentPost, sectionTitle } from "./styles/recentPost.css"
-import { Article } from "@/types"
+import Link from 'next/link'
+import { ArticleCard } from './elements/articleCard'
+import {
+  articleContainer,
+  articleLink,
+  linkContainer,
+  recentPost,
+  sectionTitle,
+} from './styles/recentPost.css'
+import { Article } from '@/types'
 
-export const RecentPost = (props: {articleList: Article[]}) => {
+export const RecentPost = (props: { articleList: Article[] }) => {
   const articleList = props.articleList.slice(0, 3)
   return (
     <section className={recentPost}>
       <h2 className={sectionTitle}>RECENT POST</h2>
       <div className={articleContainer}>
         {articleList.map((article) => {
-          return (
-            <ArticleCard article={article} key={article.id}/>
-            )
+          return <ArticleCard article={article} key={article.id} />
         })}
       </div>
       <div className={linkContainer}>
-        <Link className={articleLink} href={'/article'}>All ARTICLES</Link>
+        <Link className={articleLink} href={'/article'}>
+          All ARTICLES
+        </Link>
       </div>
     </section>
   )

@@ -44,7 +44,7 @@ export const skillTitle = style({
   },
   '@media': {
     'screen and (max-width: 768px)': {
-      margin: '20px 0 10px'
+      margin: '20px 0 10px',
     },
   },
 })
