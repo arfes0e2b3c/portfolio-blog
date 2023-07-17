@@ -1,4 +1,3 @@
-import { relative } from "path";
 import { style } from '@vanilla-extract/css'
 
 export const recentPost = style({
