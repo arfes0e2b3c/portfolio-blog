@@ -5,7 +5,7 @@ const imageRatio = 630 / 1200
 
 export const articleCard = style({
   width: cardWidth + 'px',
-  height: (cardWidth * imageRatio) + 'px',
+  height: cardWidth * imageRatio + 'px',
   margin: '10px',
   borderRadius: '5px',
   overflow: 'hidden',

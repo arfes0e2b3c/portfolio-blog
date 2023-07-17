@@ -1,5 +1,4 @@
-import { relative } from "path";
-import { style } from "@vanilla-extract/css";
+import { style } from '@vanilla-extract/css'
 
 export const recentPost = style({
 })
@@ -49,5 +48,5 @@ export const articleLink = style({
   ':hover': {
     backgroundColor: '#333',
     color: 'white',
-  }
+  },
 })

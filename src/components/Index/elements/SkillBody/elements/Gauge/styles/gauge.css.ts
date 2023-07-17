@@ -5,11 +5,11 @@ export const strokePercentWithPx = createVar()
 
 const slideOutBg = keyframes({
   '0%': {
-    transform: 'translateY(-100%)'
+    transform: 'translateY(-100%)',
   },
   '100%': {
-    transform: 'translateY(0)'
-  }
+    transform: 'translateY(0)',
+  },
 })
 
 export const card = style({
@@ -48,11 +48,11 @@ export const card = style({
 
 const slideInBg = keyframes({
   '0%': {
-    transform: 'translateY(0)'
+    transform: 'translateY(0)',
   },
   '100%': {
-    transform: 'translateY(-100%)'
-  }
+    transform: 'translateY(-100%)',
+  },
 })
 
 globalStyle(`${card}:hover:before`, {

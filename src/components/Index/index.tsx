@@ -40,88 +40,102 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   const plusZIndex = { zIndex: '1' }
 
   let parallaxNums: ParallaxNums
-  if(displayHeight > 960) {
+  if (displayHeight > 960) {
     parallaxNums = {
       pages: 5.5,
       profileHead: {
         start: 0,
-        end: 0.25
+        end: 0.25,
       },
       profileBody: 0,
       recentPost: 0.85,
       skillHead: {
         start: 1.0,
-        end: 2.3
+        end: 2.3,
       },
       skillBody: 1.4,
       productHead: {
         start: 2.6,
-        end: 5.0
+        end: 5.0,
       },
-      productBody: 3.0
+      productBody: 3.0,
     }
-  }else if(displayHeight > 780) {
+  } else if (displayHeight > 780) {
     parallaxNums = {
       pages: 8.5,
       profileHead: {
         start: 0.0,
-        end: 0.4
+        end: 0.4,
       },
       profileBody: 0,
       recentPost: 1.0,
       skillHead: {
         start: 1.25,
-        end: 2.8
+        end: 2.8,
       },
       skillBody: 1.6,
       productHead: {
         start: 3.2,
-        end: 6.5
+        end: 6.5,
       },
-      productBody: 3.5
+      productBody: 3.5,
     }
-  }else{
+  } else {
     parallaxNums = {
       pages: 8.5,
       profileHead: {
         start: 0.0,
-        end: 0.4
+        end: 0.4,
       },
       profileBody: 0,
       recentPost: 1.0,
       skillHead: {
         start: 1.25,
-        end: 2.8
+        end: 2.8,
       },
       skillBody: 1.6,
       productHead: {
         start: 3.2,
-        end: 6.5
+        end: 6.5,
       },
-      productBody: 3.5
+      productBody: 3.5,
     }
   }
 
   if (displayWidth > 768) {
-  return (
+    return (
       <>
         <Parallax pages={parallaxNums.pages}>
-          <ParallaxLayer sticky={{ start: parallaxNums.profileHead.start, end: parallaxNums.profileHead.end }}>
-            <ProfileHead/>
+          <ParallaxLayer
+            sticky={{ start: parallaxNums.profileHead.start, end: parallaxNums.profileHead.end }}
+          >
+            <ProfileHead />
           </ParallaxLayer>
           <ParallaxLayer offset={parallaxNums.profileBody}>
             <ProfileBody />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: parallaxNums.recentPost, end: parallaxNums.recentPost }} style={plusZIndex}>
-            <RecentPost articleList={articleList ?? []}/>
+          <ParallaxLayer
+            sticky={{ start: parallaxNums.recentPost, end: parallaxNums.recentPost }}
+            style={plusZIndex}
+          >
+            <RecentPost articleList={articleList ?? []} />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: parallaxNums.skillHead.start, end: parallaxNums.skillHead.end }} style={minusZIndex}>
+          <ParallaxLayer
+            sticky={{ start: parallaxNums.skillHead.start, end: parallaxNums.skillHead.end }}
+            style={minusZIndex}
+          >
             <SkillHead />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: parallaxNums.skillBody, end: parallaxNums.skillBody }} style={plusZIndex}>
+          <ParallaxLayer
+            sticky={{ start: parallaxNums.skillBody, end: parallaxNums.skillBody }}
+            style={plusZIndex}
+          >
             <SkillBody />
           </ParallaxLayer>
-          <ParallaxLayer sticky={{ start: parallaxNums.productHead.start, end: parallaxNums.productHead.end }} style={minusZIndex}>
+          <ParallaxLayer
+            sticky={{ start: parallaxNums.productHead.start, end: parallaxNums.productHead.end }}
+            style={minusZIndex}
+          >
             <ProductHead />
           </ParallaxLayer>
           <ParallaxLayer offset={parallaxNums.productBody}>

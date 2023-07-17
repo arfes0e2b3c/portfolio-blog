@@ -22,7 +22,7 @@ export const productCard = style({
   '@media': {
     'screen and (max-width: 768px)': {
       width: 'calc(100% - 40px)',
-      height: `calc(100% * ${cardHeight} / ${cardWidth})`
+      height: `calc(100% * ${cardHeight} / ${cardWidth})`,
     },
   },
 })
