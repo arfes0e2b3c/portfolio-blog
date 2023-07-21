@@ -16,7 +16,7 @@ export const articleCardInner = style({
   display: 'flex',
   justifyContent: 'space-around',
   alignItems: 'center',
-  width: '90%',
+  width: '100%',
   userSelect: 'none',
 })
 
