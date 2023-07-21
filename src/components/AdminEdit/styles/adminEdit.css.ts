@@ -11,14 +11,27 @@ export const adminEditInner = style({
 
 export const adminEditHeader = style({
   display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'flex-end',
+  flexDirection: 'column',
+  marginLeft: '20px',
+  gap: '30px'
+})
+
+export const linkToAdminPage = style({
+  textDecoration: 'none',
+  color: '#333',
+  border: '1px solid #333',
+  padding: '8px 15px',
+  borderRadius: '5px',
+  transition: '.3s',
+  ':hover': {
+    backgroundColor: '#333',
+    color: 'white',
+  },
 })
 
 export const adminEditTitle = style({
   position: 'relative',
   display: 'inline',
-  marginLeft: '20px',
   paddingBottom: '5px',
   fontSize: '36px',
   fontWeight: 'lighter',

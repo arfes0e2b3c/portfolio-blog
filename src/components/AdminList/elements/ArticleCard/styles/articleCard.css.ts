@@ -17,6 +17,7 @@ export const articleCardInner = style({
   justifyContent: 'space-around',
   alignItems: 'center',
   width: '90%',
+  userSelect: 'none',
 })
 
 export const articleId = style({
@@ -37,7 +38,7 @@ export const articleUpdatedAt = style({
   width: '10%',
   textAlign: 'center',
 })
-export const articleOther = style({
+export const articleButtonContainer = style({
   width: '8%',
 })
 
@@ -57,6 +58,13 @@ export const articleEditButton = style({
 
     fontSize: '1.1rem',
   },
+})
+
+export const isDisabled = style({
+  pointerEvents: 'none',
+  userSelect: 'none',
+  opacity: '0.4',
+  boxShadow: 'none',
 })
 
 export const articleDeleteButton = style({

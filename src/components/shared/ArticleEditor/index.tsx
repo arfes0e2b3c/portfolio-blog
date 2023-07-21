@@ -34,7 +34,7 @@ export const ArticleEditor = (props: {
           className={[titleInput, notoSansJp.className].join(' ')}
           name='title'
           type='text'
-          value={props.title}
+          value={title}
           placeholder='タイトル'
           spellCheck='false'
           onChange={(e) => setTitle(e.target.value)}
