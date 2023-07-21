@@ -60,6 +60,13 @@ export const articleEditButton = style({
   },
 })
 
+export const isDisabled = style({
+  pointerEvents: 'none',
+  userSelect: 'none',
+  opacity: '0.4',
+  boxShadow: 'none',
+})
+
 export const articleDeleteButton = style({
   textDecoration: 'none',
   color: '#333',

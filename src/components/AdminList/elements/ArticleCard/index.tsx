@@ -10,6 +10,7 @@ import {
   articlePublishedAt,
   articleTitle,
   articleUpdatedAt,
+  isDisabled,
   isDraft,
 } from './styles/articleCard.css'
 import { Article } from '@/types'
@@ -39,7 +40,7 @@ export const ArticleCard = (props: { article: Article; index: number; refetch: (
           </Link>
         </div>
         <div className={articleButtonContainer}>
-          <Link className={articleEditButton} href={`/article/${article.id}`}>
+          <Link className={[articleEditButton, article.isPublished ? '' : isDisabled].join(' ')} href={`/article/${article.id}`}>
             記事
           </Link>
         </div>
