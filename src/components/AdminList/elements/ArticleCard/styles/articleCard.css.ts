@@ -17,6 +17,7 @@ export const articleCardInner = style({
   justifyContent: 'space-around',
   alignItems: 'center',
   width: '90%',
+  userSelect: 'none',
 })
 
 export const articleId = style({
