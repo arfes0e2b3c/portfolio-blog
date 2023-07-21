@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { UseDeleteArticle } from './hooks/deleteArticleHooks'
 import {
+  articleButtonContainer,
   articleCard,
   articleCardInner,
   articleDeleteButton,
   articleEditButton,
   articleId,
-  articleOther,
   articlePublishedAt,
   articleTitle,
   articleUpdatedAt,
@@ -33,17 +33,17 @@ export const ArticleCard = (props: { article: Article; index: number; refetch: (
         <p className={articleTitle}>{article.title}</p>
         <p className={articlePublishedAt}>{article.publishedAt}</p>
         <p className={articleUpdatedAt}>{article.updatedAt}</p>
-        <div className={articleOther}>
+        <div className={articleButtonContainer}>
           <Link className={articleEditButton} href={`/admin/edit/${article.id}`}>
             編集
           </Link>
         </div>
-        <div className={articleOther}>
+        <div className={articleButtonContainer}>
           <Link className={articleEditButton} href={`/article/${article.id}`}>
             記事
           </Link>
         </div>
-        <div className={articleOther}>
+        <div className={articleButtonContainer}>
           <button className={articleDeleteButton} onClick={() => deleteArticle(article.id)}>
             削除
           </button>

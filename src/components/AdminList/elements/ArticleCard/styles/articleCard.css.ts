@@ -37,7 +37,7 @@ export const articleUpdatedAt = style({
   width: '10%',
   textAlign: 'center',
 })
-export const articleOther = style({
+export const articleButtonContainer = style({
   width: '8%',
 })
 
