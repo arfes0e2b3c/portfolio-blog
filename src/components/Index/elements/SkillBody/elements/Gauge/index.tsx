@@ -16,7 +16,12 @@ const notoSansJpBold = Inter({
   subsets: ['latin'],
 })
 
-export const Gauge = (props: { path: string; level: string; href: string }) => {
+export const Gauge = (props: {
+  path: string
+  level: string
+  displayLevel?: string
+  href: string
+}) => {
   const [displayWidth, setDisplayWidth] = useState(0)
   useEffect(() => {
     setDisplayWidth(window.innerWidth)
@@ -42,7 +47,9 @@ export const Gauge = (props: { path: string; level: string; href: string }) => {
           width={55}
           height={55}
         />
-        <p className={[skillLevel, notoSansJpBold.className].join(' ')}>{props.level}</p>
+        <p className={[skillLevel, notoSansJpBold.className].join(' ')}>
+          {props.displayLevel ? props.displayLevel : props.level}
+        </p>
       </div>
     </a>
   )
