@@ -112,6 +112,7 @@ export const logoImage = style({
 globalStyle(`${card}:hover ${logoImage}`, {
   top: '30%',
   width: '30px',
+  height: '30px',
 })
 
 export const skillLevel = style({

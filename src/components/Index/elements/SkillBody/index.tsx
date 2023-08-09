@@ -54,6 +54,12 @@ const languages = [
     level: '20',
     href: 'https://www.apple.com/jp/swift/',
   },
+  {
+    path: 'toeic.png',
+    level: '88',
+    displayLevel: '880',
+    href: 'https://www.iibc-global.org/toeic.html',
+  },
 ]
 const libraries = [
   {
@@ -145,7 +151,12 @@ export const SkillBody = () => {
             {languages.map((lang, index) => {
               return (
                 <li className={skillItem} key={index}>
-                  <Gauge path={lang.path} level={lang.level} href={lang.href} />
+                  <Gauge
+                    path={lang.path}
+                    level={lang.level}
+                    displayLevel={lang.displayLevel ?? ''}
+                    href={lang.href}
+                  />
                 </li>
               )
             })}
