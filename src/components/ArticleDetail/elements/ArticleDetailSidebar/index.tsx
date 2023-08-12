@@ -1,3 +1,5 @@
+import { Article } from '@/types'
+import { formatTime2Ymd } from '@/utils/function'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -18,8 +20,6 @@ import {
   upperContainer,
   upperRightContainer,
 } from './styles/articleDetailSidebar.css'
-import { Article } from '@/types'
-import { formatTime2Ymd } from '@/utils/function'
 export const ArticleDetailSidebar = (props: { article: Article }) => {
   const article = props.article
   article.publishedAt = formatTime2Ymd(article.publishedAt)
@@ -90,13 +90,8 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
                   height={25}
                 />
               </Link>
-              <Link href='https://twitter.com/0e2b3c'>
-                <Image
-                  src='/icons_sns/twitter.svg'
-                  alt='twitterのアイコン画像'
-                  width={25}
-                  height={25}
-                />
+              <Link href='https://x.com/0e2b3c'>
+                <Image src='/icons_sns/x.svg' alt='xのアイコン画像' width={25} height={25} />
               </Link>
               <Link href='https://zenn.dev/arfes'>
                 <Image src='/icons_sns/zenn.svg' alt='zennのアイコン画像' width={25} height={25} />

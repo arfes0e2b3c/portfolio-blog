@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import {
   currentJob,
   fullname,
@@ -18,9 +17,9 @@ const icons = [
     alt: 'githubのアイコン画像',
   },
   {
-    href: 'https://twitter.com/0e2b3c',
-    src: '/icons_sns/twitter.svg',
-    alt: 'twitterのアイコン画像',
+    href: 'https://x.com/0e2b3c',
+    src: '/icons_sns/x.svg',
+    alt: 'xのアイコン画像',
   },
   {
     href: 'https://zenn.dev/arfes',
