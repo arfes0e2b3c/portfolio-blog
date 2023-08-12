@@ -17,9 +17,9 @@ const icons = [
     alt: 'githubのアイコン画像',
   },
   {
-    href: 'https://twitter.com/0e2b3c',
+    href: 'https://x.com/0e2b3c',
     src: '/icons_sns/x.svg',
-    alt: 'twitterのアイコン画像',
+    alt: 'xのアイコン画像',
   },
   {
     href: 'https://zenn.dev/arfes',
