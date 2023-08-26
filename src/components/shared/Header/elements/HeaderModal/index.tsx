@@ -1,4 +1,4 @@
-import { animated, easings, useSpring, useSpringRef, useSprings, useTrail } from '@react-spring/web'
+import { animated, easings, useSpring, useTrail } from '@react-spring/web'
 import Link from 'next/link'
 import {
   headerModal,
@@ -18,11 +18,6 @@ const menus = [
     id: 2,
     title: 'ARTICLE',
     path: '/article',
-  },
-  {
-    id: 3,
-    title: 'CONTACT',
-    path: '/contact',
   },
 ]
 
