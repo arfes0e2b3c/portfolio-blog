@@ -4,7 +4,6 @@ import {
   blogIcon,
   blogTitle,
   footer,
-  footerTop,
   lowerFooter,
   menuLink,
   upperFooter,
@@ -21,11 +20,6 @@ const menus = [
     id: 2,
     title: 'ARTICLE',
     path: '/article',
-  },
-  {
-    id: 3,
-    title: 'CONTACT',
-    path: '/contact',
   },
 ]
 
