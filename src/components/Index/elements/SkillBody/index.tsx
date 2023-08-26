@@ -40,6 +40,11 @@ const languages = [
     href: 'https://www.python.org/',
   },
   {
+    path: 'go.svg',
+    level: '40',
+    href: 'https://www.ruby-lang.org/ja/',
+  },
+  {
     path: 'ruby.svg',
     level: '20',
     href: 'https://www.ruby-lang.org/ja/',
