@@ -71,11 +71,6 @@ export const companyName = style({
   fontSize: '1.3em',
 })
 
-export const companyLink = style({
-  color: '#333',
-  textDecoration: 'none',
-})
-
 export const job = style({
   margin: '0',
 })
