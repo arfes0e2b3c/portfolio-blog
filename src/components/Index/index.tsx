@@ -42,7 +42,7 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   let parallaxNums: ParallaxNums
   if (displayHeight > 960) {
     parallaxNums = {
-      pages: 5.5,
+      pages: 6.5,
       profileHead: {
         start: 0,
         end: 0.25,
