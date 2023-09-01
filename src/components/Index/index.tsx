@@ -40,45 +40,46 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   const plusZIndex = { zIndex: '1' }
 
   let parallaxNums: ParallaxNums
+  const addParallax = 0.1
   if (displayHeight > 960) {
     parallaxNums = {
-      pages: 6.5,
+      pages: 6.5 + addParallax,
       profileHead: {
         start: 0,
-        end: 0.25,
+        end: 0.25 + addParallax,
       },
       profileBody: 0,
-      recentPost: 0.85,
+      recentPost: 0.85 + addParallax,
       skillHead: {
-        start: 1.0,
-        end: 2.3,
+        start: 1.0 + addParallax,
+        end: 2.3 + addParallax,
       },
-      skillBody: 1.4,
+      skillBody: 1.4 + addParallax,
       productHead: {
-        start: 2.6,
-        end: 5.0,
+        start: 2.6 + addParallax,
+        end: 5.0 + addParallax,
       },
-      productBody: 3.0,
+      productBody: 3.0 + addParallax,
     }
   } else if (displayHeight > 780) {
     parallaxNums = {
-      pages: 8.5,
+      pages: 8.5 + addParallax,
       profileHead: {
         start: 0.0,
-        end: 0.4,
+        end: 0.4 + addParallax,
       },
       profileBody: 0,
-      recentPost: 1.0,
+      recentPost: 1.0 + addParallax,
       skillHead: {
-        start: 1.25,
-        end: 2.8,
+        start: 1.25 + addParallax,
+        end: 2.8 + addParallax,
       },
-      skillBody: 1.6,
+      skillBody: 1.6 + addParallax,
       productHead: {
-        start: 3.2,
-        end: 6.5,
+        start: 3.2 + addParallax,
+        end: 6.5 + addParallax,
       },
-      productBody: 3.5,
+      productBody: 3.5 + addParallax,
     }
   } else {
     parallaxNums = {
