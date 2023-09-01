@@ -40,13 +40,13 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   const plusZIndex = { zIndex: '1' }
 
   let parallaxNums: ParallaxNums
-  const addParallax = 0.1
+  const addParallax = 0.3
   if (displayHeight > 960) {
     parallaxNums = {
       pages: 6.5 + addParallax,
       profileHead: {
         start: 0,
-        end: 0.25 + addParallax,
+        end: 0.3 + addParallax,
       },
       profileBody: 0,
       recentPost: 0.85 + addParallax,
