@@ -61,6 +61,12 @@ const histories = [
     period: '2023/08/07~2023/08/25',
     src: '/company_logos/carta.png',
   },
+  {
+    company: 'Cybozu, Inc.',
+    job: 'Frontend Rearchitect Cource',
+    period: '2023/08/28~2023/09/01',
+    src: '/company_logos/cybozu.png',
+  },
 ]
 
 export const ProfileBody = () => {
