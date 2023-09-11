@@ -9,6 +9,7 @@ export const usePostDraft = async (title: string, content: string, id?: string):
     })
     .then(() => {
       alert('下書き保存しました')
+      location.href = '/admin'
     })
     .catch((err) => {
       alert('下書き保存に失敗しました：' + err.message)

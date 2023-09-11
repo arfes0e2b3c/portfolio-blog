@@ -26,8 +26,6 @@ const AdminIndexPage: NextPage<{ articleList: ArticleResponse }> = ({ articleLis
   if (data.user?.email !== process.env.NEXT_PUBLIC_GITHUB_EMAIL_ADDRESS) {
     alert('認証ユーザーではありません。別アカウントでのログインをお試しください。')
     return <NoAuth />
-  } else {
-    alert('認証ユーザーです。')
   }
   return (
     <QueryClientProvider client={queryClient}>
