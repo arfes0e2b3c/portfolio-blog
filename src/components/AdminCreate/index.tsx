@@ -16,7 +16,9 @@ export const AdminCreate = () => {
       <div className={adminCreateInner}>
         <div className={adminCreateHeader}>
           <div>
-            <Link className={linkToAdminPage} href={'/admin'}>&lt; 記事一覧</Link>
+            <Link className={linkToAdminPage} href={'/shulkssbu'}>
+              &lt; 記事一覧
+            </Link>
           </div>
           <div>
             <h2 className={adminCreateTitle}>新規記事作成</h2>

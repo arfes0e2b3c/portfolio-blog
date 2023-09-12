@@ -35,12 +35,15 @@ export const ArticleCard = (props: { article: Article; index: number; refetch: (
         <p className={articlePublishedAt}>{article.publishedAt}</p>
         <p className={articleUpdatedAt}>{article.updatedAt}</p>
         <div className={articleButtonContainer}>
-          <Link className={articleEditButton} href={`/admin/edit/${article.id}`}>
+          <Link className={articleEditButton} href={`/shulkssbu/edit/${article.id}`}>
             編集
           </Link>
         </div>
         <div className={articleButtonContainer}>
-          <Link className={[articleEditButton, article.isPublished ? '' : isDisabled].join(' ')} href={`/article/${article.id}`}>
+          <Link
+            className={[articleEditButton, article.isPublished ? '' : isDisabled].join(' ')}
+            href={`/article/${article.id}`}
+          >
             記事
           </Link>
         </div>
