@@ -5,7 +5,13 @@ import { useQuery } from 'react-query'
 import { ArticleEditor } from '../shared/ArticleEditor'
 import { useEditArticle } from './hooks/useEditArticleHooks'
 import { useEditDraft } from './hooks/useEditDraftHooks'
-import { adminEdit, adminEditHeader, adminEditInner, adminEditTitle, linkToAdminPage } from './styles/adminEdit.css'
+import {
+  adminEdit,
+  adminEditHeader,
+  adminEditInner,
+  adminEditTitle,
+  linkToAdminPage,
+} from './styles/adminEdit.css'
 import { fetchArticleDetail } from '@/hooks/articleDetail'
 import { Article } from '@/types'
 
@@ -36,7 +42,9 @@ export const AdminEdit = (props: { article: Article }) => {
       <div className={adminEditInner}>
         <div className={adminEditHeader}>
           <div>
-            <Link className={linkToAdminPage} href={'/admin'}>&lt; 記事一覧</Link>
+            <Link className={linkToAdminPage} href={'/shulkssbu'}>
+              &lt; 記事一覧
+            </Link>
           </div>
           <div>
             <h2 className={adminEditTitle}>記事編集</h2>

@@ -42,7 +42,7 @@ export const AdminList = (props: { articleList: ArticleResponse }) => {
     <section className={adminList}>
       <div className={adminListHeader}>
         <h2 className={adminListTitle}>記事一覧</h2>
-        <Link className={createArticleButton} href={'/admin/create'}>
+        <Link className={createArticleButton} href={'/shulkssbu/create'}>
           新規作成
         </Link>
       </div>
