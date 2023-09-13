@@ -11,6 +11,7 @@ export const useEditArticle = async (
         title: title,
         content: content,
         draftContent: content,
+        isPublished: true,
       })
       .then((res) => {
         alert('記事を更新しました')
