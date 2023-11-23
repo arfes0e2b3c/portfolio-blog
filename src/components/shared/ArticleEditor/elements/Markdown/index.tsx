@@ -1,10 +1,10 @@
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans_JP, Zen_Kaku_Gothic_Antique } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import markdownToHtml from 'zenn-markdown-html'
 import { htmlResult } from './styles/markdownResult.css'
 
-const notoSansJp = Noto_Sans_JP({
-  weight: '300',
+const ZenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
+  weight: '400',
   subsets: ['latin'],
 })
 
@@ -18,7 +18,7 @@ export const MarkdownResult = (props: { markdownContent: string }) => {
   }, [props.markdownContent])
   return (
     <div
-      className={['znc', htmlResult, notoSansJp.className].join(' ')}
+      className={['znc', htmlResult, ZenKakuGothicAntique.className].join(' ')}
       dangerouslySetInnerHTML={{
         __html: htmlContent ? htmlContent : 'ここにプレビューが表示されます',
       }}
