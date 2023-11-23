@@ -1,4 +1,4 @@
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans_JP, Zen_Kaku_Gothic_Antique } from 'next/font/google'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import markdownToHtml from 'zenn-markdown-html'
@@ -14,6 +14,7 @@ import {
   articleDetailTitleContainer,
 } from './styles/articleDetail.css'
 import { Article } from '@/types'
+import { assignInlineVars } from '@vanilla-extract/dynamic'
 
 export const fetchArticleDetail = async (id: string): Promise<Article> => {
   const articleDetail = await UseFetchArticleDetail(id)
@@ -26,7 +27,12 @@ const notoSansJpThin = Noto_Sans_JP({
 })
 
 const notoSansJpBold = Noto_Sans_JP({
-  weight: '300',
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const ZenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
+  weight: '400',
   subsets: ['latin'],
 })
 
@@ -68,6 +74,9 @@ export const ArticleDetail = (props: { article: Article }) => {
                 embedOrigin: 'https://embed.zenn.studio',
               }),
             }}
+            style={assignInlineVars({
+              fontFamily: ZenKakuGothicAntique.style.fontFamily,
+            })}
           ></div>
           <div className={articleDetailSidebar}>
             <ArticleDetailSidebar article={articleDetail} />
