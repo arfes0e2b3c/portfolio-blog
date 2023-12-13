@@ -55,9 +55,15 @@ const histories = [
   },
   {
     company: 'Cybozu, Inc.',
-    job: 'Frontend Rearchitect Cource',
+    job: 'Frontend Rearchitect Course',
     period: '2023/08/28~2023/09/01',
     src: '/company_logos/cybozu.png',
+  },
+  {
+    company: 'Cookpad Inc.',
+    job: 'Tech OJT Course',
+    period: '2023/10/16~2023/11/10',
+    src: '/company_logos/cookpad.png',
   },
 ]
 

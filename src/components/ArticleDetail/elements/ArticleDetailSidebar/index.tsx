@@ -82,20 +82,20 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
           <div className={upperRightContainer}>
             <h3 className={fullName}>YUKI YATA</h3>
             <div className={iconContainer}>
-              <Link href='https://github.com/arfes0e2b3c'>
+              <a href='https://github.com/arfes0e2b3c' target='_blank'>
                 <Image
                   src='/icons_sns/github.svg'
                   alt='githubのアイコン画像'
                   width={25}
                   height={25}
                 />
-              </Link>
-              <Link href='https://x.com/0e2b3c'>
+              </a>
+              <a href='https://x.com/0e2b3c' target='_blank'>
                 <Image src='/icons_sns/x.svg' alt='xのアイコン画像' width={25} height={25} />
-              </Link>
-              <Link href='https://zenn.dev/arfes'>
+              </a>
+              <a href='https://zenn.dev/arfes' target='_blank'>
                 <Image src='/icons_sns/zenn.svg' alt='zennのアイコン画像' width={25} height={25} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
