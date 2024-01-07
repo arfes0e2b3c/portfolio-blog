@@ -6,13 +6,12 @@ import { AdminList } from '@/components/AdminList'
 import { NoAuth } from '@/components/shared/NoAuth'
 import { ArticleResponse } from '@/types'
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const articleList = await fetchArticleListAdmin()
   return {
     props: {
       articleList,
     },
-    revalidate: 60,
   }
 }
 
