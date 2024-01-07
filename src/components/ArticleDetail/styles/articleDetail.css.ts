@@ -62,6 +62,11 @@ globalStyle(`${articleDetailBody} strong`, {
   fontWeight: 'bold !important',
 })
 
+globalStyle(`${articleDetailContent} h1, ${articleDetailContent} h2 `, {
+  paddingTop: '110px',
+  marginTop: '-110px',
+})
+
 export const articleDetailSidebar = style({
   position: 'absolute',
   top: titleHeight,

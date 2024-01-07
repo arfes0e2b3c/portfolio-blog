@@ -7,28 +7,12 @@ import { AdminEdit } from '@/components/AdminEdit'
 import { NoAuth } from '@/components/shared/NoAuth'
 import { Article } from '@/types'
 
-export async function getStaticPaths() {
-  const articles = await fetchArticleListAdmin()
-  const ids = articles.contents?.map((article) => {
-    return {
-      params: {
-        id: article.id,
-      },
-    }
-  })
-  return {
-    paths: ids,
-    fallback: false,
-  }
-}
-
-export const getStaticProps = async (props: { params: { id: string } }) => {
-  const article = await fetchArticleDetail(props.params.id)
+export const getServerSideProps = async (context: { params: { id: string } }) => {
+  const article = await fetchArticleDetail(context.params.id)
   return {
     props: {
       article,
     },
-    revalidate: 60,
   }
 }
 
