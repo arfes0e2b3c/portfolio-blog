@@ -1,59 +1,26 @@
-import { Article } from '@/types'
-import { formatTime2Ymd } from '@/utils/function'
+import { Article, TableOfContent } from '@/types'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import {
   articleDetailSidebar,
-  articleInfoContainer,
-  articleInfoItem,
-  articleInfoList,
   authoInfoContainer,
   authorIcon,
   description,
   fixed,
   fullName,
   iconContainer,
-  itemLabel,
-  labelContainer,
   lowerContainer,
   upperContainer,
   upperRightContainer,
 } from './styles/articleDetailSidebar.css'
-export const ArticleDetailSidebar = (props: { article: Article }) => {
-  const article = props.article
-  article.publishedAt = formatTime2Ymd(article.publishedAt)
-  article.updatedAt = formatTime2Ymd(article.updatedAt)
+import { ArticleInfo } from './elements/ArticleInfo'
+import { ArticleIndex } from './elements/ArticleIndex'
+import { useState, useEffect } from 'react'
 
-  const articleData = [
-    {
-      key: 1,
-      img_path: 'author.svg',
-      label: '著者名',
-      content: 'やた',
-    },
-    {
-      key: 2,
-      img_path: 'calendar.svg',
-      label: '公開日',
-      content: article.publishedAt,
-    },
-    {
-      key: 3,
-      img_path: 'recycle.svg',
-      label: '更新日',
-      content: article.updatedAt,
-    },
-    {
-      key: 4,
-      img_path: 'memo.svg',
-      label: '文字数',
-      content: `約${article.content.length}字`,
-    },
-  ]
-
+export const ArticleDetailSidebar = (props: {
+  article: Article
+  tableOfContent: TableOfContent[]
+}) => {
   const [isFixed, setIsFixed] = useState(false)
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
@@ -110,6 +77,7 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
         </div>
       </div>
       <div className={isFixed ? fixed : ''}>
+        <ArticleInfo article={props.article} />
         <ArticleIndex tableOfContent={props.tableOfContent} />
       </div>
     </section>
