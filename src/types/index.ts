@@ -49,3 +49,9 @@ export type ParallaxNums = {
   }
   productBody: number
 }
+
+export type TableOfContent = {
+  level: string
+  title: string
+  href: string
+}

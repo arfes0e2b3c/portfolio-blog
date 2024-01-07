@@ -109,25 +109,8 @@ export const ArticleDetailSidebar = (props: { article: Article }) => {
           </p>
         </div>
       </div>
-      <div className={[articleInfoContainer, isFixed ? fixed : ''].join(' ')}>
-        <ul className={articleInfoList}>
-          {articleData.map((item) => {
-            return (
-              <li className={articleInfoItem} key={item.key}>
-                <div className={labelContainer}>
-                  <Image
-                    src={`/icons_common/${item.img_path}`}
-                    alt={`${item.label}の画像`}
-                    width={30}
-                    height={30}
-                  />
-                  <p className={itemLabel}>{item.label}</p>
-                </div>
-                <p>{item.content}</p>
-              </li>
-            )
-          })}
-        </ul>
+      <div className={isFixed ? fixed : ''}>
+        <ArticleIndex tableOfContent={props.tableOfContent} />
       </div>
     </section>
   )

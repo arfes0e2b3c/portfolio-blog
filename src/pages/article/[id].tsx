@@ -4,7 +4,9 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { fetchArticleDetail } from '@/api/articleDetail'
 import { fetchArticleList } from '@/api/articleList'
 import { ArticleDetail } from '@/components/ArticleDetail'
-import { Article } from '@/types'
+import { Article, TableOfContent } from '@/types'
+import { JSDOM } from 'jsdom'
+import markdownToHtml from 'zenn-markdown-html'
 
 export const getStaticPaths = async () => {
   const articleList = await fetchArticleList()
@@ -23,9 +25,21 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (props: { params: { id: string } }) => {
   const article = await fetchArticleDetail(props.params.id)
+  const domHtml = new JSDOM(markdownToHtml(article.content)).window.document
+
+  const elements = domHtml.querySelectorAll<HTMLElement>('h1, h2')
+  const tableOfContent: TableOfContent[] = []
+  elements.forEach((element) => {
+    const level = element.tagName
+    const title = element.innerHTML.split('</a> ')[1]
+    const href = '#' + element.id
+    const record = { level: level, title: title, href: href }
+    tableOfContent.push(record)
+  })
   return {
     props: {
       article,
+      tableOfContent,
     },
     revalidate: 60,
   }
@@ -33,7 +47,10 @@ export const getStaticProps = async (props: { params: { id: string } }) => {
 
 const queryClient = new QueryClient()
 
-const ArticleDetailPage: NextPage<{ article: Article }> = ({ article }) => {
+const ArticleDetailPage: NextPage<{ article: Article; tableOfContent: TableOfContent[] }> = ({
+  article,
+  tableOfContent,
+}) => {
   return (
     <>
       <Head>
@@ -49,7 +66,7 @@ const ArticleDetailPage: NextPage<{ article: Article }> = ({ article }) => {
         <meta property='twitter:card' content='summary_large_image' />
       </Head>
       <QueryClientProvider client={queryClient}>
-        <ArticleDetail article={article} />
+        <ArticleDetail article={article} tableOfContent={tableOfContent} />
       </QueryClientProvider>
     </>
   )

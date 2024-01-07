@@ -31,6 +31,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
           html {
             font-family: ${inter.style.fontFamily}, ${notoSansJP.style.fontFamily};
             color: #333;
+            scroll-behavior: smooth;
           }
         `}
       </style>
