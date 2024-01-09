@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 export const productHead = style({
   width: '640px',
-  height: 'calc(100vh - 100px)',
+
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

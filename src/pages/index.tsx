@@ -29,7 +29,8 @@ const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
           //   overflow: hidden;
           // }
           footer {
-            display: none;
+            position: absolute;
+            top: 5400px;
           }
         `}
       </style>
