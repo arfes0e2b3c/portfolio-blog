@@ -10,6 +10,7 @@ export const profileHead = style({
   top: `calc((100vh - 100px) / 2 + 100px)`,
   left: `0`,
   transform: 'translateY(-50%)',
+  zIndex: 1,
   '@media': {
     'screen and (max-width: 768px)': {
       position: 'relative',

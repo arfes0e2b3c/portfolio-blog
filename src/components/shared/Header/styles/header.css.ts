@@ -13,6 +13,7 @@ export const header = style({
   height: headerHeightLg,
   paddingLeft: '20px',
   backdropFilter: 'blur(10px)',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
   zIndex: '1000',
   boxShadow: '0px 0px 2px 2px rgba(0, 0, 0, 0.1)',
   '@media': {

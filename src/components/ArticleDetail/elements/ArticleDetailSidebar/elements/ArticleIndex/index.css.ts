@@ -27,7 +27,7 @@ export const articleIndexList = style({
     transform: 'translateY(-50%)',
     display: 'block',
     width: '1px',
-    height: 'calc(100% - 10px)',
+    height: 'calc(100% - 15px)',
     backgroundColor: '#ddd',
   },
 })

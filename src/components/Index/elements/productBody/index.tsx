@@ -8,7 +8,7 @@ const products = [
     imageSrc: '/images/portfolio-blog.png',
   },
   {
-    title: '改善版質問箱',
+    title: 'お手伝いサークル公式サイト',
     href: 'https://otetsudai-circle.com',
     imageSrc: '/images/otetsudai-circle.png',
   },
