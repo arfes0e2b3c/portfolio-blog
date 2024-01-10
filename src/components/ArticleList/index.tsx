@@ -27,7 +27,9 @@ export const ArticleList = (props: { articleList: ArticleResponse }) => {
     <div className={articleListInner}>
       <h2 className={articleListTitle}>ARTICLE</h2>
       <div className={articleListContainer}>
-        {articleList?.map((article: Article) => <ArticleCard key={article.id} article={article} />)}
+        {articleList?.map((article: Article) => (
+          <ArticleCard key={article.id} article={article} />
+        ))}
       </div>
     </div>
   )

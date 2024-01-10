@@ -26,7 +26,7 @@ const languages = [
   },
   {
     path: 'typescript.svg',
-    level: '70',
+    level: '80',
     href: 'https://www.typescriptlang.org/',
   },
   {
@@ -36,12 +36,12 @@ const languages = [
   },
   {
     path: 'python.svg',
-    level: '50',
+    level: '70',
     href: 'https://www.python.org/',
   },
   {
     path: 'go.svg',
-    level: '40',
+    level: '75',
     href: 'https://www.ruby-lang.org/ja/',
   },
   {
@@ -74,12 +74,12 @@ const libraries = [
   },
   {
     path: 'nuxtjs.svg',
-    level: '85',
+    level: '90',
     href: 'https://nuxtjs.org/',
   },
   {
     path: 'reactjs.svg',
-    level: '80',
+    level: '90',
     href: 'https://ja.legacy.reactjs.org/',
   },
   {
@@ -116,7 +116,7 @@ const tools = [
   },
   {
     path: 'github.svg',
-    level: '80',
+    level: '90',
     href: 'https://github.com/arfes0e2b3c',
   },
   {
@@ -131,18 +131,23 @@ const tools = [
   },
   {
     path: 'vercel.svg',
-    level: '40',
+    level: '80',
     href: 'https://vercel.com/',
   },
   {
     path: 'graphql.svg',
-    level: '30',
+    level: '80',
     href: 'https://graphql.org/',
   },
   {
     path: 'figma.svg',
     level: '40',
     href: 'https://www.figma.com/ja/',
+  },
+  {
+    path: 'aws.svg',
+    level: '15',
+    href: 'https://aws.amazon.com/jp/',
   },
 ]
 

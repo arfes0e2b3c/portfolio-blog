@@ -1,11 +1,27 @@
 import { style } from '@vanilla-extract/css'
 
 export const recentPost = style({
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginLeft: '10px',
+    },
+  },
+})
+
+export const articleWrapper = style({
+  width: '100%',
+  overflow: 'scroll',
 })
 
 export const articleContainer = style({
   display: 'flex',
   justifyContent: 'center',
+  minWidth: '1390px',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      minWidth: '900px',
+    },
+  },
 })
 
 export const sectionTitle = style({
@@ -25,7 +41,8 @@ export const sectionTitle = style({
     borderBottom: '2px solid #333',
   },
   '@media': {
-    'screen and (max-width: 400px)': {
+    'screen and (max-width: 768px)': {
+      fontSize: '2.0em',
       top: '20%',
     },
   },
@@ -36,6 +53,11 @@ export const linkContainer = style({
   justifyContent: 'flex-end',
   width: '1390px',
   margin: '10px auto',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+    },
+  },
 })
 
 export const articleLink = style({
@@ -48,5 +70,10 @@ export const articleLink = style({
   ':hover': {
     backgroundColor: '#333',
     color: 'white',
+  },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginRight: '10px',
+    },
   },
 })

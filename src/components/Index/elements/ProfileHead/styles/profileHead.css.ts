@@ -2,7 +2,6 @@ import { style } from '@vanilla-extract/css'
 
 export const profileHead = style({
   width: '100%',
-  height: '100vh',
   overflow: 'hidden',
   '@media': {
     'screen and (max-width: 768px)': {
@@ -14,7 +13,7 @@ export const profileHead = style({
 export const profileHeadInner = style({
   width: '640px',
   marginLeft: 'calc(50vw - 640px)',
-  height: 'calc(100vh - 300px)',
+  height: 'fit-content',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

@@ -11,8 +11,33 @@ import { SkillHead } from './elements/SkillHead'
 import { ProductBody } from './elements/productBody'
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
 import { ArticleResponse, ParallaxNums } from '@/types'
+import {
+  productBody,
+  productContainer,
+  productHead,
+  profileBody,
+  profileContainer,
+  profileHead,
+  skillBody,
+  skillContainer,
+  skillHead,
+} from './index.css'
 export const Index = (props: { articleList: ArticleResponse }) => {
   const [displayWidth, setDisplayWidth] = useState(1920)
+  const [isFixed, setIsFixed] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      const limitY = 100000
+
+      setIsFixed(scrollY < limitY)
+    }
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   useEffect(() => {
     setDisplayWidth(window.innerWidth)
   }, [])
@@ -36,6 +61,7 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   if (isError) {
     return <span>Error fetching articles</span>
   }
+
   const minusZIndex = { zIndex: '-1' }
   const plusZIndex = { zIndex: '1' }
 
@@ -106,43 +132,33 @@ export const Index = (props: { articleList: ArticleResponse }) => {
   if (displayWidth > 768) {
     return (
       <>
-        <Parallax pages={parallaxNums.pages}>
-          <ParallaxLayer
-            sticky={{ start: parallaxNums.profileHead.start, end: parallaxNums.profileHead.end }}
-          >
+        <div className={profileContainer}>
+          <div className={profileHead}>
             <ProfileHead />
-          </ParallaxLayer>
-          <ParallaxLayer offset={parallaxNums.profileBody}>
+          </div>
+          <div className={profileBody}>
             <ProfileBody />
-          </ParallaxLayer>
-          <ParallaxLayer
-            sticky={{ start: parallaxNums.recentPost, end: parallaxNums.recentPost }}
-            style={plusZIndex}
-          >
-            <RecentPost articleList={articleList ?? []} />
-          </ParallaxLayer>
-          <ParallaxLayer
-            sticky={{ start: parallaxNums.skillHead.start, end: parallaxNums.skillHead.end }}
-            style={minusZIndex}
-          >
+          </div>
+        </div>
+        <div>
+          <RecentPost articleList={articleList ?? []} />
+        </div>
+        <div className={skillContainer}>
+          <div className={skillHead}>
             <SkillHead />
-          </ParallaxLayer>
-          <ParallaxLayer
-            sticky={{ start: parallaxNums.skillBody, end: parallaxNums.skillBody }}
-            style={plusZIndex}
-          >
+          </div>
+          <div className={skillBody}>
             <SkillBody />
-          </ParallaxLayer>
-          <ParallaxLayer
-            sticky={{ start: parallaxNums.productHead.start, end: parallaxNums.productHead.end }}
-            style={minusZIndex}
-          >
+          </div>
+        </div>
+        <div className={productContainer}>
+          <div className={productHead}>
             <ProductHead />
-          </ParallaxLayer>
-          <ParallaxLayer offset={parallaxNums.productBody}>
+          </div>
+          <div className={productBody}>
             <ProductBody />
-          </ParallaxLayer>
-        </Parallax>
+          </div>
+        </div>
       </>
     )
   } else {
@@ -150,6 +166,7 @@ export const Index = (props: { articleList: ArticleResponse }) => {
       <>
         <ProfileHead />
         <ProfileBody />
+        <RecentPost articleList={articleList ?? []} />
         <SkillBody />
         <ProductHead />
         <ProductBody />

@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 export const skillHead = style({
   width: '640px',
-  height: 'calc(100vh - 100px)',
+  // height: 'calc(100vh - 100px)',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -13,6 +13,7 @@ export const skillHeadTitle = style({
   position: 'relative',
   fontSize: '3em',
   fontWeight: '100',
+  marginBottom: '0px',
   ':after': {
     content: '',
     position: 'absolute',

@@ -3,6 +3,7 @@ import { ArticleCard } from './elements/articleCard'
 import {
   articleContainer,
   articleLink,
+  articleWrapper,
   linkContainer,
   recentPost,
   sectionTitle,
@@ -14,10 +15,12 @@ export const RecentPost = (props: { articleList: Article[] }) => {
   return (
     <section className={recentPost}>
       <h2 className={sectionTitle}>RECENT POST</h2>
-      <div className={articleContainer}>
-        {articleList.map((article) => {
-          return <ArticleCard article={article} key={article.id} />
-        })}
+      <div className={articleWrapper}>
+        <div className={articleContainer}>
+          {articleList.map((article) => {
+            return <ArticleCard article={article} key={article.id} />
+          })}
+        </div>
       </div>
       <div className={linkContainer}>
         <Link className={articleLink} href={'/article'}>
