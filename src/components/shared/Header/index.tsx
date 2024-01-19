@@ -11,8 +11,11 @@ import {
   menuIcon,
   rightHeader,
 } from './styles/header.css'
+import { useRouter } from 'next/router'
 
 export const Header = () => {
+  const router = useRouter()
+
   const [isOpen, setIsOpen] = useState(false)
   function toggleModal() {
     setIsOpen(!isOpen)
@@ -20,18 +23,37 @@ export const Header = () => {
   return (
     <header className={header}>
       <div className={leftHeader}>
-        <Link href='/'>
-          <Image
-            className={blogIcon}
-            src='/images/yata_icon.jpg'
-            alt='アイコン画像'
-            width={80}
-            height={80}
-          />
-        </Link>
-        <Link className={blogTitleWrapper} href='/'>
-          <h1 className={blogTitle}>ARFES</h1>
-        </Link>
+        {router.pathname === '/' ? (
+          <>
+            <Link href='/'>
+              <Image
+                className={blogIcon}
+                src='/images/yata_icon.jpg'
+                alt='アイコン画像'
+                width={80}
+                height={80}
+              />
+            </Link>
+            <Link className={blogTitleWrapper} href='/'>
+              <h1 className={blogTitle}>ARFES</h1>
+            </Link>
+          </>
+        ) : (
+          <>
+            <a href='#'>
+              <Image
+                className={blogIcon}
+                src='/images/yata_icon.jpg'
+                alt='アイコン画像'
+                width={80}
+                height={80}
+              />
+            </a>
+            <a className={blogTitleWrapper} href='#'>
+              <h1 className={blogTitle}>ARFES</h1>
+            </a>
+          </>
+        )}
       </div>
       <div className={rightHeader} onClick={toggleModal}>
         <Image
