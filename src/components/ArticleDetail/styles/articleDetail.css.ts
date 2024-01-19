@@ -62,7 +62,7 @@ globalStyle(`${articleDetailBody} strong`, {
   fontWeight: 'bold !important',
 })
 
-globalStyle(`${articleDetailContent} h1, ${articleDetailContent} h2 `, {
+globalStyle(`${articleDetailContent} h1, ${articleDetailContent} h2:nth-child(n+1)`, {
   paddingTop: '110px',
   marginTop: '-110px',
 })
