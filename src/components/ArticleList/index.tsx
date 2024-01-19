@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import { useQuery } from 'react-query'
 import { ArticleCard } from './elements/ArticleCard'
 import { articleListContainer, articleListInner, articleListTitle } from './styles/articleList.css'

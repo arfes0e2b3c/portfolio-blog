@@ -28,10 +28,7 @@ export const profileBody = style({
   width: '100%',
 })
 
-export const recentPostContainer = style({
-  position: 'absolute',
-  top: '1100px',
-})
+export const recentPostContainer = style({})
 
 export const skillContainer = style({
   position: 'absolute',
