@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css'
 
 export const profileContainer = style({
-  height: '1100px',
+  height: '1250px',
 })
 
 export const profileHead = style({
@@ -28,14 +28,11 @@ export const profileBody = style({
   width: '100%',
 })
 
-export const recentPostContainer = style({
-  position: 'absolute',
-  top: '1100px',
-})
+export const recentPostContainer = style({})
 
 export const skillContainer = style({
   position: 'absolute',
-  top: '1800px',
+  top: '1900px',
   height: '1337px',
   width: '100%',
 })
@@ -65,7 +62,7 @@ export const skillBody = style({
 
 export const productContainer = style({
   position: 'absolute',
-  top: '3300px',
+  top: '3400px',
   height: '2066px',
   width: '100%',
 })

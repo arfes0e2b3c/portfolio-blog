@@ -25,12 +25,9 @@ const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
       </Head>
       <style jsx global>
         {`
-          // html {
-          //   overflow: hidden;
-          // }
           footer {
             position: absolute;
-            top: 5400px;
+            top: 5500px;
           }
         `}
       </style>
