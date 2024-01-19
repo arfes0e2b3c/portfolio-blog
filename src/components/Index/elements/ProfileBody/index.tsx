@@ -31,13 +31,13 @@ const histories = [
   },
   {
     company: 'aidiot inc.',
-    job: 'Frontend/Backend Engineer',
+    job: 'Frontend/Backend Engineer Intern',
     period: '2022/07/01~2023/05/15',
     src: '/company_logos/aidiot.png',
   },
   {
     company: 'YUMEMI Inc.',
-    job: 'Frontend Engineer',
+    job: 'Frontend Engineer Intern',
     period: '2023/06/12~2023/06/16',
     src: '/company_logos/yumemi.svg',
   },
