@@ -65,6 +65,12 @@ const histories = [
     period: '2023/10/16~2023/11/10',
     src: '/company_logos/cookpad.png',
   },
+  {
+    company: 'LayerX Inc.',
+    job: 'Software Engineer Intern',
+    period: '2023/12/1~2023/12/31',
+    src: '/company_logos/layerx.svg',
+  },
 ]
 
 export const ProfileBody = () => {

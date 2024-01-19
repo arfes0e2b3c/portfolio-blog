@@ -30,7 +30,7 @@ const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
           // }
           footer {
             position: absolute;
-            top: 5400px;
+            top: 5500px;
           }
         `}
       </style>
