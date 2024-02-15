@@ -78,13 +78,14 @@ const histories = [
     src: '/company_logos/layerx.svg',
   },
 ]
+const reversedHistories = histories.reverse()
 
 export const ProfileBody = () => {
   return (
     <section className={profileBodyWrapper}>
       <div className={profileBody}>
         <ul className={profileBodyInner}>
-          {histories.map((history, index) => {
+          {reversedHistories.map((history, index) => {
             return (
               <li className={historyItem} key={index}>
                 <div className={[historyItemInner].join(' ')}>
