@@ -3,10 +3,10 @@ import Head from 'next/head'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Index } from '@/components/Index'
 import { ArticleResponse } from '@/types'
+import { fetchArticleList } from '@/api/articleList'
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/article/list`)
-  const articleList = await res.json()
+  const articleList = await fetchArticleList()
   return {
     props: {
       articleList,

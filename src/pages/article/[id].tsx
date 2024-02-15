@@ -6,10 +6,10 @@ import { ArticleDetail } from '@/components/ArticleDetail'
 import { Article, ArticleResponse, TableOfContent } from '@/types'
 import { JSDOM } from 'jsdom'
 import markdownToHtml from 'zenn-markdown-html'
+import { fetchArticleList } from '@/api/articleList'
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/article/list`)
-  const articleList: ArticleResponse = await res.json()
+  const articleList = await fetchArticleList()
   const ids = articleList.contents?.map((article) => {
     return {
       params: {

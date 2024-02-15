@@ -2,10 +2,10 @@ import { NextPage } from 'next'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ArticleList } from '@/components/ArticleList'
 import { ArticleResponse } from '@/types'
+import { fetchArticleList } from '@/api/articleList'
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/article/list`)
-  const articleList = await res.json()
+  const articleList = await fetchArticleList()
   return {
     props: {
       articleList,
