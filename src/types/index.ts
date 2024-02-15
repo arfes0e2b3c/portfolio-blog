@@ -1,3 +1,11 @@
+export type Category = {
+  id: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  revisedAt: string
+  name: string
+}
 export type Article = {
   id: string
   createdAt: string
@@ -12,19 +20,19 @@ export type Article = {
     height: number
     width: number
   }
-  category?: {
-    id: string
-    createdAt: string
-    updatedAt: string
-    publishedAt: string
-    revisedAt: string
-    name: string
-  }
+  category?: Category
   isPublished: boolean
 }
 
 export type ArticleResponse = {
   contents?: Article[]
+  totalCount?: number
+  offset?: number
+  limit?: number
+}
+
+export type CategoryResponse = {
+  contents?: Category[]
   totalCount?: number
   offset?: number
   limit?: number

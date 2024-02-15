@@ -42,7 +42,7 @@ export const ArticleInfo = (props: { article: Article }) => {
       key: 4,
       img_path: 'category.svg',
       label: 'カテゴリ',
-      content: `${article.category?.name}`,
+      content: `${article.category?.name || '-'}`,
     },
   ]
 

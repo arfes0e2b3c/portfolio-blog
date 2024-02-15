@@ -12,6 +12,36 @@ export const articleListInner = style({
   },
 })
 
+export const categoryList = style({
+  display: 'flex',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  margin: '20px 0',
+  padding: '0',
+  gap: '10px',
+})
+
+export const categoryListItem = style({
+  fontSize: '1.0rem',
+  cursor: 'pointer',
+  listStyle: 'none',
+  width: '160px',
+  textAlign: 'center',
+  padding: '5px 0',
+  border: '1px solid #333',
+  borderRadius: '5px',
+  transition: '.3s',
+  ':hover': {
+    backgroundColor: '#333',
+    color: 'white',
+  },
+})
+
+export const selected = style({
+  backgroundColor: '#333',
+  color: 'white',
+})
+
 export const articleListContainer = style({
   display: 'flex',
   justifyContent: 'center',
