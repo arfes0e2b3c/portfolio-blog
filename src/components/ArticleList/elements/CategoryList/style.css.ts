@@ -19,7 +19,7 @@ export const categoryList = style({
     height: '36px',
     backgroundColor: '#333',
     borderRadius: '5px',
-    transition: '.3s',
+    transition: 'all .3s cubic-bezier(0.45, 0, 0.55, 1)',
     zIndex: -1,
     transform: `translateX(calc(${categoryIndex} * 170px))`,
   },
