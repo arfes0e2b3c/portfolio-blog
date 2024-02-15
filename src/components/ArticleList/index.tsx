@@ -1,20 +1,14 @@
 import { useQuery } from 'react-query'
 import { ArticleCard } from './elements/ArticleCard'
-import {
-  articleListContainer,
-  articleListInner,
-  articleListTitle,
-  categoryList,
-  categoryListItem,
-  selected,
-} from './styles/articleList.css'
+import { articleListContainer, articleListInner, articleListTitle } from './styles/articleList.css'
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
 import { Article, ArticleResponse } from '@/types'
 import { UseFetchCategories } from '@/hooks/categoryListHooks'
 import { useState } from 'react'
+import { CategoryList } from './elements/CategoryList'
 
 export const ArticleList = (props: { articleList: ArticleResponse }) => {
-  const [categoryId, setCategoryId] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState({ index: 0, id: '' })
   const {
     data: result,
     isLoading,
@@ -40,36 +34,22 @@ export const ArticleList = (props: { articleList: ArticleResponse }) => {
   }
 
   const filteredArticleList =
-    categoryId === ''
+    selectedCategory.id === ''
       ? { articleList }
       : {
-          articleList: articleList?.filter((article) => article?.category?.id === categoryId),
+          articleList: articleList?.filter(
+            (article) => article?.category?.id === selectedCategory.id
+          ),
         }
 
   return (
     <div className={articleListInner}>
       <h2 className={articleListTitle}>ARTICLE</h2>
-      <div>
-        <ul className={categoryList}>
-          <li
-            className={[categoryListItem, categoryId === '' ? selected : ''].join(' ')}
-            onClick={() => setCategoryId('')}
-          >
-            全て
-          </li>
-          {categories?.contents?.map((category) => {
-            return (
-              <li
-                className={[categoryListItem, categoryId === category.id ? selected : ''].join(' ')}
-                key={category.id}
-                onClick={() => setCategoryId(category.id)}
-              >
-                {category.name}
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <CategoryList
+        categories={categories ?? { contents: [] }}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
       <div className={articleListContainer}>
         {filteredArticleList?.articleList?.map((article: Article) => (
           <ArticleCard key={article.id} article={article} />
