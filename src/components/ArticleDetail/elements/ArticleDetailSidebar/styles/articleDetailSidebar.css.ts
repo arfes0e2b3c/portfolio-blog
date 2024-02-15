@@ -3,6 +3,7 @@ import { globalStyle, style } from '@vanilla-extract/css'
 export const articleDetailSidebar = style({
   position: 'relative',
   width: '100%',
+  height: 'calc(100% - 100px)',
 })
 
 export const authoInfoContainer = style({
@@ -49,11 +50,12 @@ const containerWidth = '1280px'
 
 const contentWidthRatio = 0.75
 
-export const fixed = style({
-  position: 'fixed',
+export const stickySidebarContainer = style({
+  position: 'sticky',
   top: `100px`,
   left: `calc(${containerWidth} * ${contentWidthRatio} + (100% - ${containerWidth}) / 2 + 20px)`,
   width: `calc(${containerWidth} * (1 - ${contentWidthRatio}))`,
+  paddingTop: '10px',
   '@media': {
     'screen and (max-width: 768px)': {
       position: 'relative',
