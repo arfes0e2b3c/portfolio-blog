@@ -16,12 +16,12 @@ const histories = [
   {
     company: 'Yokohama National University',
     job: 'Faculty of Business Administration',
-    period: '2021/04/01~',
+    period: '2021/04/01~Present',
   },
   {
     company: 'Lumos Programming Circle',
     job: 'Member',
-    period: '2021/11/21~',
+    period: '2021/11/21~Present',
     src: '/company_logos/lumos.png',
   },
   {
