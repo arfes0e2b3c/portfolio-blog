@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 export const articleInfoContainer = style({
   padding: '10px 30px',
-  marginTop: '20px',
+  marginTop: '10px',
   boxSizing: 'border-box',
   boxShadow: 'inset 5px 5px 5px rgba(0,0,0,0.1), inset -3px -3px 3px rgba(205,205,205,0.2)',
   borderRadius: '10px',

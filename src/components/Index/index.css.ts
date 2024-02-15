@@ -1,7 +1,9 @@
 import { style } from '@vanilla-extract/css'
 
+const historyNum = 11
+
 export const profileContainer = style({
-  height: '1250px',
+  height: `${1350 + (historyNum - 11) * 100}px`,
 })
 
 export const profileHead = style({
@@ -32,7 +34,7 @@ export const recentPostContainer = style({})
 
 export const skillContainer = style({
   position: 'absolute',
-  top: '1900px',
+  top: `${2000 + (historyNum - 11) * 100}px`,
   height: '1337px',
   width: '100%',
 })
@@ -62,7 +64,7 @@ export const skillBody = style({
 
 export const productContainer = style({
   position: 'absolute',
-  top: '3400px',
+  top: `${3500 + (historyNum - 11) * 100}px`,
   height: '2066px',
   width: '100%',
 })

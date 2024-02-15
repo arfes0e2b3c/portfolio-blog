@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { fetchArticleListAdmin } from '@/api/articleListAdmin'
 import { AdminList } from '@/components/AdminList'

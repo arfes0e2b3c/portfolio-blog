@@ -16,12 +16,12 @@ const histories = [
   {
     company: 'Yokohama National University',
     job: 'Faculty of Business Administration',
-    period: '2021/04/01~',
+    period: '2021/04/01~Present',
   },
   {
     company: 'Lumos Programming Circle',
     job: 'Member',
-    period: '2021/11/21~',
+    period: '2021/11/21~Present',
     src: '/company_logos/lumos.png',
   },
   {
@@ -71,14 +71,21 @@ const histories = [
     period: '2023/12/1~2023/12/31',
     src: '/company_logos/layerx.svg',
   },
+  {
+    company: 'LayerX Inc.',
+    job: 'Software Engineer Intern',
+    period: '2023/2/16~Present',
+    src: '/company_logos/layerx.svg',
+  },
 ]
+const reversedHistories = histories.reverse()
 
 export const ProfileBody = () => {
   return (
     <section className={profileBodyWrapper}>
       <div className={profileBody}>
         <ul className={profileBodyInner}>
-          {histories.map((history, index) => {
+          {reversedHistories.map((history, index) => {
             return (
               <li className={historyItem} key={index}>
                 <div className={[historyItemInner].join(' ')}>

@@ -23,7 +23,7 @@ export const Header = () => {
   return (
     <header className={header}>
       <div className={leftHeader}>
-        {router.pathname === '/' ? (
+        {router.pathname != '/' ? (
           <>
             <Link href='/'>
               <Image

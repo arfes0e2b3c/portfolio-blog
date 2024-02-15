@@ -45,17 +45,16 @@ export const articleImage = style({
 
 export const articleCreatedAt = style({
   position: 'absolute',
-  top: '20px',
-  left: '20px',
+  top: `calc(29 / 630 * 100%)`,
+  left: `calc(20 / 1200 * 100%)`,
   padding: '5px 20px',
   margin: '0',
-  backgroundColor: '#333',
+  backgroundColor: 'rgba(0, 0, 0, 0.6)',
   color: 'white',
-  borderRadius: '30px',
+  fontWeight: 'bold',
+  borderRadius: '10px 5px 5px 5px',
   '@media': {
     'screen and (max-width: 768px)': {
-      top: '10px',
-      left: '10px',
       fontSize: '0.8rem',
     },
   },

@@ -5,36 +5,20 @@ import {
   authoInfoContainer,
   authorIcon,
   description,
-  fixed,
   fullName,
   iconContainer,
   lowerContainer,
+  stickySidebarContainer,
   upperContainer,
   upperRightContainer,
 } from './styles/articleDetailSidebar.css'
 import { ArticleInfo } from './elements/ArticleInfo'
 import { ArticleIndex } from './elements/ArticleIndex'
-import { useState, useEffect } from 'react'
 
 export const ArticleDetailSidebar = (props: {
   article: Article
   tableOfContent: TableOfContent[]
 }) => {
-  const [isFixed, setIsFixed] = useState(false)
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const limitY = 395
-
-      setIsFixed(scrollY > limitY)
-    }
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
   return (
     <section className={articleDetailSidebar}>
       <div className={authoInfoContainer}>
@@ -72,11 +56,11 @@ export const ArticleDetailSidebar = (props: {
             <br />
             フロントエンドエンジニアを目指しています。
             <br />
-            Vue / Nuxt / React / Next / Laravel
+            Vue / React / Go / Laravel
           </p>
         </div>
       </div>
-      <div className={isFixed ? fixed : ''}>
+      <div className={stickySidebarContainer}>
         <ArticleInfo article={props.article} />
         <ArticleIndex tableOfContent={props.tableOfContent} />
       </div>
