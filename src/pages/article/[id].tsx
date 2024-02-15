@@ -4,12 +4,13 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { fetchArticleDetail } from '@/api/articleDetail'
 import { fetchArticleList } from '@/api/articleList'
 import { ArticleDetail } from '@/components/ArticleDetail'
-import { Article, TableOfContent } from '@/types'
+import { Article, ArticleResponse, TableOfContent } from '@/types'
 import { JSDOM } from 'jsdom'
 import markdownToHtml from 'zenn-markdown-html'
 
 export const getStaticPaths = async () => {
-  const articleList = await fetchArticleList()
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/article/list`)
+  const articleList: ArticleResponse = await res.json()
   const ids = articleList.contents?.map((article) => {
     return {
       params: {

@@ -6,7 +6,8 @@ import { Index } from '@/components/Index'
 import { ArticleResponse } from '@/types'
 
 export const getStaticProps = async () => {
-  const articleList = await fetchArticleList()
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/article/list`)
+  const articleList = await res.json()
   return {
     props: {
       articleList,
