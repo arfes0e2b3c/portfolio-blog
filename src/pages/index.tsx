@@ -28,7 +28,7 @@ const Home: NextPage<{ articleList: ArticleResponse }> = ({ articleList }) => {
         {`
           footer {
             position: absolute;
-            top: 5500px;
+            top: 5600px;
           }
         `}
       </style>
