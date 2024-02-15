@@ -48,13 +48,13 @@ export const AdminList = (props: { articleList: ArticleResponse }) => {
       </div>
       <div className={articleListTable}>
         <div className={articleListTableHead}>
-          <p className={articleId}>ID</p>
-          <p className={articleTitle}>記事タイトル</p>
-          <p className={articlePublishedAt}>公開日</p>
-          <p className={articleUpdatedAt}>更新日</p>
-          <p className={articleOther}></p>
-          <p className={articleOther}></p>
-          <p className={articleOther}></p>
+          <div className={articleId}>ID</div>
+          <div className={articleTitle}>記事タイトル</div>
+          <div className={articlePublishedAt}>公開日</div>
+          <div className={articleUpdatedAt}>更新日</div>
+          <div className={articleOther}></div>
+          <div className={articleOther}></div>
+          <div className={articleOther}></div>
         </div>
         <ul className={articleListTableBody}>
           {articleList &&
