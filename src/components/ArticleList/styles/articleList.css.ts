@@ -14,7 +14,7 @@ export const articleListInner = style({
 
 export const articleListContainer = style({
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'start',
   flexWrap: 'wrap',
 })
 
