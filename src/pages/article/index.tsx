@@ -1,6 +1,5 @@
 import { NextPage } from 'next'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { fetchArticleList } from '@/api/articleList'
 import { ArticleList } from '@/components/ArticleList'
 import { ArticleResponse } from '@/types'
 
