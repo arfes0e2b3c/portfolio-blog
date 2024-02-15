@@ -38,6 +38,12 @@ export const ArticleInfo = (props: { article: Article }) => {
       label: '文字数',
       content: `約${article.content.length}字`,
     },
+    {
+      key: 4,
+      img_path: 'category.svg',
+      label: 'カテゴリ',
+      content: `${article.category?.name}`,
+    },
   ]
 
   return (
