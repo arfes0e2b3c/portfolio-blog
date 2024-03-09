@@ -23,6 +23,18 @@ export const categoryList = style({
     zIndex: -1,
     transform: `translateX(calc(${categoryIndex} * 170px))`,
   },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      flexWrap: 'nowrap',
+      width: '100%',
+      overflowX: 'scroll',
+      marginLeft: '10px',
+      ':after': {
+        width: '120px',
+        transform: `translateX(calc(${categoryIndex} * 130px))`,
+      },
+    },
+  },
 })
 
 export const categoryListItem = style({
@@ -38,6 +50,12 @@ export const categoryListItem = style({
   transition: '.3s',
   ':hover': {
     backgroundColor: 'rgba(0,0,0,0.1)',
+  },
+  '@media': {
+    'screen and (max-width: 768px)': {
+      fontSize: '.8rem',
+      minWidth: '120px',
+    },
   },
 })
 
