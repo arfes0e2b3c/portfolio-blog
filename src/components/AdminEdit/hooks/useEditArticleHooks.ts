@@ -6,19 +6,12 @@ export const useEditArticle = async (
   id?: string
 ): Promise<void> => {
   if (confirm('記事を更新してよろしいですか？')) {
-    await initMicroCms()
-      .patch(`/articles/${id}`, {
-        title: title,
-        content: content,
-        draftContent: content,
-        isPublished: true,
-      })
-      .then((res) => {
-        alert('記事を更新しました')
-      })
-      .catch((err) => {
-        alert('記事の更新に失敗しました：' + err.message)
-      })
+    await initMicroCms().patch(`/articles/${id}`, {
+      title: title,
+      content: content,
+      draftContent: content,
+      isPublished: true,
+    })
   } else {
     alert('キャンセルしました')
   }
