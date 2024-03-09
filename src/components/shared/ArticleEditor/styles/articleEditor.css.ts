@@ -54,6 +54,14 @@ export const publishButton = style({
   },
 })
 
+export const isSuccess = style({
+  color: '#007B49',
+})
+
+export const isError = style({
+  color: '#ED1A3D',
+})
+
 export const editorContainer = style({
   width: '100%',
   display: 'flex',

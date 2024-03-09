@@ -7,6 +7,8 @@ import {
   editorContainer,
   editorHeader,
   editorTextarea,
+  isError,
+  isSuccess,
   publishButton,
   saveDraftButton,
   titleInput,
@@ -54,6 +56,24 @@ export const ArticleEditor = (props: {
       }, 3000)
     }
   }, [props, title, draftContent])
+  const saveArticle = useCallback(async () => {
+    setIsSaving(true)
+    try {
+      await props.funcArticle(title, draftContent, props.id)
+      setIsSaving(false)
+      setIsEdited(false)
+      setIsShowArticleSuccess(true)
+      setTimeout(() => {
+        setIsShowArticleSuccess(false)
+      }, 3000)
+    } catch (error) {
+      setIsSaving(false)
+      setIsShowArticleError(true)
+      setTimeout(() => {
+        setIsShowArticleError(false)
+      }, 3000)
+    }
+  }, [props, title, draftContent])
   useEffect(() => {
     const interval = setInterval(saveDraft, 60000)
 
@@ -74,8 +94,12 @@ export const ArticleEditor = (props: {
         />
         <div className={buttonContainer}>
           <button
-            className={saveDraftButton}
-            onClick={() => props.funcDraft(title, draftContent, props.id)}
+            className={[
+              saveDraftButton,
+              isShowDraftSuccess ? isSuccess : '',
+              isShowDraftError ? isError : '',
+            ].join(' ')}
+            onClick={() => saveDraft()}
           >
             {isSaving ? (
               <Oval
@@ -87,16 +111,20 @@ export const ArticleEditor = (props: {
                 ariaLabel='loading'
               />
             ) : isShowDraftSuccess ? (
-              'Success'
+              '成功'
             ) : isShowDraftError ? (
-              'Error'
+              '失敗'
             ) : (
               '下書き保存'
             )}
           </button>
           <button
-            className={publishButton}
-            onClick={() => props.funcArticle(title, draftContent, props.id)}
+            className={[
+              publishButton,
+              isShowArticleSuccess ? isSuccess : '',
+              isShowArticleError ? isError : '',
+            ].join(' ')}
+            onClick={() => saveArticle()}
           >
             {isSaving ? (
               <Oval
@@ -108,9 +136,9 @@ export const ArticleEditor = (props: {
                 ariaLabel='loading'
               />
             ) : isShowArticleSuccess ? (
-              'Success'
+              '成功'
             ) : isShowArticleError ? (
-              'Error'
+              '失敗'
             ) : (
               '公開'
             )}
