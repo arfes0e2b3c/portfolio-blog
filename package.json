@@ -22,6 +22,7 @@
     "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loader-spinner": "^6.1.6",
     "react-query": "^3.39.3",
     "react-scrollspy": "^3.4.3",
     "sanitize.css": "^13.0.0",

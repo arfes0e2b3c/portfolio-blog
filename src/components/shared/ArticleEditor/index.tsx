@@ -1,5 +1,5 @@
 import { Noto_Sans_JP } from 'next/font/google'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { MarkdownResult } from './elements/Markdown'
 import { useDebounce } from './hooks/useDebounce'
 import {
@@ -11,6 +11,8 @@ import {
   saveDraftButton,
   titleInput,
 } from './styles/articleEditor.css'
+
+import { Oval } from 'react-loader-spinner'
 
 const notoSansJp = Noto_Sans_JP({
   weight: '300',
@@ -26,7 +28,38 @@ export const ArticleEditor = (props: {
 }) => {
   const [title, setTitle] = useState(props.title ?? '')
   const [draftContent, setDraftContent] = useState(props.draftContent ?? '')
+  const [isEdited, setIsEdited] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+  const [isShowDraftSuccess, setIsShowDraftSuccess] = useState(false)
+  const [isShowDraftError, setIsShowDraftError] = useState(false)
+  const [isShowArticleSuccess, setIsShowArticleSuccess] = useState(false)
+  const [isShowArticleError, setIsShowArticleError] = useState(false)
   const debouncedContent = useDebounce(draftContent, 500)
+
+  const saveDraft = useCallback(async () => {
+    setIsSaving(true)
+    try {
+      await props.funcDraft(title, draftContent, props.id)
+      setIsSaving(false)
+      setIsEdited(false)
+      setIsShowDraftSuccess(true)
+      setTimeout(() => {
+        setIsShowDraftSuccess(false)
+      }, 3000)
+    } catch (error) {
+      setIsSaving(false)
+      setIsShowDraftError(true)
+      setTimeout(() => {
+        setIsShowDraftError(false)
+      }, 3000)
+    }
+  }, [props, title, draftContent])
+  useEffect(() => {
+    const interval = setInterval(saveDraft, 60000)
+
+    return () => clearInterval(interval)
+  }, [draftContent, isEdited, props.funcDraft, title, saveDraft])
+
   return (
     <>
       <div className={editorHeader}>
@@ -44,13 +77,43 @@ export const ArticleEditor = (props: {
             className={saveDraftButton}
             onClick={() => props.funcDraft(title, draftContent, props.id)}
           >
-            下書き保存
+            {isSaving ? (
+              <Oval
+                strokeWidth={3}
+                width={30}
+                height={30}
+                color='#888'
+                secondaryColor='#eee'
+                ariaLabel='loading'
+              />
+            ) : isShowDraftSuccess ? (
+              'Success'
+            ) : isShowDraftError ? (
+              'Error'
+            ) : (
+              '下書き保存'
+            )}
           </button>
           <button
             className={publishButton}
             onClick={() => props.funcArticle(title, draftContent, props.id)}
           >
-            公開
+            {isSaving ? (
+              <Oval
+                strokeWidth={3}
+                width={30}
+                height={30}
+                color='#888'
+                secondaryColor='#eee'
+                ariaLabel='loading'
+              />
+            ) : isShowArticleSuccess ? (
+              'Success'
+            ) : isShowArticleError ? (
+              'Error'
+            ) : (
+              '公開'
+            )}
           </button>
         </div>
       </div>
@@ -62,7 +125,10 @@ export const ArticleEditor = (props: {
           cols={30}
           rows={30}
           defaultValue={props.draftContent}
-          onChange={(e) => setDraftContent(e.target.value)}
+          onChange={(e) => {
+            setDraftContent(e.target.value)
+            setIsEdited(true)
+          }}
           placeholder='ここに本文を書いてください'
           spellCheck='false'
         ></textarea>
