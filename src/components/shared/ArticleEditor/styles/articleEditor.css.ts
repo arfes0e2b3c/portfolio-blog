@@ -24,6 +24,7 @@ export const buttonContainer = style({
 })
 
 export const saveDraftButton = style({
+  minWidth: '110px',
   padding: '10px 20px',
   textDecoration: 'none',
   backgroundColor: '#333',
@@ -41,6 +42,7 @@ export const saveDraftButton = style({
 export const publishButton = style({
   padding: '10px 20px',
   marginLeft: '15px',
+  minWidth: '110px',
   textDecoration: 'none',
   backgroundColor: '#333',
   color: '#fff',
