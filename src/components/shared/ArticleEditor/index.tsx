@@ -104,8 +104,8 @@ export const ArticleEditor = (props: {
             {isSaving ? (
               <Oval
                 strokeWidth={3}
-                width={30}
-                height={30}
+                width={20}
+                height={20}
                 color='#888'
                 secondaryColor='#eee'
                 ariaLabel='loading'
@@ -129,8 +129,8 @@ export const ArticleEditor = (props: {
             {isSaving ? (
               <Oval
                 strokeWidth={3}
-                width={30}
-                height={30}
+                width={20}
+                height={20}
                 color='#888'
                 secondaryColor='#eee'
                 ariaLabel='loading'
