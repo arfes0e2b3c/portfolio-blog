@@ -26,11 +26,14 @@ export const categoryList = style({
   '@media': {
     'screen and (max-width: 768px)': {
       flexWrap: 'nowrap',
+      justifyContent: 'flex-start',
       width: '100%',
       overflowX: 'scroll',
+      overflowY: 'hidden',
       marginLeft: '10px',
       ':after': {
         width: '120px',
+        height: '100%',
         transform: `translateX(calc(${categoryIndex} * 130px))`,
       },
     },
