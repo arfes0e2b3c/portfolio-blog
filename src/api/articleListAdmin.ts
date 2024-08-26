@@ -3,7 +3,7 @@ import { ArticleResponse } from '@/types'
 
 export const fetchArticleListAdmin = async () => {
 	const articleList = await initMicroCms()
-		.get<ArticleResponse>('articles')
+		.get<ArticleResponse>('articles&limit=100')
 		.then((res) => {
 			return res.data
 		})
