@@ -1,65 +1,65 @@
 export type Category = {
-  id: string
-  createdAt: string
-  updatedAt: string
-  publishedAt: string
-  revisedAt: string
-  name: string
+	id: string
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	revisedAt: string
+	name: string
 }
 export type Article = {
-  id: string
-  createdAt: string
-  updatedAt: string
-  publishedAt: string
-  revisedAt: string
-  title: string
-  content: string
-  draftContent: string
-  eyecatch?: {
-    url: string
-    height: number
-    width: number
-  }
-  category?: Category
-  isPublished: boolean
+	id: string
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	revisedAt: string
+	title: string
+	content: string
+	draftContent: string
+	eyecatch?: {
+		url: string
+		height: number
+		width: number
+	}
+	category?: Category
+	isPublished: boolean
 }
 
 export type ArticleResponse = {
-  contents?: Article[]
-  totalCount?: number
-  offset?: number
-  limit?: number
+	contents?: Article[]
+	totalCount?: number
+	offset?: number
+	limit?: number
 }
 
 export type CategoryResponse = {
-  contents?: Category[]
-  totalCount?: number
-  offset?: number
-  limit?: number
+	contents?: Category[]
+	totalCount?: number
+	offset?: number
+	limit?: number
 }
 
 export type ParallaxNums = {
-  pages: number
-  profileHead: {
-    start: number
-    end: number
-  }
-  profileBody: number
-  recentPost: number
-  skillHead: {
-    start: number
-    end: number
-  }
-  skillBody: number
-  productHead: {
-    start: number
-    end: number
-  }
-  productBody: number
+	pages: number
+	profileHead: {
+		start: number
+		end: number
+	}
+	profileBody: number
+	recentPost: number
+	skillHead: {
+		start: number
+		end: number
+	}
+	skillBody: number
+	productHead: {
+		start: number
+		end: number
+	}
+	productBody: number
 }
 
 export type TableOfContent = {
-  level: string
-  title: string
-  href: string
+	level: string
+	title: string
+	href: string
 }

@@ -6,27 +6,29 @@ import { AdminEdit } from '@/components/AdminEdit'
 import { NoAuth } from '@/components/shared/NoAuth'
 import { Article } from '@/types'
 
-export const getServerSideProps = async (context: { params: { id: string } }) => {
-  const article = await fetchArticleDetail(context.params.id)
-  return {
-    props: {
-      article,
-    },
-  }
+export const getServerSideProps = async (context: {
+	params: { id: string }
+}) => {
+	const article = await fetchArticleDetail(context.params.id)
+	return {
+		props: {
+			article,
+		},
+	}
 }
 
 const queryClient = new QueryClient()
 
 const AdminEditPage: NextPage<{ article: Article }> = ({ article }) => {
-  const { status } = useSession()
-  if (status !== 'authenticated') {
-    return <NoAuth />
-  }
-  return (
-    <QueryClientProvider client={queryClient}>
-      <AdminEdit article={article} />
-    </QueryClientProvider>
-  )
+	const { status } = useSession()
+	if (status !== 'authenticated') {
+		return <NoAuth />
+	}
+	return (
+		<QueryClientProvider client={queryClient}>
+			<AdminEdit article={article} />
+		</QueryClientProvider>
+	)
 }
 
 export default AdminEditPage
