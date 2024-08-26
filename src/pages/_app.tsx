@@ -11,39 +11,42 @@ import { component } from '@/styles/component.css'
 import 'zenn-content-css'
 
 const inter = Inter({
-  weight: '100',
-  subsets: ['cyrillic'],
+	weight: '100',
+	subsets: ['cyrillic'],
 })
 
 const notoSansJP = Noto_Sans_JP({
-  weight: '100',
-  subsets: ['latin'],
+	weight: '100',
+	subsets: ['latin'],
 })
 
-export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-  useEffect(() => {
-    import('zenn-embed-elements')
-  }, [])
-  return (
-    <>
-      <style jsx global>
-        {`
+export default function App({
+	Component,
+	pageProps: { session, ...pageProps },
+}: AppProps) {
+	useEffect(() => {
+		import('zenn-embed-elements')
+	}, [])
+	return (
+		<>
+			<style jsx global>
+				{`
           html {
             font-family: ${inter.style.fontFamily}, ${notoSansJP.style.fontFamily};
             color: #333;
             scroll-behavior: smooth;
           }
         `}
-      </style>
-      <Script src='https://embed.zenn.studio/js/listen-embed-event.js'></Script>
-      <Header />
-      <ShadowHeader />
-      <div className={component}>
-        <SessionProvider session={session}>
-          <Component {...pageProps} />
-        </SessionProvider>
-      </div>
-      <Footer />
-    </>
-  )
+			</style>
+			<Script src='https://embed.zenn.studio/js/listen-embed-event.js'></Script>
+			<Header />
+			<ShadowHeader />
+			<div className={component}>
+				<SessionProvider session={session}>
+					<Component {...pageProps} />
+				</SessionProvider>
+			</div>
+			<Footer />
+		</>
+	)
 }

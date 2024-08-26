@@ -3,68 +3,70 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { HeaderModal } from './elements/HeaderModal'
 import {
-  blogIcon,
-  blogTitle,
-  blogTitleWrapper,
-  header,
-  leftHeader,
-  menuIcon,
-  rightHeader,
+	blogIcon,
+	blogTitle,
+	blogTitleWrapper,
+	header,
+	leftHeader,
+	menuIcon,
+	rightHeader,
 } from './styles/header.css'
 import { useRouter } from 'next/router'
 
 export const Header = () => {
-  const router = useRouter()
+	const router = useRouter()
 
-  const [isOpen, setIsOpen] = useState(false)
-  function toggleModal() {
-    setIsOpen(!isOpen)
-  }
-  return (
-    <header className={header}>
-      <div className={leftHeader}>
-        {router.pathname != '/' ? (
-          <>
-            <Link href='/'>
-              <Image
-                className={blogIcon}
-                src='/images/yata_icon.jpg'
-                alt='アイコン画像'
-                width={80}
-                height={80}
-              />
-            </Link>
-            <Link className={blogTitleWrapper} href='/'>
-              <h1 className={blogTitle}>ARFES</h1>
-            </Link>
-          </>
-        ) : (
-          <>
-            <a href='#'>
-              <Image
-                className={blogIcon}
-                src='/images/yata_icon.jpg'
-                alt='アイコン画像'
-                width={80}
-                height={80}
-              />
-            </a>
-            <a className={blogTitleWrapper} href='#'>
-              <h1 className={blogTitle}>ARFES</h1>
-            </a>
-          </>
-        )}
-      </div>
-      <div className={rightHeader} onClick={toggleModal}>
-        <Image
-          className={menuIcon}
-          src={isOpen ? '/icons_common/close.svg' : '/icons_common//menu_icon.svg'}
-          alt='ハンバーガーメニュー'
-          width={100}
-          height={100}
-        />
-      </div>
-      {<HeaderModal toggleModal={toggleModal} isOpen={isOpen} />}
-    </header>
-  )
+	const [isOpen, setIsOpen] = useState(false)
+	function toggleModal() {
+		setIsOpen(!isOpen)
+	}
+	return (
+		<header className={header}>
+			<div className={leftHeader}>
+				{router.pathname != '/' ? (
+					<>
+						<Link href='/'>
+							<Image
+								className={blogIcon}
+								src='/images/yata_icon.jpg'
+								alt='アイコン画像'
+								width={80}
+								height={80}
+							/>
+						</Link>
+						<Link className={blogTitleWrapper} href='/'>
+							<h1 className={blogTitle}>ARFES</h1>
+						</Link>
+					</>
+				) : (
+					<>
+						<a href='#'>
+							<Image
+								className={blogIcon}
+								src='/images/yata_icon.jpg'
+								alt='アイコン画像'
+								width={80}
+								height={80}
+							/>
+						</a>
+						<a className={blogTitleWrapper} href='#'>
+							<h1 className={blogTitle}>ARFES</h1>
+						</a>
+					</>
+				)}
+			</div>
+			<div className={rightHeader} onClick={toggleModal}>
+				<Image
+					className={menuIcon}
+					src={
+						isOpen ? '/icons_common/close.svg' : '/icons_common//menu_icon.svg'
+					}
+					alt='ハンバーガーメニュー'
+					width={100}
+					height={100}
+				/>
+			</div>
+			{<HeaderModal toggleModal={toggleModal} isOpen={isOpen} />}
+		</header>
+	)
 }
