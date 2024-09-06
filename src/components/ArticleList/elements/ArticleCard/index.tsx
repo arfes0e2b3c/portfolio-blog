@@ -1,3 +1,5 @@
+import { Article } from '@/types'
+import { formatTime2Ymd } from '@/utils/function'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -9,8 +11,6 @@ import {
 	articleTitle,
 	articleTitleContainer,
 } from './styles/articleCard.css'
-import { Article } from '@/types'
-import { formatTime2Ymd } from '@/utils/function'
 
 type ArticleCardProps = {
 	article: Article

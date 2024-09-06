@@ -9,8 +9,8 @@ export const productCardWrapper = style({
 })
 
 export const productCard = style({
-	width: cardWidth + 'px',
-	height: cardHeight + 'px',
+	width: `${cardWidth}px`,
+	height: `${cardHeight}px`,
 	margin: '0 20px',
 	boxShadow: '0px 0px 10px 10px rgba(0, 0, 0, 0.05)',
 	transition: '.2s',

@@ -5,8 +5,8 @@ const cardHeight = '360'
 const imageRatio = `${630 / 1200}`
 
 export const articleCard = style({
-	width: cardWidth + 'px',
-	height: cardHeight + 'px',
+	width: `${cardWidth}px`,
+	height: `${cardHeight}px`,
 	margin: '20px',
 	borderRadius: '5px',
 	overflow: 'hidden',
@@ -45,8 +45,8 @@ export const articleImage = style({
 
 export const articleCreatedAt = style({
 	position: 'absolute',
-	top: `calc(29 / 630 * 100%)`,
-	left: `calc(20 / 1200 * 100%)`,
+	top: 'calc(29 / 630 * 100%)',
+	left: 'calc(20 / 1200 * 100%)',
 	padding: '5px 20px',
 	margin: '0',
 	backgroundColor: 'rgba(0, 0, 0, 0.6)',

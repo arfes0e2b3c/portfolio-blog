@@ -1,13 +1,13 @@
 import { Article } from '@/types'
+import { formatTime2Ymd } from '@/utils/function'
+import Image from 'next/image'
 import {
 	articleInfoContainer,
-	articleInfoList,
 	articleInfoItem,
-	labelContainer,
+	articleInfoList,
 	itemLabel,
+	labelContainer,
 } from './index.css'
-import Image from 'next/image'
-import { formatTime2Ymd } from '@/utils/function'
 
 export const ArticleInfo = (props: { article: Article }) => {
 	const article = props.article

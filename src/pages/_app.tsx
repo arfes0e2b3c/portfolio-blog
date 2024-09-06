@@ -1,13 +1,13 @@
 import type { AppProps } from 'next/app'
 import 'sanitize.css'
-import { Inter, Noto_Sans_JP } from 'next/font/google'
-import Script from 'next/script'
-import { SessionProvider } from 'next-auth/react'
-import { useEffect } from 'react'
 import { Footer } from '@/components/shared/Footer'
 import { Header } from '@/components/shared/Header'
 import { ShadowHeader } from '@/components/shared/ShadowHeader'
 import { component } from '@/styles/component.css'
+import { SessionProvider } from 'next-auth/react'
+import { Inter, Noto_Sans_JP } from 'next/font/google'
+import Script from 'next/script'
+import { useEffect } from 'react'
 import 'zenn-content-css'
 
 const inter = Inter({
@@ -38,7 +38,7 @@ export default function App({
           }
         `}
 			</style>
-			<Script src='https://embed.zenn.studio/js/listen-embed-event.js'></Script>
+			<Script src='https://embed.zenn.studio/js/listen-embed-event.js' />
 			<Header />
 			<ShadowHeader />
 			<div className={component}>

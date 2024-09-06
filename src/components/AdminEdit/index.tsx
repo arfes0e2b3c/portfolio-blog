@@ -1,3 +1,5 @@
+import { fetchArticleDetail } from '@/hooks/articleDetail'
+import { Article } from '@/types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
@@ -12,8 +14,6 @@ import {
 	adminEditTitle,
 	linkToAdminPage,
 } from './styles/adminEdit.css'
-import { fetchArticleDetail } from '@/hooks/articleDetail'
-import { Article } from '@/types'
 
 export const AdminEdit = (props: { article: Article }) => {
 	const router = useRouter()

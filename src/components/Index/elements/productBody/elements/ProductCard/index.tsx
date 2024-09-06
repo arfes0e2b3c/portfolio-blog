@@ -13,7 +13,12 @@ export const ProductCard = (props: {
 	title: string
 }) => {
 	return (
-		<a className={productCardWrapper} href={props.href} target='_blank'>
+		<a
+			className={productCardWrapper}
+			href={props.href}
+			target='_blank'
+			rel='noreferrer'
+		>
 			<div className={productCard}>
 				<Image
 					className={productImage}

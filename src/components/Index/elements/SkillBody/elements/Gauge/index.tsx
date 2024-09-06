@@ -33,17 +33,18 @@ export const Gauge = (props: {
 				: (displayWidth - 35) * 0.15
 			: 0
 	return (
-		<a href={props.href} target='_blank'>
+		<a href={props.href} target='_blank' rel='noreferrer'>
 			<div
 				className={card}
 				style={assignInlineVars({
 					[strokePercent]: props.level,
-					[strokePercentWithPx]: props.level + 'px',
+					[strokePercentWithPx]: `${props.level}px`,
 				})}
 			>
 				<svg className={svg}>
-					<circle cx={circleR} cy={circleR} r={circleR}></circle>
-					<circle cx={circleR} cy={circleR} r={circleR}></circle>
+					<title>スキルレベルのゲージ</title>
+					<circle cx={circleR} cy={circleR} r={circleR} />
+					<circle cx={circleR} cy={circleR} r={circleR} />
 				</svg>
 				<Image
 					className={logoImage}

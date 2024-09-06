@@ -9,14 +9,14 @@ export const profileContainer = style({
 export const profileHead = style({
 	position: 'sticky',
 	height: 'fit-content',
-	top: `calc((100vh - 100px) / 2 + 100px)`,
-	left: `0`,
+	top: 'calc((100vh - 100px) / 2 + 100px)',
+	left: '0',
 	transform: 'translateY(-50%)',
 	zIndex: 1,
 	'@media': {
 		'screen and (max-width: 768px)': {
 			position: 'relative',
-			top: `0`,
+			top: '0',
 			left: '0',
 			width: '100%',
 		},
@@ -42,13 +42,13 @@ export const skillContainer = style({
 export const skillHead = style({
 	position: 'sticky',
 	height: 'fit-content',
-	top: `calc((100vh - 100px) / 2 + 100px)`,
-	left: `0`,
+	top: 'calc((100vh - 100px) / 2 + 100px)',
+	left: '0',
 	transform: 'translateY(-50%)',
 	'@media': {
 		'screen and (max-width: 768px)': {
 			position: 'relative',
-			top: `0`,
+			top: '0',
 			left: '0',
 			width: '100%',
 		},
@@ -72,13 +72,13 @@ export const productContainer = style({
 export const productHead = style({
 	position: 'sticky',
 	height: 'fit-content',
-	top: `calc((100vh - 100px) / 2 + 100px)`,
-	left: `0`,
+	top: 'calc((100vh - 100px) / 2 + 100px)',
+	left: '0',
 	transform: 'translateY(-50%)',
 	'@media': {
 		'screen and (max-width: 768px)': {
 			position: 'relative',
-			top: `0`,
+			top: '0',
 			left: '0',
 			width: '100%',
 		},

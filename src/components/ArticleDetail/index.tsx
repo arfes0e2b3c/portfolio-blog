@@ -1,3 +1,5 @@
+import { Article, TableOfContent } from '@/types'
+import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { Noto_Sans_JP, Zen_Kaku_Gothic_Antique } from 'next/font/google'
 import markdownToHtml from 'zenn-markdown-html'
 import { UseFetchArticleDetail } from '../../hooks/ArticleDetailHooks'
@@ -11,8 +13,6 @@ import {
 	articleDetailTitle,
 	articleDetailTitleContainer,
 } from './styles/articleDetail.css'
-import { Article, TableOfContent } from '@/types'
-import { assignInlineVars } from '@vanilla-extract/dynamic'
 
 export const fetchArticleDetail = async (id: string): Promise<Article> => {
 	const articleDetail = await UseFetchArticleDetail(id)
@@ -63,7 +63,7 @@ export const ArticleDetail = (props: {
 						style={assignInlineVars({
 							fontFamily: ZenKakuGothicAntique.style.fontFamily,
 						})}
-					></div>
+					/>
 					<div className={articleDetailSidebar}>
 						<ArticleDetailSidebar
 							article={props.article}

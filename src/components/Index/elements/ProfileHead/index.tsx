@@ -49,13 +49,14 @@ export const ProfileHead = () => {
 						<h3 className={fullname}>Yuki Yata</h3>
 						<p className={currentJob}>Student/Software Engineer</p>
 						<div className={iconContainer}>
-							{icons.map((icon, index) => {
+							{icons.map((icon) => {
 								return (
 									<a
 										target='_blank'
 										className={snsIcon}
 										href={icon.href}
-										key={index}
+										key={icon.src}
+										rel='noreferrer'
 									>
 										<Image
 											src={icon.src}

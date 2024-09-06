@@ -1,11 +1,11 @@
+import { CategoryResponse } from '@/types'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import {
-	categoryList,
 	categoryIndex,
+	categoryList,
 	categoryListItem,
 	selected,
 } from './style.css'
-import { CategoryResponse } from '@/types'
 
 export const CategoryList = (props: {
 	categories: CategoryResponse

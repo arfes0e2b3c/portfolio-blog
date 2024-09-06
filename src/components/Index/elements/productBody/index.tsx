@@ -33,9 +33,9 @@ export const ProductBody = () => {
 	return (
 		<section className={productBody}>
 			<ul className={productList}>
-				{products.map((prod, index) => {
+				{products.map((prod) => {
 					return (
-						<li className={productItem} key={index}>
+						<li className={productItem} key={prod.title}>
 							<ProductCard
 								href={prod.href}
 								imageSrc={prod.imageSrc}

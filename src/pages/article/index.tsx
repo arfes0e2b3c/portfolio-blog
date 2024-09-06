@@ -1,8 +1,8 @@
-import { NextPage } from 'next'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { fetchArticleList } from '@/api/articleList'
 import { ArticleList } from '@/components/ArticleList'
 import { ArticleResponse } from '@/types'
-import { fetchArticleList } from '@/api/articleList'
+import { NextPage } from 'next'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 export const getStaticProps = async () => {
 	const articleList = await fetchArticleList()

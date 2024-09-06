@@ -1,5 +1,7 @@
-import { Article, TableOfContent } from '@/types'
+import type { Article, TableOfContent } from '@/types'
 import Image from 'next/image'
+import { ArticleIndex } from './elements/ArticleIndex'
+import { ArticleInfo } from './elements/ArticleInfo'
 import {
 	articleDetailSidebar,
 	authoInfoContainer,
@@ -12,8 +14,6 @@ import {
 	upperContainer,
 	upperRightContainer,
 } from './styles/articleDetailSidebar.css'
-import { ArticleInfo } from './elements/ArticleInfo'
-import { ArticleIndex } from './elements/ArticleIndex'
 
 export const ArticleDetailSidebar = (props: {
 	article: Article
@@ -33,7 +33,11 @@ export const ArticleDetailSidebar = (props: {
 					<div className={upperRightContainer}>
 						<h3 className={fullName}>YUKI YATA</h3>
 						<div className={iconContainer}>
-							<a href='https://github.com/arfes0e2b3c' target='_blank'>
+							<a
+								href='https://github.com/arfes0e2b3c'
+								target='_blank'
+								rel='noreferrer'
+							>
 								<Image
 									src='/icons_sns/github.svg'
 									alt='githubのアイコン画像'
@@ -41,7 +45,7 @@ export const ArticleDetailSidebar = (props: {
 									height={25}
 								/>
 							</a>
-							<a href='https://x.com/0e2b3c' target='_blank'>
+							<a href='https://x.com/0e2b3c' target='_blank' rel='noreferrer'>
 								<Image
 									src='/icons_sns/x.svg'
 									alt='xのアイコン画像'
@@ -49,7 +53,7 @@ export const ArticleDetailSidebar = (props: {
 									height={25}
 								/>
 							</a>
-							<a href='https://zenn.dev/arfes' target='_blank'>
+							<a href='https://zenn.dev/arfes' target='_blank' rel='noreferrer'>
 								<Image
 									src='/icons_sns/zenn.svg'
 									alt='zennのアイコン画像'

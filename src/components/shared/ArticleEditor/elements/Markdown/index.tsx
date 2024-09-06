@@ -22,6 +22,6 @@ export const MarkdownResult = (props: { markdownContent: string }) => {
 			dangerouslySetInnerHTML={{
 				__html: htmlContent ? htmlContent : 'ここにプレビューが表示されます',
 			}}
-		></div>
+		/>
 	)
 }

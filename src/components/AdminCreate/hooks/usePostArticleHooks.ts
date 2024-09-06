@@ -16,7 +16,7 @@ export const usePostArticle = async (
 				alert('記事を公開しました')
 			})
 			.catch((err) => {
-				alert('記事の公開に失敗しました：' + err.message)
+				alert(`記事の公開に失敗しました：${err.message}`)
 			})
 	} else {
 		alert('キャンセルしました')
