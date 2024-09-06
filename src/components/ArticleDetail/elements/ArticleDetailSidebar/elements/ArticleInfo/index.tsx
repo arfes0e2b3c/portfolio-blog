@@ -39,7 +39,7 @@ export const ArticleInfo = (props: { article: Article }) => {
 			content: `約${article.content.length}字`,
 		},
 		{
-			key: 4,
+			key: 5,
 			img_path: 'category.svg',
 			label: 'カテゴリ',
 			content: `${article.category?.name || '-'}`,
