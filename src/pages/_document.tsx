@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
 export default function Document() {
@@ -26,7 +26,7 @@ export default function Document() {
 				<meta property='twitter:title' content='Arfes' />
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='icon' href='favicons/favicon.ico' />
-				<Script src='https://embed.zenn.studio/js/listen-embed-event.js'></Script>
+				<Script src='https://embed.zenn.studio/js/listen-embed-event.js' />
 			</Head>
 			<body>
 				<Main />

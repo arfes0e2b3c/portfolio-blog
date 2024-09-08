@@ -1,7 +1,7 @@
 import { initMicroCms } from '@/api/axios'
 
 export const UseDeleteArticle = async (id: string): Promise<string> => {
-	let status: string = ''
+	let status = ''
 	if (confirm('本当に記事を削除しますか？')) {
 		const deleteResult = await initMicroCms()
 			.delete(`articles/${id}`)
@@ -10,7 +10,7 @@ export const UseDeleteArticle = async (id: string): Promise<string> => {
 				status = '202'
 			})
 			.catch((err) => {
-				alert('削除に失敗しました：' + err.message)
+				alert(`削除に失敗しました：${err.message}`)
 				status = err.response.status ?? '444'
 			})
 	} else {

@@ -1,10 +1,10 @@
-import { NextPage } from 'next'
-import { useSession } from 'next-auth/react'
-import { QueryClient, QueryClientProvider } from 'react-query'
 import { fetchArticleDetail } from '@/api/articleDetail'
 import { AdminEdit } from '@/components/AdminEdit'
 import { NoAuth } from '@/components/shared/NoAuth'
 import { Article } from '@/types'
+import { NextPage } from 'next'
+import { useSession } from 'next-auth/react'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 export const getServerSideProps = async (context: {
 	params: { id: string }

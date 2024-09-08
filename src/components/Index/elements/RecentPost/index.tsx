@@ -1,3 +1,4 @@
+import { Article } from '@/types'
 import Link from 'next/link'
 import { ArticleCard } from './elements/articleCard'
 import {
@@ -8,7 +9,6 @@ import {
 	recentPost,
 	sectionTitle,
 } from './styles/recentPost.css'
-import { Article } from '@/types'
 
 export const RecentPost = (props: { articleList: Article[] }) => {
 	const articleList = props.articleList.slice(0, 3)

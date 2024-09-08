@@ -76,7 +76,7 @@ export const articleDetailSidebar = style({
 	top: titleHeight,
 	left: `calc(${contentWidthRatio} * 100%)`,
 	width: `calc(${containerWidth} * ${sidebarWidthRatio} - 0px)`,
-	height: `100%`,
+	height: '100%',
 	marginLeft: '20px',
 	'@media': {
 		'screen and (max-width: 768px)': {

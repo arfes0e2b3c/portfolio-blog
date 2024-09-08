@@ -1,15 +1,15 @@
+import { UseFetchArticleList } from '@/hooks/articleListHooks'
+import { UseFetchCategories } from '@/hooks/categoryListHooks'
+import { Article, ArticleResponse } from '@/types'
+import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { ArticleCard } from './elements/ArticleCard'
+import { CategoryList } from './elements/CategoryList'
 import {
 	articleListContainer,
 	articleListInner,
 	articleListTitle,
 } from './styles/articleList.css'
-import { UseFetchArticleList } from '@/hooks/articleListHooks'
-import { Article, ArticleResponse } from '@/types'
-import { UseFetchCategories } from '@/hooks/categoryListHooks'
-import { useState } from 'react'
-import { CategoryList } from './elements/CategoryList'
 
 export const ArticleList = (props: { articleList: ArticleResponse }) => {
 	const [selectedCategory, setSelectedCategory] = useState({ index: 0, id: '' })
@@ -28,7 +28,7 @@ export const ArticleList = (props: { articleList: ArticleResponse }) => {
 	} = useQuery('categories', UseFetchCategories, {
 		refetchOnWindowFocus: false,
 	})
-	const articleList = result && result.contents
+	const articleList = result?.contents
 	if (isLoading || isLoadingCategories) {
 		return <span>Loading...</span>
 	}

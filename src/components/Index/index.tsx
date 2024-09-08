@@ -1,3 +1,5 @@
+import { UseFetchArticleList } from '@/hooks/articleListHooks'
+import { ArticleResponse, ParallaxNums } from '@/types'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Pragati_Narrow } from 'next/font/google'
 import { useEffect, useState } from 'react'
@@ -9,8 +11,6 @@ import { RecentPost } from './elements/RecentPost'
 import { SkillBody } from './elements/SkillBody'
 import { SkillHead } from './elements/SkillHead'
 import { ProductBody } from './elements/productBody'
-import { UseFetchArticleList } from '@/hooks/articleListHooks'
-import { ArticleResponse, ParallaxNums } from '@/types'
 import {
 	productBody,
 	productContainer,
@@ -36,7 +36,7 @@ export const Index = (props: { articleList: ArticleResponse }) => {
 		refetchOnWindowFocus: false,
 		initialData: props.articleList,
 	})
-	const articleList = result && result.contents
+	const articleList = result?.contents
 	if (isLoading) {
 		return <span>Loading...</span>
 	}
@@ -77,16 +77,15 @@ export const Index = (props: { articleList: ArticleResponse }) => {
 				</div>
 			</>
 		)
-	} else {
-		return (
-			<>
-				<ProfileHead />
-				<ProfileBody />
-				<RecentPost articleList={articleList ?? []} />
-				<SkillBody />
-				<ProductHead />
-				<ProductBody />
-			</>
-		)
 	}
+	return (
+		<>
+			<ProfileHead />
+			<ProfileBody />
+			<RecentPost articleList={articleList ?? []} />
+			<SkillBody />
+			<ProductHead />
+			<ProductBody />
+		</>
+	)
 }

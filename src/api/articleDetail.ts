@@ -1,5 +1,5 @@
-import { initMicroCms } from './axios'
 import { Article } from '@/types'
+import { initMicroCms } from './axios'
 
 export const fetchArticleDetail = async (id: string) => {
 	const articleDetail = await initMicroCms()

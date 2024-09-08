@@ -16,6 +16,6 @@ export const usePostDraft = async (
 			location.href = '/shulkssbu'
 		})
 		.catch((err) => {
-			alert('下書き保存に失敗しました：' + err.message)
+			alert(`下書き保存に失敗しました：${err.message}`)
 		})
 }

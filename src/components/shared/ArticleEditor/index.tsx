@@ -74,11 +74,12 @@ export const ArticleEditor = (props: {
 			}, 3000)
 		}
 	}, [props, title, draftContent])
+
 	useEffect(() => {
 		const interval = setInterval(saveDraft, 60000)
 
 		return () => clearInterval(interval)
-	}, [draftContent, isEdited, props.funcDraft, title, saveDraft])
+	}, [saveDraft])
 
 	return (
 		<>
@@ -94,6 +95,7 @@ export const ArticleEditor = (props: {
 				/>
 				<div className={buttonContainer}>
 					<button
+						type='button'
 						className={[
 							saveDraftButton,
 							isShowDraftSuccess ? isSuccess : '',
@@ -119,6 +121,7 @@ export const ArticleEditor = (props: {
 						)}
 					</button>
 					<button
+						type='button'
 						className={[
 							publishButton,
 							isShowArticleSuccess ? isSuccess : '',
@@ -159,7 +162,7 @@ export const ArticleEditor = (props: {
 					}}
 					placeholder='ここに本文を書いてください'
 					spellCheck='false'
-				></textarea>
+				/>
 			</div>
 		</>
 	)

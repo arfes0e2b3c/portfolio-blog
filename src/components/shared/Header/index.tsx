@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { HeaderModal } from './elements/HeaderModal'
 import {
@@ -11,7 +12,6 @@ import {
 	menuIcon,
 	rightHeader,
 } from './styles/header.css'
-import { useRouter } from 'next/router'
 
 export const Header = () => {
 	const router = useRouter()
@@ -23,7 +23,7 @@ export const Header = () => {
 	return (
 		<header className={header}>
 			<div className={leftHeader}>
-				{router.pathname != '/' ? (
+				{router.pathname !== '/' ? (
 					<>
 						<Link href='/'>
 							<Image
@@ -40,7 +40,7 @@ export const Header = () => {
 					</>
 				) : (
 					<>
-						<a href='#'>
+						<Link href='/'>
 							<Image
 								className={blogIcon}
 								src='/images/yata_icon.jpg'
@@ -48,10 +48,10 @@ export const Header = () => {
 								width={80}
 								height={80}
 							/>
-						</a>
-						<a className={blogTitleWrapper} href='#'>
+						</Link>
+						<Link className={blogTitleWrapper} href='/'>
 							<h1 className={blogTitle}>ARFES</h1>
-						</a>
+						</Link>
 					</>
 				)}
 			</div>

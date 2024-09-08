@@ -1,3 +1,5 @@
+import { UseFetchArticleListAdmin } from '@/hooks/articleListAdminHooks'
+import { ArticleResponse } from '@/types'
 import Link from 'next/link'
 import { FC } from 'react'
 import { useQuery } from 'react-query'
@@ -16,8 +18,6 @@ import {
 	articleUpdatedAt,
 	createArticleButton,
 } from './styles/articleList.css'
-import { UseFetchArticleListAdmin } from '@/hooks/articleListAdminHooks'
-import { ArticleResponse } from '@/types'
 
 export const AdminList = (props: { articleList: ArticleResponse }) => {
 	const {
@@ -29,7 +29,7 @@ export const AdminList = (props: { articleList: ArticleResponse }) => {
 		refetchOnWindowFocus: false,
 		initialData: props.articleList,
 	})
-	const articleList = result && result.contents
+	const articleList = result?.contents
 	if (isLoading) {
 		return <span>Loading...</span>
 	}
@@ -52,22 +52,21 @@ export const AdminList = (props: { articleList: ArticleResponse }) => {
 					<div className={articleTitle}>記事タイトル</div>
 					<div className={articlePublishedAt}>公開日</div>
 					<div className={articleUpdatedAt}>更新日</div>
-					<div className={articleOther}></div>
-					<div className={articleOther}></div>
-					<div className={articleOther}></div>
+					<div className={articleOther} />
+					<div className={articleOther} />
+					<div className={articleOther} />
 				</div>
 				<ul className={articleListTableBody}>
-					{articleList &&
-						articleList.map((article, index) => {
-							return (
-								<ArticleCard
-									article={article}
-									index={index}
-									key={article.id}
-									refetch={refetch}
-								/>
-							)
-						})}
+					{articleList?.map((article, index) => {
+						return (
+							<ArticleCard
+								article={article}
+								index={index}
+								key={article.id}
+								refetch={refetch}
+							/>
+						)
+					})}
 				</ul>
 			</div>
 		</section>

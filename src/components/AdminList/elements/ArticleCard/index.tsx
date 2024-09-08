@@ -1,3 +1,5 @@
+import { Article } from '@/types'
+import { formatTime2Ymd } from '@/utils/function'
 import Link from 'next/link'
 import { UseDeleteArticle } from './hooks/deleteArticleHooks'
 import {
@@ -13,8 +15,6 @@ import {
 	isDisabled,
 	isDraft,
 } from './styles/articleCard.css'
-import { Article } from '@/types'
-import { formatTime2Ymd } from '@/utils/function'
 
 export const ArticleCard = (props: {
 	article: Article
@@ -59,6 +59,7 @@ export const ArticleCard = (props: {
 				</div>
 				<div className={articleButtonContainer}>
 					<button
+						type='button'
 						className={articleDeleteButton}
 						onClick={() => deleteArticle(article.id)}
 					>

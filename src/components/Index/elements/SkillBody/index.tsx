@@ -158,9 +158,9 @@ export const SkillBody = () => {
 				<div className={skillContainer}>
 					<h2 className={skillTitle}>Languages</h2>
 					<ul className={skillList}>
-						{languages.map((lang, index) => {
+						{languages.map((lang) => {
 							return (
-								<li className={skillItem} key={index}>
+								<li className={skillItem} key={lang.href}>
 									<Gauge
 										path={lang.path}
 										level={lang.level}
@@ -175,9 +175,9 @@ export const SkillBody = () => {
 				<div className={skillContainer}>
 					<h2 className={skillTitle}>Libraries</h2>
 					<ul className={skillList}>
-						{libraries.map((lib, index) => {
+						{libraries.map((lib) => {
 							return (
-								<li className={skillItem} key={index}>
+								<li className={skillItem} key={lib.href}>
 									<Gauge path={lib.path} level={lib.level} href={lib.href} />
 								</li>
 							)
@@ -187,9 +187,9 @@ export const SkillBody = () => {
 				<div className={skillContainer}>
 					<h2 className={skillTitle}>Tools</h2>
 					<ul className={skillList}>
-						{tools.map((tool, index) => {
+						{tools.map((tool) => {
 							return (
-								<li className={skillItem} key={index}>
+								<li className={skillItem} key={tool.path}>
 									<Gauge path={tool.path} level={tool.level} href={tool.href} />
 								</li>
 							)

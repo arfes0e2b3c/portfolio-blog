@@ -53,14 +53,14 @@ const contentWidthRatio = 0.75
 
 export const stickySidebarContainer = style({
 	position: 'sticky',
-	top: `100px`,
+	top: '100px',
 	left: `calc(${containerWidth} * ${contentWidthRatio} + (100% - ${containerWidth}) / 2 + 20px)`,
 	width: `calc(${containerWidth} * (1 - ${contentWidthRatio}))`,
 	paddingTop: '10px',
 	'@media': {
 		'screen and (max-width: 768px)': {
 			position: 'relative',
-			top: `0`,
+			top: '0',
 			left: '0',
 			width: '100%',
 		},

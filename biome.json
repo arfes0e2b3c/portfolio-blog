@@ -9,6 +9,16 @@
 			"recommended": true,
 			"style": {
 				"useImportType": "off"
+			},
+			"a11y": {
+				"useKeyWithClickEvents": "off",
+				"useButtonType": "off"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
+			},
+			"complexity": {
+				"noForEach": "off"
 			}
 		}
 	},
