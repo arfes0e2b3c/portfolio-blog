@@ -15,6 +15,33 @@ import {
 	upperRightContainer,
 } from './styles/articleDetailSidebar.css'
 
+type SnsInfo = {
+	id: number
+	href: string
+	imagePath: string
+	alt: string
+}
+const snsInfos: SnsInfo[] = [
+	{
+		id: 1,
+		href: 'https://github.com/arfes0e2b3c',
+		imagePath: '/icons_sns/github.svg',
+		alt: 'githubのアイコン画像',
+	},
+	{
+		id: 2,
+		href: 'https://x.com/0e2b3c',
+		imagePath: 'icons_sns/x.svg',
+		alt: 'xのアイコン画像',
+	},
+	{
+		id: 3,
+		href: 'https://zenn.dev/arfes',
+		imagePath: '/icons_sns/zenn.svg',
+		alt: 'zennのアイコン画像',
+	},
+]
+
 export const ArticleDetailSidebar = (props: {
 	article: Article
 	tableOfContent: TableOfContent[]
@@ -33,34 +60,23 @@ export const ArticleDetailSidebar = (props: {
 					<div className={upperRightContainer}>
 						<h3 className={fullName}>YUKI YATA</h3>
 						<div className={iconContainer}>
-							<a
-								href='https://github.com/arfes0e2b3c'
-								target='_blank'
-								rel='noreferrer'
-							>
-								<Image
-									src='/icons_sns/github.svg'
-									alt='githubのアイコン画像'
-									width={25}
-									height={25}
-								/>
-							</a>
-							<a href='https://x.com/0e2b3c' target='_blank' rel='noreferrer'>
-								<Image
-									src='/icons_sns/x.svg'
-									alt='xのアイコン画像'
-									width={25}
-									height={25}
-								/>
-							</a>
-							<a href='https://zenn.dev/arfes' target='_blank' rel='noreferrer'>
-								<Image
-									src='/icons_sns/zenn.svg'
-									alt='zennのアイコン画像'
-									width={25}
-									height={25}
-								/>
-							</a>
+							{snsInfos.map((sns) => {
+								return (
+									<a
+										key={sns.id}
+										href={sns.href}
+										target='_blank'
+										rel='noreferrer'
+									>
+										<Image
+											src={sns.imagePath}
+											alt={sns.alt}
+											width={25}
+											height={25}
+										/>
+									</a>
+								)
+							})}
 						</div>
 					</div>
 				</div>
