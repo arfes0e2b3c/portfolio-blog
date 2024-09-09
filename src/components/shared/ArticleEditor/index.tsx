@@ -14,7 +14,11 @@ import {
 	titleInput,
 } from './styles/articleEditor.css'
 
+import { PageType, PageTypeUnion } from '@/const'
+import { UseFetchCategories } from '@/hooks/categoryListHooks'
 import { Oval } from 'react-loader-spinner'
+import { useQuery } from 'react-query'
+import { CategoryList } from '../CategoryList'
 
 const notoSansJp = Noto_Sans_JP({
 	weight: '300',
@@ -22,8 +26,19 @@ const notoSansJp = Noto_Sans_JP({
 })
 
 export const ArticleEditor = (props: {
-	funcDraft: (title: string, draftContent: string, id?: string) => Promise<void>
-	funcArticle: (title: string, content: string, id?: string) => Promise<void>
+	funcDraft: (
+		title: string,
+		draftContent: string,
+		categoryId?: string,
+		articleId?: string
+	) => Promise<void>
+	funcArticle: (
+		title: string,
+		content: string,
+		categoryId?: string,
+		articleId?: string
+	) => Promise<void>
+	pageType: PageTypeUnion
 	id?: string
 	title?: string
 	draftContent?: string
@@ -36,12 +51,19 @@ export const ArticleEditor = (props: {
 	const [isShowDraftError, setIsShowDraftError] = useState(false)
 	const [isShowArticleSuccess, setIsShowArticleSuccess] = useState(false)
 	const [isShowArticleError, setIsShowArticleError] = useState(false)
+	const [categoryId, setCategoryId] = useState('')
 	const debouncedContent = useDebounce(draftContent, 500)
 
+	const onClickCategoryItem = (categoryId: string) => {
+		setCategoryId(categoryId)
+		setIsEdited(true)
+	}
+
 	const saveDraft = useCallback(async () => {
+		if (!isEdited) return
 		setIsSaving(true)
 		try {
-			await props.funcDraft(title, draftContent, props.id)
+			await props.funcDraft(title, draftContent, categoryId, props.id)
 			setIsSaving(false)
 			setIsEdited(false)
 			setIsShowDraftSuccess(true)
@@ -55,11 +77,11 @@ export const ArticleEditor = (props: {
 				setIsShowDraftError(false)
 			}, 3000)
 		}
-	}, [props, title, draftContent])
+	}, [props, title, draftContent, categoryId, isEdited])
 	const saveArticle = useCallback(async () => {
 		setIsSaving(true)
 		try {
-			await props.funcArticle(title, draftContent, props.id)
+			await props.funcArticle(title, draftContent, categoryId, props.id)
 			setIsSaving(false)
 			setIsEdited(false)
 			setIsShowArticleSuccess(true)
@@ -73,13 +95,21 @@ export const ArticleEditor = (props: {
 				setIsShowArticleError(false)
 			}, 3000)
 		}
-	}, [props, title, draftContent])
+	}, [props, title, draftContent, categoryId])
+
+	const {
+		data: categories,
+		isLoading: isLoadingCategories,
+		isError: isErrorCategories,
+	} = useQuery('categories', UseFetchCategories, {
+		refetchOnWindowFocus: false,
+	})
 
 	useEffect(() => {
+		if (props.pageType === PageType.create) return
 		const interval = setInterval(saveDraft, 60000)
-
 		return () => clearInterval(interval)
-	}, [saveDraft])
+	}, [saveDraft, props.pageType])
 
 	return (
 		<>
@@ -164,6 +194,10 @@ export const ArticleEditor = (props: {
 					spellCheck='false'
 				/>
 			</div>
+			<CategoryList
+				categories={categories?.contents ?? []}
+				onClick={onClickCategoryItem}
+			/>
 		</>
 	)
 }

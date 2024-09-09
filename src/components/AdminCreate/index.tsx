@@ -1,3 +1,4 @@
+import { PageType } from '@/const'
 import Link from 'next/link'
 import { ArticleEditor } from '../shared/ArticleEditor'
 import { usePostArticle } from './hooks/usePostArticleHooks'
@@ -24,7 +25,11 @@ export const AdminCreate = () => {
 						<h2 className={adminCreateTitle}>新規記事作成</h2>
 					</div>
 				</div>
-				<ArticleEditor funcDraft={usePostDraft} funcArticle={usePostArticle} />
+				<ArticleEditor
+					funcDraft={usePostDraft}
+					funcArticle={usePostArticle}
+					pageType={PageType.create}
+				/>
 			</div>
 		</section>
 	)
