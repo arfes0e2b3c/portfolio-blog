@@ -2,7 +2,8 @@ import { initMicroCms } from '@/api/axios'
 
 export const usePostArticle = async (
 	title: string,
-	content: string
+	content: string,
+	categoryId?: string
 ): Promise<void> => {
 	if (confirm('記事を公開してよろしいですか？')) {
 		await initMicroCms()
@@ -11,8 +12,9 @@ export const usePostArticle = async (
 				content: content,
 				draftContent: content,
 				isPublished: true,
+				category: categoryId,
 			})
-			.then((res) => {
+			.then(() => {
 				alert('記事を公開しました')
 			})
 			.catch((err) => {

@@ -1,3 +1,4 @@
+import { PageType } from '@/const'
 import { fetchArticleDetail } from '@/hooks/articleDetail'
 import { Article } from '@/types'
 import Link from 'next/link'
@@ -55,6 +56,7 @@ export const AdminEdit = (props: { article: Article }) => {
 				<ArticleEditor
 					funcDraft={useEditDraft}
 					funcArticle={useEditArticle}
+					pageType={PageType.edit}
 					id={result?.id}
 					title={result?.title}
 					draftContent={result?.draftContent}
