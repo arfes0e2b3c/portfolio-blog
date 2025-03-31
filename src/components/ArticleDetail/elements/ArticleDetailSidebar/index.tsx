@@ -66,11 +66,11 @@ export const ArticleDetailSidebar = (props: {
 				</div>
 				<div className={lowerContainer}>
 					<p className={description}>
-						横浜国立大学経営学部３年
+						株式会社LayerX
 						<br />
 						フロントエンドエンジニアを目指しています。
 						<br />
-						Vue / React / Go / Laravel
+						Vue / React / Go / TypeScript
 					</p>
 				</div>
 			</div>
