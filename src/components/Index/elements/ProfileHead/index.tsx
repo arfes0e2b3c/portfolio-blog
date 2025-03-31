@@ -47,7 +47,7 @@ export const ProfileHead = () => {
 					/>
 					<div>
 						<h3 className={fullname}>Yuki Yata</h3>
-						<p className={currentJob}>Student/Software Engineer</p>
+						<p className={currentJob}>Software Engineer</p>
 						<div className={iconContainer}>
 							{icons.map((icon) => {
 								return (

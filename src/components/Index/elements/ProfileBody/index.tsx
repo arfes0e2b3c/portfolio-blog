@@ -17,13 +17,13 @@ const histories = [
 		id: 1,
 		company: 'Yokohama National University',
 		job: 'Faculty of Business Administration',
-		period: '2021/04/01~Present',
+		period: '2021/04/01~2025/3/31',
 	},
 	{
 		id: 2,
 		company: 'Lumos Programming Circle',
 		job: 'Member',
-		period: '2021/11/21~Present',
+		period: '2021/11/21~~2025/3/31',
 		src: '/company_logos/lumos.png',
 	},
 	{
@@ -86,6 +86,13 @@ const histories = [
 		company: 'LayerX Inc.',
 		job: 'Software Engineer Intern',
 		period: '2024/2/16~2024/8/31',
+		src: '/company_logos/layerx.svg',
+	},
+	{
+		id: 12,
+		company: 'LayerX Inc.',
+		job: 'Software Engineer',
+		period: '2025/4/1~Present',
 		src: '/company_logos/layerx.svg',
 	},
 ]
