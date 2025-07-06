@@ -18,7 +18,13 @@ import {
   profileBody,
   profileContainer,
   profileHead,
+  talkAndEventBody,
+  talkAndEventContainer,
+  talkAndEventHead,
 } from './index.css'
+import { TalkAndEventHead } from './elements/TalkAndEventHead'
+import { TalkAndEventBody } from './elements/TalkAndEventBody'
+
 export const Index = (props: { articleList: ArticleResponse }) => {
   const [displayWidth, setDisplayWidth] = useState(1920)
   useEffect(() => {
@@ -56,6 +62,14 @@ export const Index = (props: { articleList: ArticleResponse }) => {
         <div>
           <RecentPost articleList={articleList ?? []} />
         </div>
+        <div className={talkAndEventContainer}>
+          <div className={talkAndEventHead}>
+            <TalkAndEventHead />
+          </div>
+          <div className={talkAndEventBody}>
+            <TalkAndEventBody />
+          </div>
+        </div>
         <div className={productContainer}>
           <div className={productHead}>
             <ProductHead />
@@ -72,6 +86,8 @@ export const Index = (props: { articleList: ArticleResponse }) => {
       <ProfileHead />
       <ProfileBody />
       <RecentPost articleList={articleList ?? []} />
+      <TalkAndEventHead />
+      <TalkAndEventBody />
       <ProductHead />
       <ProductBody />
     </>

@@ -32,16 +32,40 @@ export const profileBody = style({
 
 export const recentPostContainer = style({})
 
-export const skillContainer = style({
+export const talkAndEventContainer = style({
   position: 'absolute',
-  top: `${2000 + (historyNum - 11) * 100}px`,
-  height: '1337px',
+  top: `${2100 + (historyNum - 11) * 100}px`,
+  height: '437px',
+  width: '100%',
+})
+
+export const talkAndEventHead = style({
+  position: 'sticky',
+  height: 'fit-content',
+  top: 'calc((100vh - 100px) / 2 + 100px)',
+  left: '0',
+  transform: 'translateY(-50%)',
+  zIndex: 1,
+  '@media': {
+    'screen and (max-width: 768px)': {
+      position: 'relative',
+      top: '0',
+      left: '0',
+      width: '100%',
+    },
+  },
+})
+
+export const talkAndEventBody = style({
+  position: 'absolute',
+  top: '0px',
+  left: '0',
   width: '100%',
 })
 
 export const productContainer = style({
   position: 'absolute',
-  top: `${2100 + (historyNum - 11) * 100}px`,
+  top: `${2700 + (historyNum - 11) * 100}px`,
   height: '1566px',
   width: '100%',
 })
