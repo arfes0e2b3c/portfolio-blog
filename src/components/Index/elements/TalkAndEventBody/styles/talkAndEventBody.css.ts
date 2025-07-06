@@ -1,17 +1,17 @@
 import { style } from '@vanilla-extract/css'
 
-export const profileBodyWrapper = style({
+export const talkAndEventBodyWrapper = style({
   display: 'flex',
   justifyContent: 'flex-end',
   width: '100%',
 })
 
-export const profileBody = style({
+export const talkAndEventBody = style({
   display: 'flex',
   justifyContent: 'center',
-  width: '640px',
+  width: '100%',
   padding: '0',
-  marginRight: 'calc(50vw - 640px)',
+  marginLeft: 'calc(50vw - 440px)',
   '@media': {
     'screen and (max-width: 768px)': {
       width: '100%',
@@ -20,7 +20,12 @@ export const profileBody = style({
   },
 })
 
-export const profileBodyInner = style({})
+export const talkAndEventBodyInner = style({
+  padding: '0',
+  marginInline: '40px',
+  maxWidth: 'calc(100% - 80px)',
+  overflow: 'hidden',
+})
 
 export const historyItem = style({
   position: 'relative',
@@ -34,7 +39,7 @@ export const historyItem = style({
       left: '39px',
       width: '0px',
       height: 'calc(100%)',
-      borderLeft: '2px solid #ddd',
+      // borderLeft: '2px solid #ddd',
       zIndex: '-1',
     },
   },
@@ -70,7 +75,13 @@ export const companyImage = style({
 
 export const companyName = style({
   margin: '0',
+  marginBlock: '5px',
   fontSize: '1.3em',
+  lineHeight: '1.1',
+  borderBottom: '1px solid #ccc',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 })
 
 export const job = style({
@@ -81,4 +92,9 @@ export const period = style({
   margin: '0',
   color: '#aaa',
   fontWeight: 'bold',
+})
+
+export const link = style({
+  textDecoration: 'none',
+  color: 'inherit',
 })
