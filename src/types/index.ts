@@ -63,3 +63,22 @@ export type TableOfContent = {
 	title: string
 	href: string
 }
+
+export type TalkAndEvent = {
+  id: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  revisedAt: string
+  title: string
+  subTitle?: string
+  date: string
+  src?: string
+}
+
+export type TalkAndEventResponse = {
+  contents?: TalkAndEvent[]
+  totalCount?: number
+  offset?: number
+  limit?: number
+}

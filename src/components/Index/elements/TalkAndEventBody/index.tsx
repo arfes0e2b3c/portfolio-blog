@@ -1,4 +1,6 @@
-import Image from 'next/image'
+import { UseFetchTalkAndEvents } from '@/hooks/talkAndEventsHooks'
+import { formatTime2Ymd } from '@/utils/function'
+import { useQuery } from 'react-query'
 import {
   companyImage,
   companyImageContainer,
@@ -13,42 +15,38 @@ import {
   talkAndEventBodyWrapper,
 } from './styles/talkAndEventBody.css'
 
-const histories = [
-  {
-    id: 2,
-    company: 'フロントエンドカンファレンス北海道2024',
-    job: 'スポンサーLT',
-    period: '2024/08/27',
-    src: 'https://x.com/0e2b3c/status/1827180443227320707',
-  },
-  {
-    id: 1,
-    company: 'CTO研修 ISUCON研修おかわり会',
-    job: '主催',
-    period: '2025/06/26',
-  },
-]
-const reversedHistories = histories.reverse()
-
 export const TalkAndEventBody = () => {
+  const { data, isLoading, isError } = useQuery(
+    'talk-and-events',
+    UseFetchTalkAndEvents,
+    { refetchOnWindowFocus: false }
+  )
+
+  if (isLoading) return null
+  if (isError) return null
+
+  const items = (data?.contents ?? [])
+    .slice()
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
   return (
     <section className={talkAndEventBodyWrapper}>
       <div className={talkAndEventBody}>
         <ul className={talkAndEventBodyInner}>
-          {reversedHistories.map((history) => {
+          {items.map((item) => {
             return (
-              <li className={historyItem} key={history.id}>
+              <li className={historyItem} key={item.id}>
                 <div className={[historyItemInner].join(' ')}>
                   <div>
                     <a
                       className={link}
-                      href={history.src || ''}
+                      href={item.src || '#'}
                       target='_blank'
                       rel='noopener noreferrer'
                     >
-                      <p className={period}>{history.period}</p>
-                      <p className={companyName}>{history.company}</p>
-                      <p className={job}>{history.job}</p>
+                      <p className={period}>{formatTime2Ymd(item.date)}</p>
+                      <p className={companyName}>{item.title}</p>
+                      <p className={job}>{item.subTitle}</p>
                     </a>
                   </div>
                 </div>
