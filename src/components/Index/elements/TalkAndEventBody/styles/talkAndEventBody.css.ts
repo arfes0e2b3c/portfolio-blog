@@ -82,6 +82,7 @@ export const companyName = style({
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
+  fontWeight: 'bold',
 })
 
 export const job = style({
