@@ -22,6 +22,10 @@ export type Article = {
 	}
 	category?: Category
 	isPublished: boolean
+	// 外部記事統合用フィールド
+	isExternal?: boolean
+	externalUrl?: string
+	externalSource?: string
 }
 
 export type ArticleResponse = {

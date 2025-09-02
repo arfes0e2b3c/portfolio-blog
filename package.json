@@ -35,7 +35,7 @@
 	"devDependencies": {
 		"@testing-library/react": "^14.0.0",
 		"@types/jsdom": "^21.1.6",
-		"@types/node": "18.15.11",
+		"@types/node": "^22",
 		"@types/react": "18.0.31",
 		"@types/react-dom": "18.0.11",
 		"@types/react-scrollspy": "^3.3.9",
@@ -48,6 +48,6 @@
 		"typescript": "5.0.2"
 	},
 	"volta": {
-		"node": "18.16.0"
+		"node": "22.0.0"
 	}
 }
