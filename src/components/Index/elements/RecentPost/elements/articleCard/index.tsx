@@ -8,6 +8,7 @@ import {
 	articleCreatedAt,
 	articleImage,
 	articleImageContainer,
+	externalBadge,
 } from './styles/articleCard.css'
 
 type ArticleCardProps = {
@@ -16,8 +17,13 @@ type ArticleCardProps = {
 
 export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
 	article.publishedAt = formatTime2Ymd(article.publishedAt)
+
+	const isExternal = article.isExternal && !!article.externalUrl
+	const href = isExternal ? article.externalUrl! : `article/${article.id}`
+	const linkProps = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+
 	return (
-		<Link href={`article/${article.id}`} className={articleCard}>
+		<Link href={href} className={articleCard} {...linkProps}>
 			<div className={articleImageContainer}>
 				<Image
 					className={articleImage}
@@ -27,6 +33,11 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article }) => {
 					height={630}
 				/>
 				<p className={articleCreatedAt}>{article.publishedAt}</p>
+				{isExternal && (
+					<span className={externalBadge}>
+						{article.externalSource ? article.externalSource : '外部'}
+					</span>
+				)}
 			</div>
 		</Link>
 	)
