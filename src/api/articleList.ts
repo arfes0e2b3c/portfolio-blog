@@ -10,3 +10,15 @@ export const fetchArticleList = async () => {
 
 	return articleList
 }
+
+export const fetchInternalArticleList = async () => {
+	const articleList = await initMicroCms()
+		.get<ArticleResponse>(
+			'articles?filters=isPublished[equals]true[and]isExternal[equals]false&limit=100'
+		)
+		.then((res) => {
+			return res.data
+		})
+
+	return articleList
+}
