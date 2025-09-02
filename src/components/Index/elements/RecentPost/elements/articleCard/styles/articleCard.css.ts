@@ -57,3 +57,15 @@ export const articleCreatedAt = style({
 		},
 	},
 })
+
+export const externalBadge = style({
+	position: 'absolute',
+	top: '10px',
+	right: '10px',
+	padding: '6px 16px',
+	backgroundColor: '#0ea5e9',
+	color: '#fff',
+	fontSize: '16px',
+	borderRadius: '6px',
+	fontWeight: 'bold',
+})
