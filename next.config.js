@@ -14,6 +14,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/slides/frontend-conference-kansai-2025',
+        destination: '/slides/frontend-conference-kansai-2025/index.html',
+      },
+    ]
+  },
 }
 
 module.exports = withVanillaExtract(nextConfig)
