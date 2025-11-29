@@ -6,7 +6,7 @@ export const footer = style({
 	width: '100%',
 	height: '200px',
 	paddingTop: '40px',
-	marginTop: '50px',
+	marginTop: '250px',
 	border: '2px solid rgba(0,0,0,0.05)',
 })
 

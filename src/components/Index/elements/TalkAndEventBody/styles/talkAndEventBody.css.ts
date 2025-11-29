@@ -11,7 +11,7 @@ export const talkAndEventBody = style({
   justifyContent: 'center',
   width: '100%',
   padding: '0',
-  marginLeft: 'calc(50vw - 440px)',
+  marginLeft: '50vw',
   '@media': {
     'screen and (max-width: 768px)': {
       width: '100%',
