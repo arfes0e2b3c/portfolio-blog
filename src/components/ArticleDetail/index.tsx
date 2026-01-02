@@ -30,7 +30,7 @@ const notoSansJpBold = Noto_Sans_JP({
 })
 
 const ZenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
-	weight: '400',
+	weight: ['400', '500'],
 	subsets: ['latin'],
 })
 
