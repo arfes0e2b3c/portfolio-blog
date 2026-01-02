@@ -15,7 +15,7 @@ import {
 } from './index.css'
 
 const ZenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
-	weight: '400',
+	weight: ['400', '500'],
 	subsets: ['latin'],
 })
 

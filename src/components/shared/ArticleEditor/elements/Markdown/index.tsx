@@ -4,7 +4,7 @@ import markdownToHtml from 'zenn-markdown-html'
 import { htmlResult } from './styles/markdownResult.css'
 
 const ZenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
-	weight: '400',
+	weight: ['400', '500'],
 	subsets: ['latin'],
 })
 
