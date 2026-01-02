@@ -1,6 +1,6 @@
 import { Category } from '@/types'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
-import { Noto_Sans_JP, Zen_Kaku_Gothic_Antique } from 'next/font/google'
+import { Noto_Sans_JP } from 'next/font/google'
 import { categoryList, categoryListSection } from './index.css'
 
 const notoSansJpThin = Noto_Sans_JP({
