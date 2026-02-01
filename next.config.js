@@ -20,6 +20,10 @@ const nextConfig = {
         source: '/slides/frontend-conference-kansai-2025',
         destination: '/slides/frontend-conference-kansai-2025/index.html',
       },
+      {
+        source: '/slides/25-grad-lt-20260109',
+        destination: '/slides/25-grad-lt-20260109/index.html',
+      },
     ]
   },
 }
