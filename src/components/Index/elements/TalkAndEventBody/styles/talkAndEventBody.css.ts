@@ -82,7 +82,7 @@ export const companyName = style({
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  fontWeight: 'bold',
+  fontWeight: '400',
 })
 
 export const job = style({
@@ -92,7 +92,6 @@ export const job = style({
 export const period = style({
   margin: '0',
   color: '#aaa',
-  fontWeight: 'bold',
 })
 
 export const link = style({

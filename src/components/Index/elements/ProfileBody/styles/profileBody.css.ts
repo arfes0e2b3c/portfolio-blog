@@ -80,5 +80,4 @@ export const job = style({
 export const period = style({
   margin: '0',
   color: '#aaa',
-  fontWeight: 'bold',
 })
