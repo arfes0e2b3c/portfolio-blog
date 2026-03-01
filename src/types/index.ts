@@ -86,3 +86,19 @@ export type TalkAndEventResponse = {
   offset?: number
   limit?: number
 }
+
+export type ReadArticle = {
+  article_id: string
+  article_title: string
+  article_url: string
+  feedback_type: string
+  note: string
+  user_comment: string
+  topics: string[]
+  read_at: string
+}
+
+export type ReadArticleResponse = {
+  articles: ReadArticle[]
+  total: number
+}

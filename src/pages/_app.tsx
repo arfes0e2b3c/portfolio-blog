@@ -11,12 +11,12 @@ import { useEffect } from 'react'
 import 'zenn-content-css'
 
 const inter = Inter({
-	weight: '100',
+	weight: ['100', '400', '700'],
 	subsets: ['cyrillic'],
 })
 
 const notoSansJP = Noto_Sans_JP({
-	weight: '100',
+	weight: ['100', '400', '700'],
 	subsets: ['latin'],
 })
 
@@ -33,6 +33,7 @@ export default function App({
 				{`
           html {
             font-family: ${inter.style.fontFamily}, ${notoSansJP.style.fontFamily};
+            font-weight: 100;
             color: #333;
             scroll-behavior: smooth;
           }
