@@ -1,10 +1,12 @@
 import { animated, easings, useSpring, useTrail } from '@react-spring/web'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {
 	headerModal,
 	headerModalTitle,
 	menuContainer,
 	menuLink,
+	menuLinkActive,
 	menuList,
 } from './styles/headerModal.css'
 
@@ -30,8 +32,14 @@ export const HeaderModal = (props: {
 	toggleModal: () => void
 	isOpen: boolean
 }) => {
+	const router = useRouter()
 	const toggleModal = () => {
 		props.toggleModal()
+	}
+
+	const isActive = (path: string) => {
+		if (path === '/') return router.pathname === '/'
+		return router.pathname.startsWith(path)
 	}
 
 	const { modalSpring } = useSpring({
@@ -67,7 +75,7 @@ export const HeaderModal = (props: {
 							}}
 						>
 							<Link
-								className={menuLink}
+								className={`${menuLink} ${isActive(menus[index].path) ? menuLinkActive : ''}`}
 								href={menus[index].path}
 								onClick={toggleModal}
 							>
