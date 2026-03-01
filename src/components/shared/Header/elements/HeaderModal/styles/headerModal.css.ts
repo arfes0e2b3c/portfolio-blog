@@ -52,8 +52,16 @@ export const menuList = style({
 })
 
 export const menuLink = style({
+	display: 'inline-block',
 	margin: '10px 0',
+	padding: '8px 24px',
 	textDecoration: 'none',
 	fontSize: '2rem',
 	color: '#333',
+	borderRadius: '6px',
+	transition: 'color 0.2s, background-color 0.2s',
+	':hover': {
+		color: '#89abe5',
+		backgroundColor: 'rgba(137, 171, 229, 0.08)',
+	},
 })
