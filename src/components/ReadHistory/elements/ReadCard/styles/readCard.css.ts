@@ -77,13 +77,22 @@ export const topicList = style({
   marginTop: '12px',
 })
 
+export const categoryTag = style({
+  padding: '3px 10px',
+  fontSize: '0.75rem',
+  backgroundColor: '#333',
+  color: '#fff',
+  borderRadius: '4px',
+  fontWeight: 500,
+})
+
 export const topicTag = style({
   padding: '3px 10px',
   fontSize: '0.75rem',
-  backgroundColor: '#f0f4ff',
-  color: '#3b5998',
+  backgroundColor: '#333',
+  color: '#fff',
   borderRadius: '4px',
-  fontWeight: 400,
+  fontWeight: 500,
 })
 
 export const noteContainer = style({
