@@ -1,5 +1,7 @@
 import type { ReadArticle } from '@/types'
-import { FC } from 'react'
+import { CATEGORY_LABELS, getCategoryLabel } from '@/constants/curriculum'
+import { assignInlineVars } from '@vanilla-extract/dynamic'
+import { FC, useMemo, useState } from 'react'
 import { ReadCard } from './elements/ReadCard'
 import {
   cardList,
@@ -10,6 +12,10 @@ import {
   statItem,
   statValue,
   statLabel,
+  filterRow,
+  filterIndex,
+  filterItem,
+  filterItemSelected,
 } from './styles/readHistory.css'
 
 type Props = {
@@ -20,6 +26,18 @@ type Props = {
 }
 
 export const ReadHistory: FC<Props> = ({ articles, total, currentStreak, maxStreak }) => {
+  const [selectedCategory, setSelectedCategory] = useState({ index: 0, id: '' })
+
+  // 記事に存在するカテゴリだけ抽出（順序はCATEGORY_LABELSの定義順）
+  const categories = useMemo(() => {
+    const existing = new Set(articles.map((a) => a.category).filter(Boolean))
+    return Object.keys(CATEGORY_LABELS).filter((key) => existing.has(key))
+  }, [articles])
+
+  const filtered = selectedCategory.id
+    ? articles.filter((a) => a.category === selectedCategory.id)
+    : articles
+
   return (
     <div className={readHistoryInner}>
       <h2 className={readHistoryTitle}>READ</h2>
@@ -40,9 +58,32 @@ export const ReadHistory: FC<Props> = ({ articles, total, currentStreak, maxStre
         </div>
       )}
 
-      {articles.length > 0 ? (
+      {categories.length > 0 && (
+        <ul
+          className={filterRow}
+          style={assignInlineVars({ [filterIndex]: selectedCategory.index.toString() })}
+        >
+          <li
+            className={[filterItem, selectedCategory.id === '' ? filterItemSelected : ''].join(' ')}
+            onClick={() => setSelectedCategory({ index: 0, id: '' })}
+          >
+            All
+          </li>
+          {categories.map((cat, i) => (
+            <li
+              key={cat}
+              className={[filterItem, selectedCategory.id === cat ? filterItemSelected : ''].join(' ')}
+              onClick={() => setSelectedCategory({ index: i + 1, id: cat })}
+            >
+              {getCategoryLabel(cat)}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {filtered.length > 0 ? (
         <div className={cardList}>
-          {articles.map((article) => (
+          {filtered.map((article) => (
             <ReadCard key={article.article_id} article={article} />
           ))}
         </div>

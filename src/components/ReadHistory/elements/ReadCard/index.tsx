@@ -1,4 +1,5 @@
 import type { ReadArticle } from '@/types'
+import { getCategoryLabel } from '@/constants/curriculum'
 import { FC } from 'react'
 import {
   arrow,
@@ -11,6 +12,7 @@ import {
   titleLink,
   topicList,
   topicTag,
+  categoryTag,
 } from './styles/readCard.css'
 
 const feedbackMap: Record<string, { emoji: string; label: string }> = {
@@ -24,9 +26,7 @@ const feedbackMap: Record<string, { emoji: string; label: string }> = {
 
 function formatDate(iso: string): string {
   const d = new Date(iso)
-  const date = `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
-  const time = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
-  return `${date} / ${time}`
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
 }
 
 type Props = {
@@ -44,7 +44,7 @@ export const ReadCard: FC<Props> = ({ article }) => {
       rel='noopener noreferrer'
     >
       <div className={cardHeader}>
-        <span className={readDate}>{formatDate(article.read_at)}</span>
+        <span className={readDate}>{formatDate(article.delivered_at ?? article.read_at)}</span>
         <span className={feedbackBadge}>
           {fb.emoji} {fb.label}
         </span>
@@ -59,7 +59,7 @@ export const ReadCard: FC<Props> = ({ article }) => {
         <div className={topicList}>
           {article.topics.map((topic) => (
             <span className={topicTag} key={topic}>
-              {topic}
+              {article.category ? `${getCategoryLabel(article.category)} > ${topic}` : topic}
             </span>
           ))}
         </div>

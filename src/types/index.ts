@@ -95,7 +95,9 @@ export type ReadArticle = {
   note: string
   user_comment: string
   topics: string[]
+  category: string
   read_at: string
+  delivered_at: string | null
 }
 
 export type ReadArticleResponse = {
