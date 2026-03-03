@@ -101,4 +101,6 @@ export type ReadArticle = {
 export type ReadArticleResponse = {
   articles: ReadArticle[]
   total: number
+  currentStreak: number
+  maxStreak: number
 }
