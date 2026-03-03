@@ -7,7 +7,7 @@ export const fetchReadArticles = async (): Promise<ReadArticleResponse> => {
 
   if (!url || !key) {
     console.log('[readHistory] env vars missing, returning empty')
-    return { articles: [], total: 0 }
+    return { articles: [], total: 0, currentStreak: 0, maxStreak: 0 }
   }
 
   const res = await fetch(url, {
@@ -19,7 +19,7 @@ export const fetchReadArticles = async (): Promise<ReadArticleResponse> => {
   if (!res.ok) {
     const body = await res.text()
     console.error(`[readHistory] fetch failed: ${res.status} body=${body}`)
-    return { articles: [], total: 0 }
+    return { articles: [], total: 0, currentStreak: 0, maxStreak: 0 }
   }
 
   const data = (await res.json()) as ReadArticleResponse
