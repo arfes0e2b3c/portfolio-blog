@@ -45,7 +45,7 @@ export const statsRow = style({
   marginBottom: '16px',
   '@media': {
     'screen and (max-width: 768px)': {
-      marginBottom: '16px',
+      marginBottom: '0px',
     },
   },
 })
@@ -129,6 +129,7 @@ globalStyle(`${filterRow}::-webkit-scrollbar`, {
 
 export const filterItem = style({
   fontSize: '1.0rem',
+  fontWeight: 400,
   cursor: 'pointer',
   listStyle: 'none',
   width: '160px',
@@ -151,7 +152,6 @@ export const filterItem = style({
 
 export const filterItemSelected = style({
   color: 'white',
-  fontWeight: 400,
 })
 
 export const cardList = style({
