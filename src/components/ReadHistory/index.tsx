@@ -16,6 +16,7 @@ import {
   filterIndex,
   filterItem,
   filterItemSelected,
+  mobileBreak,
 } from './styles/readHistory.css'
 
 type Props = {
@@ -45,15 +46,15 @@ export const ReadHistory: FC<Props> = ({ articles, total, currentStreak, maxStre
         <div className={statsRow}>
           <div className={statItem}>
             <span className={statValue}>{total}</span>
-            <span className={statLabel}>Total Read</span>
+            <span className={statLabel}>Total<br className={mobileBreak} /> Read</span>
           </div>
           <div className={statItem}>
             <span className={statValue}>{currentStreak}</span>
-            <span className={statLabel}>Current Streak</span>
+            <span className={statLabel}>Current<br className={mobileBreak} /> Streak</span>
           </div>
           <div className={statItem}>
             <span className={statValue}>{maxStreak}</span>
-            <span className={statLabel}>Best Streak</span>
+            <span className={statLabel}>Best<br className={mobileBreak} /> Streak</span>
           </div>
         </div>
       )}

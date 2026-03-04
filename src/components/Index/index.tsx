@@ -1,5 +1,5 @@
 import { UseFetchArticleList } from '@/hooks/articleListHooks'
-import { ArticleResponse, ParallaxNums } from '@/types'
+import { ArticleResponse, ParallaxNums, ReadArticle } from '@/types'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Pragati_Narrow } from 'next/font/google'
 import { useEffect, useState } from 'react'
@@ -24,8 +24,9 @@ import {
 } from './index.css'
 import { TalkAndEventHead } from './elements/TalkAndEventHead'
 import { TalkAndEventBody } from './elements/TalkAndEventBody'
+import { RecentRead } from './elements/RecentRead'
 
-export const Index = (props: { articleList: ArticleResponse }) => {
+export const Index = (props: { articleList: ArticleResponse; recentReadArticles: ReadArticle[] }) => {
   const [displayWidth, setDisplayWidth] = useState(1920)
   useEffect(() => {
     setDisplayWidth(window.innerWidth)
@@ -62,6 +63,9 @@ export const Index = (props: { articleList: ArticleResponse }) => {
         <div>
           <RecentPost articleList={articleList ?? []} />
         </div>
+        <div>
+          <RecentRead articles={props.recentReadArticles} />
+        </div>
         <div className={talkAndEventContainer}>
           <div className={talkAndEventHead}>
             <TalkAndEventHead />
@@ -86,6 +90,7 @@ export const Index = (props: { articleList: ArticleResponse }) => {
       <ProfileHead />
       <ProfileBody />
       <RecentPost articleList={articleList ?? []} />
+      <RecentRead articles={props.recentReadArticles} />
       <TalkAndEventHead />
       <TalkAndEventBody />
       <ProductHead />

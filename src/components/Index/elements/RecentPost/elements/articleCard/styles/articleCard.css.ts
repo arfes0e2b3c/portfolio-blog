@@ -49,7 +49,7 @@ export const articleCreatedAt = style({
 	margin: '0',
 	backgroundColor: 'rgba(0, 0, 0, 0.6)',
 	color: 'white',
-	fontWeight: 'bold',
+	fontWeight: 100,
 	borderRadius: '10px 5px 5px 5px',
 	'@media': {
 		'screen and (max-width: 768px)': {
@@ -67,5 +67,5 @@ export const externalBadge = style({
 	color: '#fff',
 	fontSize: '16px',
 	borderRadius: '6px',
-	fontWeight: 'bold',
+	fontWeight: 100,
 })
