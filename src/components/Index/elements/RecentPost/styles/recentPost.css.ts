@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 
 export const recentPost = style({
 	'@media': {
@@ -11,6 +11,12 @@ export const recentPost = style({
 export const articleWrapper = style({
 	width: '100%',
 	overflow: 'scroll',
+	scrollbarWidth: 'none',
+	msOverflowStyle: 'none',
+})
+
+globalStyle(`${articleWrapper}::-webkit-scrollbar`, {
+	display: 'none',
 })
 
 export const articleContainer = style({

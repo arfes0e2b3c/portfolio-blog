@@ -83,6 +83,15 @@ export const statLabel = style({
   textAlign: 'center',
 })
 
+export const mobileBreak = style({
+  display: 'none',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      display: 'inline',
+    },
+  },
+})
+
 export const filterRow = style({
   position: 'relative',
   width: 'fit-content',
