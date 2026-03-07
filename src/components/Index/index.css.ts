@@ -36,7 +36,7 @@ export const recentPostContainer = style({})
 
 export const talkAndEventContainer = style({
   position: 'absolute',
-  top: `${2100 + (historyNum - 11) * 100 + recentReadHeight}px`,
+  top: `${2150 + (historyNum - 11) * 100 + recentReadHeight}px`,
   height: '637px',
   width: '100%',
 })
@@ -67,7 +67,7 @@ export const talkAndEventBody = style({
 
 export const productContainer = style({
   position: 'absolute',
-  top: `${2700 + (historyNum - 11) * 100 + recentReadHeight + (talkAndEventNum - 4) * 120}px`,
+  top: `${3000 + (historyNum - 11) * 100 + recentReadHeight + (talkAndEventNum - 4) * 120}px`,
   height: '1566px',
   width: '100%',
 })

@@ -33,7 +33,7 @@ export const cardHeader = style({
 export const readDate = style({
   fontSize: '0.8rem',
   color: '#999',
-  fontWeight: 400,
+  fontWeight: 100,
   letterSpacing: '0.04em',
 })
 

@@ -7,10 +7,7 @@ import Head from 'next/head'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 export const getStaticProps = async () => {
-  const [articleList, readData] = await Promise.all([
-    fetchArticleList(),
-    fetchReadArticles(),
-  ])
+  const [articleList, readData] = await Promise.all([fetchArticleList(), fetchReadArticles()])
   return {
     props: {
       articleList,
@@ -22,7 +19,10 @@ export const getStaticProps = async () => {
 
 const queryClient = new QueryClient()
 
-const Home: NextPage<{ articleList: ArticleResponse; recentReadArticles: ReadArticle[] }> = ({ articleList, recentReadArticles }) => {
+const Home: NextPage<{ articleList: ArticleResponse; recentReadArticles: ReadArticle[] }> = ({
+  articleList,
+  recentReadArticles,
+}) => {
   return (
     <>
       <Head>
@@ -32,7 +32,7 @@ const Home: NextPage<{ articleList: ArticleResponse; recentReadArticles: ReadArt
         {`
           footer {
             position: absolute;
-            top: 4300px;
+            top: 4900px;
           }
         `}
       </style>

@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css'
 
 export const recentRead = style({
+  marginBottom: '100px',
   '@media': {
     'screen and (max-width: 768px)': {
       marginLeft: '10px',
