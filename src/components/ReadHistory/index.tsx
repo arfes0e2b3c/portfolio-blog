@@ -27,13 +27,16 @@ type Props = {
   maxStreak: number
 }
 
+type categoryLabelsKey = (keyof typeof CATEGORY_LABELS)[]
+
 export const ReadHistory: FC<Props> = ({ articles, total, currentStreak, maxStreak }) => {
   const [selectedCategory, setSelectedCategory] = useState({ index: 0, id: '' })
 
   // 記事に存在するカテゴリだけ抽出（順序はCATEGORY_LABELSの定義順、マージ後）
   const categories = useMemo(() => {
     const existing = new Set(articles.map((a) => normalizeCategory(a.category)).filter(Boolean))
-    return Object.keys(CATEGORY_LABELS).filter((key) => existing.has(key))
+    const categoryLabelsObj = Object.keys(CATEGORY_LABELS) as categoryLabelsKey
+    return categoryLabelsObj.filter((key) => existing.has(key))
   }, [articles])
 
   const filtered = selectedCategory.id
