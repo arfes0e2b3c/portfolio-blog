@@ -7,7 +7,6 @@ export const readHistoryInner = style({
   flexDirection: 'column',
   width: '1280px',
   margin: '0 auto',
-  paddingBottom: '80px',
   '@media': {
     'screen and (max-width: 768px)': {
       width: '100%',
@@ -138,7 +137,7 @@ globalStyle(`${filterRow}::-webkit-scrollbar`, {
 
 export const filterItem = style({
   fontSize: '1.0rem',
-  fontWeight: 400,
+  fontWeight: 100,
   cursor: 'pointer',
   listStyle: 'none',
   width: '160px',
@@ -181,4 +180,19 @@ export const emptyMessage = style({
   color: '#999',
   fontSize: '1rem',
   marginTop: '60px',
+})
+
+export const endMessage = style({
+  textAlign: 'center',
+  color: '#bbb',
+  fontSize: '1.1rem',
+  fontWeight: 100,
+  marginTop: '48px',
+  letterSpacing: '0.1em',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      fontSize: '0.9rem',
+      marginTop: '32px',
+    },
+  },
 })
