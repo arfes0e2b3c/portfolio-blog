@@ -6,6 +6,7 @@ import {
 	footer,
 	lowerFooter,
 	menuLink,
+	menuList,
 	upperFooter,
 	upperLeftFooter,
 } from './styles/footer.css'
@@ -49,7 +50,7 @@ export const Footer = () => {
 					</Link>
 					<h2 className={blogTitle}>ARFES</h2>
 				</div>
-				<div>
+				<div className={menuList}>
 					{menus.map((menu) => {
 						return (
 							<Link className={menuLink} key={menu.id} href={menu.path}>

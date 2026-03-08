@@ -9,6 +9,7 @@ import {
   quizHistoryTitle,
   statItem,
   statLabel,
+  statLabelText,
   statValue,
   statsRow,
 } from './styles/quizHistory.css'
@@ -18,10 +19,10 @@ type Props = {
 }
 
 const QUIZ_RANKS = [
-  { minInterval: 30, label: '👑 Master' },
-  { minInterval: 10, label: '🔥 Expert' },
-  { minInterval: 1, label: '⭐ Familiar' },
-  { minInterval: 0, label: '💀 Learning' },
+  { minInterval: 30, emoji: '👑', label: 'Master' },
+  { minInterval: 10, emoji: '🔥', label: 'Expert' },
+  { minInterval: 1, emoji: '⭐', label: 'Familiar' },
+  { minInterval: 0, emoji: '💀', label: 'Learning' },
 ]
 
 function getQuizRank(scheduledDays: number, reps: number) {
@@ -31,10 +32,10 @@ function getQuizRank(scheduledDays: number, reps: number) {
 
 export const QuizHistory: FC<Props> = ({ quizzes }) => {
   const rankCounts = useMemo(() => {
-    const counts = Object.fromEntries(QUIZ_RANKS.map((r) => [r.label, 0]))
+    const counts = Object.fromEntries(QUIZ_RANKS.map((r) => [r.emoji, 0]))
     for (const q of quizzes) {
       const rank = getQuizRank(q.scheduled_days, q.reps)
-      counts[rank.label]++
+      counts[rank.emoji]++
     }
     return counts
   }, [quizzes])
@@ -49,10 +50,12 @@ export const QuizHistory: FC<Props> = ({ quizzes }) => {
             <span className={statValue}>{quizzes.length}</span>
             <span className={statLabel}>Total</span>
           </div>
-          {QUIZ_RANKS.map(({ label }) => (
+          {QUIZ_RANKS.map(({ emoji, label }) => (
             <div key={label} className={statItem}>
-              <span className={statValue}>{rankCounts[label]}</span>
-              <span className={statLabel}>{label}</span>
+              <span className={statValue}>{rankCounts[emoji]}</span>
+              <span className={statLabel}>
+                {emoji} <span className={statLabelText}>{label}</span>
+              </span>
             </div>
           ))}
         </div>
