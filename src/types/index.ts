@@ -87,6 +87,58 @@ export type TalkAndEventResponse = {
   limit?: number
 }
 
+export type QuizHistoryItem = {
+  id: number
+  article_id: string
+  article_title: string
+  article_url: string | null
+  question: string
+  level: string
+  topics: string[]
+  reps: number
+  scheduled_days: number
+  last_review: string | null
+  created_at: string
+  latest_quality: number
+  latest_answered_at: string
+}
+
+export type QuizHistoryResponse = {
+  quizzes: QuizHistoryItem[]
+}
+
+export type QuizAnswerRecord = {
+  id: number
+  quiz_id: number
+  user_answer: string
+  quality: number
+  is_correct: boolean
+  referenced: boolean
+  feedback_neutral: string
+  answered_at: string
+}
+
+export type QuizDetailRow = {
+  id: number
+  article_id: string
+  article_title: string
+  article_url: string | null
+  question: string
+  answer: string
+  key_point: string
+  level: string
+  topics: string[]
+  reps: number
+  scheduled_days: number
+  last_review: string | null
+  created_at: string
+}
+
+export type QuizDetailResponse = {
+  quiz: QuizDetailRow
+  answers: QuizAnswerRecord[]
+}
+
 export type ReadArticle = {
   article_id: string
   article_title: string

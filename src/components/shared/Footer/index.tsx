@@ -26,6 +26,11 @@ const menus = [
 		title: 'READ',
 		path: '/read',
 	},
+	{
+		id: 4,
+		title: 'QUIZ',
+		path: '/quiz',
+	},
 ]
 
 export const Footer = () => {
