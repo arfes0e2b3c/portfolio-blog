@@ -24,7 +24,7 @@ import {
   qualityWrong,
   questionHeading,
   sectionTitle,
-} from './quizDetail.css'
+} from '@/components/QuizHistory/styles/quizDetail.css'
 
 const LEVEL_LABEL: Record<string, string> = {
   '基本': '🟢 基本',

@@ -83,7 +83,7 @@ export const statLabel = style({
 export const cardList = style({
   display: 'flex',
   flexWrap: 'wrap',
-  justifyContent: 'start',
+  justifyContent: 'flex-start',
   gap: '32px',
   '@media': {
     'screen and (max-width: 768px)': {
