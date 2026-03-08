@@ -53,8 +53,8 @@ export const subLabel = style({
   fontSize: '0.75rem',
   textTransform: 'uppercase',
   letterSpacing: '0.08em',
-  color: '#aaa',
-  fontWeight: 500,
+  color: '#666',
+  fontWeight: 700,
   marginBottom: '4px',
   marginTop: '12px',
 })
