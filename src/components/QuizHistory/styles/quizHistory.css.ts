@@ -80,11 +80,20 @@ export const statLabel = style({
   textAlign: 'center',
 })
 
+export const statLabelText = style({
+  '@media': {
+    'screen and (max-width: 768px)': {
+      display: 'none',
+    },
+  },
+})
+
 export const cardList = style({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'flex-start',
   gap: '32px',
+  marginTop: '32px',
   '@media': {
     'screen and (max-width: 768px)': {
       flexDirection: 'column',

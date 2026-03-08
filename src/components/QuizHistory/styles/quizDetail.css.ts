@@ -39,13 +39,24 @@ export const questionHeading = style({
 })
 
 export const sectionTitle = style({
+  fontSize: '1.0rem',
+  letterSpacing: '0.05em',
+  color: '#555',
+  marginBottom: '12px',
+  marginTop: '36px',
+  fontWeight: 600,
+  borderBottom: '2px solid #eee',
+  paddingBottom: '8px',
+})
+
+export const subLabel = style({
   fontSize: '0.75rem',
   textTransform: 'uppercase',
-  letterSpacing: '0.1em',
+  letterSpacing: '0.08em',
   color: '#aaa',
-  marginBottom: '8px',
-  marginTop: '32px',
-  fontWeight: 400,
+  fontWeight: 500,
+  marginBottom: '4px',
+  marginTop: '12px',
 })
 
 export const modelAnswerBox = style({
@@ -109,15 +120,14 @@ export const answerText = style({
   lineHeight: 1.7,
   color: '#333',
   whiteSpace: 'pre-wrap',
-  marginBottom: '12px',
+  margin: '0',
 })
 
 export const feedbackText = style({
   fontSize: '0.9rem',
   lineHeight: 1.7,
   color: '#555',
-  borderTop: '1px solid #f0f0f0',
-  paddingTop: '12px',
+  margin: '0',
 })
 
 export const metaRow = style({

@@ -15,7 +15,6 @@ import {
   scoreCorrect,
   scoreNeutral,
   scoreWrong,
-  titleText,
 } from './styles/quizCard.css'
 
 const LEVEL_LABEL: Record<string, string> = {
@@ -65,8 +64,6 @@ export const QuizCard: FC<Props> = ({ quiz }) => {
         <span className={quizDate}>{dateStr}</span>
         {levelLabel && <span className={levelBadge}>{levelLabel}</span>}
       </div>
-
-      <p className={titleText}>{quiz.article_title}</p>
 
       <span className={questionText}>
         {quiz.question}

@@ -8,6 +8,12 @@ export const footer = style({
   paddingTop: '40px',
   marginTop: '50px',
   border: '2px solid rgba(0,0,0,0.05)',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      height: 'auto',
+      paddingBottom: '20px',
+    },
+  },
 })
 
 export const upperFooter = style({
@@ -53,6 +59,18 @@ export const lowerFooter = style({
   textAlign: 'center',
 })
 
+export const menuList = style({
+  display: 'flex',
+  flexDirection: 'row',
+  '@media': {
+    'screen and (max-width: 768px)': {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: '4px',
+    },
+  },
+})
+
 export const menuLink = style({
   margin: '0 20px',
   padding: '4px 12px',
@@ -67,7 +85,7 @@ export const menuLink = style({
   },
   '@media': {
     'screen and (max-width: 768px)': {
-      margin: '0 10px',
+      margin: '0',
       fontSize: '18px',
     },
   },

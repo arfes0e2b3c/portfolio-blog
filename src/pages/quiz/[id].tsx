@@ -24,6 +24,7 @@ import {
   qualityWrong,
   questionHeading,
   sectionTitle,
+  subLabel,
 } from '@/components/QuizHistory/styles/quizDetail.css'
 
 const LEVEL_LABEL: Record<string, string> = {
@@ -105,8 +106,14 @@ const QuizDetailPage: NextPage<Props> = ({ quiz, answers }) => {
                   </span>
                   <span className={[qualityBadge, badgeClass].join(' ')}>{badgeText}</span>
                 </div>
+                <p className={subLabel}>あなたの回答</p>
                 <p className={answerText}>{a.user_answer || '（回答なし）'}</p>
-                {a.feedback_neutral && <p className={feedbackText}>{a.feedback_neutral}</p>}
+                {a.feedback_neutral && (
+                  <>
+                    <p className={subLabel}>フィードバック</p>
+                    <p className={feedbackText}>{a.feedback_neutral}</p>
+                  </>
+                )}
               </div>
             )
           })
